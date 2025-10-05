@@ -1,0 +1,33 @@
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SRAM$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	addr_gen.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SRAM.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IFU.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GenerateVerilog.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GenerateVerilog$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	addr_gen$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InstReq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GenerateVerilog$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	addrReq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IFU$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SRAM$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	addr_gen.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SRAM.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IFU.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GenerateVerilog.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GenerateVerilog$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	addr_gen$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InstReq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GenerateVerilog$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	addrReq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IFU$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRolling back changes to class files.[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0mRestoring class files: [0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes.bak[0m

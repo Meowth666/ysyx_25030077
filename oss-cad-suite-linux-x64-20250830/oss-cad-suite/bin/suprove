@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+tool=super_prove; if [ "$1" != "${1#+}" ]; then tool="${1#+}"; shift; fi
+export PYTHONNOUSERSITE=1
+export PYTHONPATH=$(dirname ${BASH_SOURCE[0]})/../lib/python2.7:$(dirname ${BASH_SOURCE[0]})/../lib/python2.7/site-packages
+exec $(dirname ${BASH_SOURCE[0]})/../super_prove/bin/${tool}.sh "$@"

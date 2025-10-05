@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/5_IDU/src/main/scala/module.scala:592:20: not found: type MyOperators[0m
+[0m[[0m[31merror[0m] [0m[0m   emitVerilog(new MyOperators(), Array("--target-dir", "generated_verilog"))[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

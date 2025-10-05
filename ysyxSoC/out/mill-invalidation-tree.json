@@ -1,0 +1,430 @@
+{
+  "ysyxsoc.mainClass": {
+    "ysyxsoc.finalMainClassOpt": {
+      "ysyxsoc.runMain": {}
+    },
+    "ysyxsoc.finalMainClassOpt.super.RunModule": {}
+  },
+  "rocketchip.scalacOptions.super.mill.scalalib.ScalaModule": {
+    "rocketchip.scalacOptions.super.build_.rocket-chip.common.HasChisel": {
+      "rocketchip.scalacOptions": {}
+    }
+  },
+  "rocketchip.hardfloat.compileIvyDeps": {},
+  "rocketchip.mandatoryIvyDeps.super.JavaModule": {
+    "rocketchip.mandatoryIvyDeps": {
+      "rocketchip.allIvyDeps": {}
+    }
+  },
+  "rocketchip.hardfloat.upstreamCompileOutput": {},
+  "rocketchip.diplomacy.artifactTypes": {
+    "rocketchip.diplomacy.resolvedIvyDeps": {
+      "rocketchip.diplomacy.compileClasspath": {}
+    }
+  },
+  "ysyxsoc.artifactTypes": {},
+  "rocketchip.macros.zincIncrementalCompilation": {},
+  "rocketchip.macros.mandatoryScalacOptions": {
+    "rocketchip.macros.allScalacOptions": {}
+  },
+  "mill.scalalib.ZincWorkerModule.jvmIndexVersion": {},
+  "rocketchip.unmanagedClasspath": {},
+  "ysyxsoc.scalacPluginIvyDeps.super.ScalaModule": {
+    "ysyxsoc.scalacPluginIvyDeps": {}
+  },
+  "ysyxsoc.runClasspath.super.RunModule": {
+    "ysyxsoc.runClasspath": {}
+  },
+  "rocketchip.cde.localRunClasspath.super.RunModule": {
+    "rocketchip.cde.localRunClasspath": {
+      "rocketchip.cde.localClasspath": {}
+    }
+  },
+  "rocketchip.hardfloat.localRunClasspath.super.RunModule": {
+    "rocketchip.hardfloat.localRunClasspath": {
+      "rocketchip.hardfloat.localClasspath": {}
+    }
+  },
+  "rocketchip.hardfloat.zincIncrementalCompilation": {
+    "rocketchip.hardfloat.compile": {
+      "ysyxsoc.upstreamCompileOutput": {},
+      "rocketchip.upstreamCompileOutput": {},
+      "rocketchip.transitiveCompileClasspath": {},
+      "ysyxsoc.transitiveCompileClasspath": {}
+    }
+  },
+  "rocketchip.cde.sources": {},
+  "rocketchip.hardfloat.bomIvyDeps": {},
+  "rocketchip.hardfloat.platformSuffix": {
+    "rocketchip.hardfloat.scalacPluginClasspath.super.ScalaModule": {},
+    "rocketchip.hardfloat.resolvedIvyDeps": {},
+    "rocketchip.hardfloat.transitiveCompileIvyDeps": {},
+    "rocketchip.hardfloat.enablePluginScalacOptions.super.ScalaModule": {},
+    "rocketchip.hardfloat.transitiveIvyDeps": {},
+    "rocketchip.hardfloat.transitiveRunIvyDeps": {},
+    "rocketchip.hardfloat.scalaCompilerClasspath": {}
+  },
+  "rocketchip.diplomacy.depManagement": {
+    "rocketchip.diplomacy.transitiveIvyDeps": {}
+  },
+  "ysyxsoc.runUseArgsFile.super.RunModule": {
+    "ysyxsoc.runUseArgsFile": {}
+  },
+  "ysyxsoc.scalacOptions.super.ScalaModule": {
+    "ysyxsoc.scalacOptions": {}
+  },
+  "rocketchip.hardfloat.mandatoryJavacOptions": {},
+  "rocketchip.cde.transitiveCompileClasspath": {
+    "rocketchip.cde.compileClasspath": {}
+  },
+  "rocketchip.hardfloat.runIvyDeps": {},
+  "ysyxsoc.localRunClasspath.super.RunModule": {},
+  "rocketchip.cde.compileResources": {},
+  "rocketchip.mandatoryScalacOptions": {
+    "rocketchip.allScalacOptions": {}
+  },
+  "rocketchip.hardfloat.zincAuxiliaryClassFileExtensions.super.JavaModule": {},
+  "rocketchip.macros.resources": {},
+  "ysyxsoc.unmanagedClasspath": {
+    "ysyxsoc.localCompileClasspath": {}
+  },
+  "rocketchip.hardfloat.generatedSources": {},
+  "ysyxsoc.forkEnv.super.RunModule": {
+    "ysyxsoc.forkEnv": {}
+  },
+  "rocketchip.diplomacy.javacOptions": {},
+  "rocketchip.diplomacy.mandatoryIvyDeps.super.JavaModule": {
+    "rocketchip.diplomacy.mandatoryIvyDeps": {
+      "rocketchip.diplomacy.allIvyDeps": {}
+    }
+  },
+  "ysyxsoc.forkArgs.super.RunModule": {
+    "ysyxsoc.forkArgs": {}
+  },
+  "rocketchip.diplomacy.scalacPluginIvyDeps.super.ScalaModule": {
+    "rocketchip.diplomacy.scalacPluginIvyDeps": {}
+  },
+  "rocketchip.localRunClasspath.super.RunModule": {},
+  "rocketchip.diplomacy.mandatoryJavacOptions": {
+    "rocketchip.diplomacy.compile": {}
+  },
+  "rocketchip.cde.mandatoryIvyDeps.super.JavaModule": {
+    "rocketchip.cde.mandatoryIvyDeps": {}
+  },
+  "rocketchip.cde.compileIvyDeps": {},
+  "rocketchip.hardfloat.ivyDeps.super.mill.scalalib.JavaModule": {
+    "rocketchip.hardfloat.ivyDeps.super.build_.rocket-chip.dependencies.hardfloat.common.HasChisel": {
+      "rocketchip.hardfloat.ivyDeps": {}
+    }
+  },
+  "rocketchip.macros.artifactTypes": {},
+  "rocketchip.cde.zincIncrementalCompilation": {},
+  "mill.scalalib.ZincWorkerModule.jvmId": {
+    "mill.scalalib.ZincWorkerModule.javaHome": {}
+  },
+  "rocketchip.cde.scalacPluginIvyDeps": {},
+  "rocketchip.macros.compileResources": {
+    "rocketchip.macros.localCompileClasspath": {}
+  },
+  "rocketchip.macros.compileIvyDeps": {},
+  "rocketchip.macros.sources": {
+    "rocketchip.macros.allSources": {
+      "rocketchip.macros.allSourceFiles": {}
+    }
+  },
+  "rocketchip.hardfloat.mandatoryIvyDeps.super.JavaModule": {
+    "rocketchip.hardfloat.mandatoryIvyDeps": {
+      "rocketchip.hardfloat.allIvyDeps": {}
+    }
+  },
+  "rocketchip.mandatoryJavacOptions": {
+    "rocketchip.compile": {}
+  },
+  "rocketchip.hardfloat.mandatoryScalacOptions": {
+    "rocketchip.hardfloat.allScalacOptions": {}
+  },
+  "rocketchip.diplomacy.scalacOptions.super.mill.scalalib.ScalaModule": {
+    "rocketchip.diplomacy.scalacOptions.super.build_.rocket-chip.dependencies.diplomacy.common.HasChisel": {
+      "rocketchip.diplomacy.scalacOptions": {}
+    }
+  },
+  "rocketchip.cde.unmanagedClasspath": {
+    "rocketchip.cde.localCompileClasspath": {}
+  },
+  "rocketchip.diplomacy.mandatoryScalacOptions": {
+    "rocketchip.diplomacy.allScalacOptions": {}
+  },
+  "rocketchip.macros.javacOptions": {},
+  "rocketchip.hardfloat.compileResources": {
+    "rocketchip.hardfloat.localCompileClasspath": {}
+  },
+  "mill.scalalib.ZincWorkerModule.classpath": {
+    "mill.scalalib.ZincWorkerModule.worker": {},
+    "ysyxsoc.allLocalMainClasses": {}
+  },
+  "rocketchip.cde.depManagement": {},
+  "ysyxsoc.platformSuffix": {},
+  "ysyxsoc.compileIvyDeps": {},
+  "rocketchip.diplomacy.zincAuxiliaryClassFileExtensions.super.JavaModule": {
+    "rocketchip.diplomacy.zincAuxiliaryClassFileExtensions": {}
+  },
+  "rocketchip.macros.generatedSources": {},
+  "rocketchip.macros.mandatoryJavacOptions": {},
+  "rocketchip.javacOptions": {},
+  "rocketchip.cde.platformSuffix": {},
+  "ysyxsoc.mandatoryJavacOptions": {},
+  "ysyxsoc.sources": {
+    "ysyxsoc.allSources": {
+      "ysyxsoc.allSourceFiles": {}
+    }
+  },
+  "rocketchip.cde.runIvyDeps": {},
+  "rocketchip.macros.localRunClasspath.super.RunModule": {
+    "rocketchip.macros.localRunClasspath": {
+      "rocketchip.macros.localClasspath": {
+        "ysyxsoc.transitiveLocalClasspath": {}
+      }
+    }
+  },
+  "rocketchip.cde.zincReportCachedProblems": {},
+  "ysyxsoc.scalaVersion": {
+    "ysyxsoc.scalaCompilerClasspath": {},
+    "ysyxsoc.compile": {},
+    "ysyxsoc.scalacPluginClasspath": {},
+    "ysyxsoc.transitiveIvyDeps": {},
+    "ysyxsoc.enablePluginScalacOptions.super.ScalaModule": {},
+    "ysyxsoc.resolvedIvyDeps": {
+      "ysyxsoc.compileClasspath": {}
+    },
+    "ysyxsoc.zincAuxiliaryClassFileExtensions": {},
+    "ysyxsoc.resolvedRunIvyDeps": {},
+    "ysyxsoc.scalaLibraryIvyDeps": {},
+    "ysyxsoc.transitiveCompileIvyDeps": {},
+    "ysyxsoc.scalaOrganization": {}
+  },
+  "rocketchip.hardfloat.zincReportCachedProblems": {},
+  "rocketchip.macros.unmanagedClasspath": {},
+  "rocketchip.cde.mandatoryScalacOptions": {
+    "rocketchip.cde.allScalacOptions": {}
+  },
+  "rocketchip.zincIncrementalCompilation": {},
+  "rocketchip.macros.ivyDeps.super.JavaModule": {
+    "rocketchip.macros.ivyDeps": {}
+  },
+  "ysyxsoc.mandatoryIvyDeps.super.JavaModule": {
+    "ysyxsoc.mandatoryIvyDeps": {
+      "ysyxsoc.allIvyDeps": {}
+    }
+  },
+  "rocketchip.macros.scalacOptions": {},
+  "rocketchip.macros.platformSuffix": {},
+  "rocketchip.hardfloat.transitiveCompileClasspath": {
+    "rocketchip.hardfloat.compileClasspath": {}
+  },
+  "rocketchip.zincAuxiliaryClassFileExtensions.super.JavaModule": {},
+  "ysyxsoc.generatedSources": {},
+  "rocketchip.hardfloat.javacOptions": {},
+  "rocketchip.hardfloat.sources": {
+    "rocketchip.hardfloat.allSources": {
+      "rocketchip.hardfloat.allSourceFiles": {}
+    }
+  },
+  "rocketchip.macros.zincReportCachedProblems": {},
+  "rocketchip.cde.bomIvyDeps": {},
+  "rocketchip.artifactTypes": {},
+  "rocketchip.compileResources": {
+    "rocketchip.localCompileClasspath": {
+      "rocketchip.localClasspath": {},
+      "rocketchip.compileClasspath": {}
+    }
+  },
+  "ysyxsoc.mandatoryScalacOptions": {
+    "ysyxsoc.allScalacOptions": {}
+  },
+  "rocketchip.diplomacy.zincReportCachedProblems": {},
+  "rocketchip.cde.ivyDeps": {
+    "rocketchip.cde.allIvyDeps": {}
+  },
+  "rocketchip.diplomacy.chiselPluginJar": {
+    "rocketchip.diplomacy.scalacPluginClasspath": {}
+  },
+  "rocketchip.hardfloat.scalacPluginIvyDeps.super.mill.scalalib.ScalaModule": {
+    "rocketchip.hardfloat.scalacPluginIvyDeps.super.build_.rocket-chip.dependencies.hardfloat.common.HasChisel": {
+      "rocketchip.hardfloat.scalacPluginIvyDeps": {}
+    }
+  },
+  "rocketchip.diplomacy.unmanagedClasspath": {
+    "rocketchip.diplomacy.localCompileClasspath": {}
+  },
+  "rocketchip.cde.javacOptions": {},
+  "ysyxsoc.forkWorkingDir.super.RunModule": {
+    "ysyxsoc.forkWorkingDir": {}
+  },
+  "rocketchip.diplomacy.platformSuffix": {},
+  "rocketchip.runIvyDeps": {},
+  "rocketchip.cde.artifactTypes": {},
+  "rocketchip.cde.upstreamCompileOutput": {},
+  "ysyxsoc.ivyDeps.super.JavaModule": {
+    "ysyxsoc.ivyDeps": {}
+  },
+  "rocketchip.macros.bomIvyDeps": {},
+  "ysyxsoc.resources": {
+    "ysyxsoc.localRunClasspath": {
+      "ysyxsoc.localClasspath": {}
+    }
+  },
+  "rocketchip.diplomacy.localRunClasspath.super.RunModule": {
+    "rocketchip.diplomacy.localRunClasspath": {
+      "rocketchip.diplomacy.localClasspath": {}
+    }
+  },
+  "rocketchip.hardfloat.resources": {},
+  "rocketchip.diplomacy.compileResources": {},
+  "rocketchip.diplomacy.generatedSources": {
+    "rocketchip.diplomacy.allSources": {
+      "rocketchip.diplomacy.allSourceFiles": {}
+    }
+  },
+  "rocketchip.diplomacy.scalaVersion": {
+    "rocketchip.diplomacy.scalaOrganization": {},
+    "rocketchip.diplomacy.transitiveRunIvyDeps": {},
+    "rocketchip.diplomacy.enablePluginScalacOptions.super.ScalaModule": {},
+    "rocketchip.diplomacy.scalaCompilerClasspath": {},
+    "rocketchip.diplomacy.scalaLibraryIvyDeps": {},
+    "rocketchip.diplomacy.scalacPluginClasspath.super.ScalaModule": {}
+  },
+  "rocketchip.diplomacy.bomIvyDeps": {},
+  "rocketchip.hardfloat.scalaVersion": {
+    "rocketchip.hardfloat.scalaOrganization": {},
+    "rocketchip.hardfloat.scalaLibraryIvyDeps": {},
+    "rocketchip.hardfloat.zincAuxiliaryClassFileExtensions": {}
+  },
+  "rocketchip.cde.zincAuxiliaryClassFileExtensions.super.JavaModule": {},
+  "rocketchip.cde.mandatoryJavacOptions": {},
+  "rocketchip.diplomacy.compileIvyDeps": {
+    "rocketchip.diplomacy.transitiveCompileIvyDeps": {}
+  },
+  "ysyxsoc.compileResources": {},
+  "rocketchip.depManagement": {},
+  "rocketchip.compileIvyDeps": {},
+  "rocketchip.diplomacy.sources": {},
+  "rocketchip.cde.resources": {},
+  "rocketchip.cde.scalaVersion": {
+    "rocketchip.cde.scalaOrganization": {},
+    "rocketchip.cde.scalaCompilerClasspath": {},
+    "rocketchip.cde.zincAuxiliaryClassFileExtensions": {},
+    "rocketchip.cde.transitiveRunIvyDeps": {},
+    "rocketchip.cde.resolvedIvyDeps": {},
+    "rocketchip.cde.scalaLibraryIvyDeps": {},
+    "rocketchip.cde.transitiveIvyDeps": {},
+    "rocketchip.cde.compile": {
+      "rocketchip.diplomacy.transitiveCompileClasspath": {},
+      "rocketchip.diplomacy.upstreamCompileOutput": {}
+    },
+    "rocketchip.cde.scalacPluginClasspath": {},
+    "rocketchip.cde.transitiveCompileIvyDeps": {},
+    "rocketchip.cde.enablePluginScalacOptions.super.ScalaModule": {}
+  },
+  "rocketchip.diplomacy.ivyDeps.super.mill.scalalib.JavaModule": {
+    "rocketchip.diplomacy.ivyDeps.super.build_.rocket-chip.dependencies.diplomacy.common.HasChisel": {
+      "rocketchip.diplomacy.ivyDeps": {}
+    }
+  },
+  "rocketchip.bomIvyDeps": {
+    "rocketchip.transitiveIvyDeps": {}
+  },
+  "rocketchip.macros.mandatoryIvyDeps.super.JavaModule": {
+    "rocketchip.macros.mandatoryIvyDeps": {
+      "rocketchip.macros.allIvyDeps": {}
+    }
+  },
+  "rocketchip.macros.depManagement": {},
+  "rocketchip.zincReportCachedProblems": {},
+  "rocketchip.macros.zincAuxiliaryClassFileExtensions.super.JavaModule": {},
+  "rocketchip.diplomacy.zincIncrementalCompilation": {},
+  "rocketchip.cde.generatedSources": {
+    "rocketchip.cde.allSources": {
+      "rocketchip.cde.allSourceFiles": {}
+    }
+  },
+  "rocketchip.chiselPluginJar": {
+    "rocketchip.scalacPluginClasspath": {}
+  },
+  "rocketchip.sources": {},
+  "rocketchip.macros.scalacPluginIvyDeps": {},
+  "ysyxsoc.runIvyDeps": {
+    "ysyxsoc.transitiveRunIvyDeps": {}
+  },
+  "mill.scalalib.ZincWorkerModule.zincLogDebug": {},
+  "rocketchip.hardfloat.chiselPluginJar": {
+    "rocketchip.hardfloat.scalacPluginClasspath": {}
+  },
+  "rocketchip.diplomacy.runIvyDeps": {},
+  "rocketchip.hardfloat.scalacOptions.super.mill.scalalib.ScalaModule": {
+    "rocketchip.hardfloat.scalacOptions.super.build_.rocket-chip.dependencies.hardfloat.common.HasChisel": {
+      "rocketchip.hardfloat.scalacOptions": {}
+    }
+  },
+  "rocketchip.generatedSources": {
+    "rocketchip.allSources": {
+      "rocketchip.allSourceFiles": {}
+    }
+  },
+  "rocketchip.hardfloat.unmanagedClasspath": {},
+  "rocketchip.macros.runIvyDeps": {},
+  "ysyxsoc.zincIncrementalCompilation": {},
+  "rocketchip.scalaVersion": {
+    "rocketchip.zincAuxiliaryClassFileExtensions": {},
+    "rocketchip.scalaLibraryIvyDeps": {},
+    "rocketchip.scalaOrganization": {}
+  },
+  "rocketchip.ivyDeps.super.mill.scalalib.JavaModule": {
+    "rocketchip.ivyDeps.super.build_.rocket-chip.common.HasChisel": {
+      "rocketchip.ivyDeps.super.build_.rocket-chip.common.RocketChipModule": {
+        "rocketchip.ivyDeps": {}
+      }
+    }
+  },
+  "rocketchip.hardfloat.artifactTypes": {},
+  "rocketchip.resources": {
+    "rocketchip.localRunClasspath": {}
+  },
+  "rocketchip.hardfloat.depManagement": {},
+  "rocketchip.scalacPluginIvyDeps.super.mill.scalalib.ScalaModule": {
+    "rocketchip.scalacPluginIvyDeps.super.build_.rocket-chip.common.HasChisel": {
+      "rocketchip.scalacPluginIvyDeps": {}
+    }
+  },
+  "ysyxsoc.bomIvyDeps": {},
+  "rocketchip.macros.upstreamCompileOutput": {},
+  "rocketchip.platformSuffix": {
+    "rocketchip.transitiveRunIvyDeps": {},
+    "rocketchip.transitiveCompileIvyDeps": {},
+    "rocketchip.resolvedIvyDeps": {},
+    "rocketchip.enablePluginScalacOptions.super.ScalaModule": {},
+    "rocketchip.scalaCompilerClasspath": {},
+    "rocketchip.scalacPluginClasspath.super.ScalaModule": {}
+  },
+  "ysyxsoc.zincReportCachedProblems": {},
+  "ysyxsoc.depManagement": {},
+  "ysyxsoc.zincAuxiliaryClassFileExtensions.super.JavaModule": {},
+  "rocketchip.macros.scalaVersion": {
+    "rocketchip.macros.transitiveCompileIvyDeps": {},
+    "rocketchip.macros.scalacPluginClasspath": {},
+    "rocketchip.macros.transitiveRunIvyDeps": {},
+    "rocketchip.macros.scalaOrganization": {},
+    "rocketchip.macros.scalaCompilerClasspath": {},
+    "rocketchip.macros.transitiveIvyDeps": {},
+    "rocketchip.macros.zincAuxiliaryClassFileExtensions": {},
+    "rocketchip.macros.enablePluginScalacOptions.super.ScalaModule": {},
+    "rocketchip.macros.resolvedIvyDeps": {},
+    "rocketchip.macros.scalaLibraryIvyDeps": {},
+    "rocketchip.macros.compile": {}
+  },
+  "rocketchip.diplomacy.resources": {},
+  "ysyxsoc.javacOptions": {},
+  "rocketchip.cde.scalacOptions": {},
+  "rocketchip.macros.transitiveCompileClasspath": {
+    "rocketchip.macros.compileClasspath": {}
+  }
+}

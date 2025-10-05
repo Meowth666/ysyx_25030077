@@ -1,0 +1,98 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.56+197 (git sha1 d4c4b2106, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `-' --
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_reg'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v' to AST representation.
+Generating RTLIL representation for module `\Queue'.
+Generating RTLIL representation for module `\ysyx_25030077_IFU'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_IDU'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_Imm.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_Imm.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_Imm'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_MEM'.
+/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:71: Warning: Identifier `\io_rs1' is implicitly declared.
+/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:71: Warning: Identifier `\io_rs2' is implicitly declared.
+/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:73: Warning: Identifier `\io_imm' is implicitly declared.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_arbiter'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v' to AST representation.
+Generating RTLIL representation for module `\MaxPeriodFibonacciLFSR'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_EXIT.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_EXIT.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_EXIT'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_ALU'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_DATA_CONTROL.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_DATA_CONTROL.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_DATA_CONTROL'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR_1.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR_1.v' to AST representation.
+Generating RTLIL representation for module `\MaxPeriodFibonacciLFSR_1'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_PC_next'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/top.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+14. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/yosys/yosys-sta/scripts/../pdk/nangate45/verilog/blackbox.v
+Parsing Verilog input from `/home/meowth/ysyx/ysyx-workbench/yosys/yosys-sta/scripts/../pdk/nangate45/verilog/blackbox.v' to AST representation.
+Successfully finished Verilog frontend.
+
+15. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/yosys/yosys-sta/scripts/../pdk/nangate45/verilog/cells_clkgate.v
+Parsing Verilog input from `/home/meowth/ysyx/ysyx-workbench/yosys/yosys-sta/scripts/../pdk/nangate45/verilog/cells_clkgate.v' to AST representation.
+Generating RTLIL representation for module `\OPENROAD_CLKGATE'.
+Successfully finished Verilog frontend.
+
+16. Executing SYNTH pass.
+
+16.1. Executing HIERARCHY pass (managing design hierarchy).
+ERROR: Module `ysyx_25030077_top' not found!
+ERROR: TCL interpreter returned an error: Yosys command produced an error

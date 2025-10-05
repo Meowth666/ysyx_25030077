@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/1_val_ALU/src/main/scala/module.scala:24:24: value ina is not a member of chisel3.Bundle{val in_a: chisel3.UInt; val in_b: chisel3.UInt; val sw: chisel3.UInt; val out: chisel3.UInt; val carry: chisel3.UInt; val overflow: chisel3.UInt}[0m
+[0m[[0m[31merror[0m] [0m[0m  val sraiResult = (io.ina >> io.inb)[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/1_val_ALU/src/main/scala/module.scala:24:34: value inb is not a member of chisel3.Bundle{val in_a: chisel3.UInt; val in_b: chisel3.UInt; val sw: chisel3.UInt; val out: chisel3.UInt; val carry: chisel3.UInt; val overflow: chisel3.UInt}[0m
+[0m[[0m[31merror[0m] [0m[0m  val sraiResult = (io.ina >> io.inb)[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

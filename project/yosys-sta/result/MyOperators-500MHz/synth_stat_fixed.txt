@@ -1,0 +1,80 @@
+
+5. Printing statistics.
+
+=== MyOperators ===
+
+   Number of wires:               1832
+   Number of wire bits:           1928
+   Number of public wires:        1832
+   Number of public wire bits:    1928
+   Number of ports:                  8
+   Number of port bits:            104
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1858
+     AND2_X1                       110
+     AND2_X2                         8
+     AND2_X4                         7
+     AND3_X1                        86
+     AND3_X2                         1
+     AND3_X4                         1
+     AND4_X1                        15
+     AND4_X2                         1
+     AND4_X4                         2
+     AOI211_X1                      22
+     AOI211_X2                       1
+     AOI21_X1                      224
+     AOI21_X2                        9
+     AOI21_X4                        3
+     AOI221_X1                       1
+     AOI221_X2                       1
+     AOI221_X4                       3
+     AOI22_X1                       14
+     BUF_X16                         2
+     BUF_X2                         25
+     BUF_X4                         58
+     BUF_X8                         16
+     INV_X1                        152
+     INV_X2                          4
+     INV_X4                          2
+     MUX2_X1                        96
+     MUX2_X2                         4
+     NAND2_X1                      136
+     NAND2_X2                        3
+     NAND2_X4                        2
+     NAND3_X1                      154
+     NAND3_X2                        6
+     NAND3_X4                        1
+     NAND4_X1                       37
+     NAND4_X4                        2
+     NOR2_X1                       133
+     NOR2_X2                         5
+     NOR2_X4                        11
+     NOR3_X1                        40
+     NOR3_X4                         2
+     NOR4_X1                        12
+     NOR4_X2                         1
+     NOR4_X4                         2
+     OAI211_X1                     106
+     OAI211_X2                       6
+     OAI21_X1                      203
+     OAI21_X2                        2
+     OAI221_X1                       9
+     OAI22_X1                        2
+     OR2_X1                         22
+     OR2_X2                          1
+     OR2_X4                          4
+     OR3_X1                         44
+     OR3_X2                          1
+     OR3_X4                          6
+     OR4_X1                          7
+     OR4_X2                          3
+     OR4_X4                          1
+     XNOR2_X1                        7
+     XOR2_X1                        16
+     XOR2_X2                         3
+
+   Chip area for module '\MyOperators': 2244.774000
+     of which used for sequential elements: 0.000000 (0.00%)
+

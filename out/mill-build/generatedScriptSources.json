@@ -1,0 +1,12 @@
+{
+    "value": {
+        "wrapped": [
+            "ref:v0:105c2b0d:/home/meowth/ysyx/ysyx-workbench/out/mill-build/generatedScriptSources.dest/wrapped"
+        ],
+        "support": [
+            "ref:v0:93b09b5e:/home/meowth/ysyx/ysyx-workbench/out/mill-build/generatedScriptSources.dest/support"
+        ]
+    },
+    "valueHash": -1612675945,
+    "inputsHash": 31366474
+}

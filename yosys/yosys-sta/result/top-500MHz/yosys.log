@@ -1,0 +1,1927 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.56+197 (git sha1 d4c4b2106, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `-' --
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_reg'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v' to AST representation.
+Generating RTLIL representation for module `\Queue'.
+Generating RTLIL representation for module `\ysyx_25030077_IFU'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_IDU'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_Imm.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_Imm.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_Imm'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_MEM'.
+/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:71: Warning: Identifier `\io_rs1' is implicitly declared.
+/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:71: Warning: Identifier `\io_rs2' is implicitly declared.
+/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:73: Warning: Identifier `\io_imm' is implicitly declared.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_arbiter'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v' to AST representation.
+Generating RTLIL representation for module `\MaxPeriodFibonacciLFSR'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_EXIT.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_EXIT.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_EXIT'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_ALU'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_DATA_CONTROL.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_DATA_CONTROL.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_DATA_CONTROL'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR_1.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR_1.v' to AST representation.
+Generating RTLIL representation for module `\MaxPeriodFibonacciLFSR_1'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v' to AST representation.
+Generating RTLIL representation for module `\ysyx_25030077_PC_next'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/top.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+14. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/yosys/yosys-sta/scripts/../pdk/nangate45/verilog/blackbox.v
+Parsing Verilog input from `/home/meowth/ysyx/ysyx-workbench/yosys/yosys-sta/scripts/../pdk/nangate45/verilog/blackbox.v' to AST representation.
+Successfully finished Verilog frontend.
+
+15. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/yosys/yosys-sta/scripts/../pdk/nangate45/verilog/cells_clkgate.v
+Parsing Verilog input from `/home/meowth/ysyx/ysyx-workbench/yosys/yosys-sta/scripts/../pdk/nangate45/verilog/cells_clkgate.v' to AST representation.
+Generating RTLIL representation for module `\OPENROAD_CLKGATE'.
+Successfully finished Verilog frontend.
+
+16. Executing SYNTH pass.
+
+16.1. Executing HIERARCHY pass (managing design hierarchy).
+
+16.1.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \ysyx_25030077_EXIT
+Used module:     \ysyx_25030077_PC_next
+Used module:     \ysyx_25030077_ALU
+Used module:     \ysyx_25030077_DATA_CONTROL
+Used module:     \ysyx_25030077_MEM
+Used module:         \MaxPeriodFibonacciLFSR_1
+Used module:         \MaxPeriodFibonacciLFSR
+Used module:     \ysyx_25030077_reg
+Used module:     \ysyx_25030077_Imm
+Used module:     \ysyx_25030077_IDU
+Used module:     \ysyx_25030077_arbiter
+Used module:     \ysyx_25030077_IFU
+Used module:         \Queue
+
+16.1.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \ysyx_25030077_EXIT
+Used module:     \ysyx_25030077_PC_next
+Used module:     \ysyx_25030077_ALU
+Used module:     \ysyx_25030077_DATA_CONTROL
+Used module:     \ysyx_25030077_MEM
+Used module:         \MaxPeriodFibonacciLFSR_1
+Used module:         \MaxPeriodFibonacciLFSR
+Used module:     \ysyx_25030077_reg
+Used module:     \ysyx_25030077_Imm
+Used module:     \ysyx_25030077_IDU
+Used module:     \ysyx_25030077_arbiter
+Used module:     \ysyx_25030077_IFU
+Used module:         \Queue
+Removing unused module `\OPENROAD_CLKGATE'.
+Removed 1 unused modules.
+
+16.2. Executing PROC pass (convert processes to netlists).
+
+16.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\ysyx_25030077_EXIT.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_EXIT.v:17$675'.
+Removing empty process `ysyx_25030077_EXIT.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_EXIT.v:17$675'.
+Found and cleaned up 1 empty switch in `\ysyx_25030077_EXIT.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_EXIT.v:9$672'.
+Removing empty process `ysyx_25030077_EXIT.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_EXIT.v:9$672'.
+Cleaned up 2 empty switches.
+
+16.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR_1.v:15$728 in module MaxPeriodFibonacciLFSR_1.
+Marked 15 switch rules as full_case in process $proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670 in module MaxPeriodFibonacciLFSR.
+Marked 6 switch rules as full_case in process $proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:70$666 in module ysyx_25030077_arbiter.
+Marked 5 switch rules as full_case in process $proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:121$634 in module ysyx_25030077_MEM.
+Marked 2 switch rules as full_case in process $proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:33$327 in module Queue.
+Marked 129 switch rules as full_case in process $proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187 in module ysyx_25030077_reg.
+Removed a total of 0 dead cases.
+
+16.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 21 redundant assignments.
+Promoted 5 assignments to connections.
+
+16.2.4. Executing PROC_INIT pass (extract init attributes).
+
+16.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+16.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~196 debug messages>
+
+16.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\MaxPeriodFibonacciLFSR_1.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR_1.v:15$728'.
+     1/2: $0\state_2[0:0]
+     2/2: $0\state_1[0:0]
+Creating decoders for process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+     1/15: $0\state_15[0:0]
+     2/15: $0\state_14[0:0]
+     3/15: $0\state_13[0:0]
+     4/15: $0\state_12[0:0]
+     5/15: $0\state_11[0:0]
+     6/15: $0\state_10[0:0]
+     7/15: $0\state_9[0:0]
+     8/15: $0\state_8[0:0]
+     9/15: $0\state_7[0:0]
+    10/15: $0\state_6[0:0]
+    11/15: $0\state_5[0:0]
+    12/15: $0\state_4[0:0]
+    13/15: $0\state_3[0:0]
+    14/15: $0\state_2[0:0]
+    15/15: $0\state_1[0:0]
+Creating decoders for process `\ysyx_25030077_arbiter.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:70$666'.
+     1/2: $0\state_reg[1:0]
+     2/2: $0\inst_reg[31:0]
+Creating decoders for process `\ysyx_25030077_MEM.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:121$634'.
+     1/3: $0\delayCnt[2:0]
+     2/3: $0\validReg[0:0]
+     3/3: $0\mem_data_Reg[31:0]
+Creating decoders for process `\Queue.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:33$327'.
+     1/4: $1$memwr$\ram_addr$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:35$319_EN[31:0]$334
+     2/4: $1$memwr$\ram_addr$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:35$319_DATA[31:0]$333
+     3/4: $1$memwr$\ram_addr$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:35$319_ADDR[0:0]$332
+     4/4: $0\maybe_full[0:0]
+Creating decoders for process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+     1/34: $0\validReg[0:0]
+     2/34: $0\pc_next_reg[31:0]
+     3/34: $0\regs_31[31:0]
+     4/34: $0\regs_30[31:0]
+     5/34: $0\regs_29[31:0]
+     6/34: $0\regs_28[31:0]
+     7/34: $0\regs_27[31:0]
+     8/34: $0\regs_26[31:0]
+     9/34: $0\regs_25[31:0]
+    10/34: $0\regs_24[31:0]
+    11/34: $0\regs_23[31:0]
+    12/34: $0\regs_22[31:0]
+    13/34: $0\regs_21[31:0]
+    14/34: $0\regs_20[31:0]
+    15/34: $0\regs_19[31:0]
+    16/34: $0\regs_18[31:0]
+    17/34: $0\regs_17[31:0]
+    18/34: $0\regs_16[31:0]
+    19/34: $0\regs_15[31:0]
+    20/34: $0\regs_14[31:0]
+    21/34: $0\regs_13[31:0]
+    22/34: $0\regs_12[31:0]
+    23/34: $0\regs_11[31:0]
+    24/34: $0\regs_10[31:0]
+    25/34: $0\regs_9[31:0]
+    26/34: $0\regs_8[31:0]
+    27/34: $0\regs_7[31:0]
+    28/34: $0\regs_6[31:0]
+    29/34: $0\regs_5[31:0]
+    30/34: $0\regs_4[31:0]
+    31/34: $0\regs_3[31:0]
+    32/34: $0\regs_2[31:0]
+    33/34: $0\regs_1[31:0]
+    34/34: $0\regs_0[31:0]
+
+16.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+16.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\MaxPeriodFibonacciLFSR_1.\state_0' using process `\MaxPeriodFibonacciLFSR_1.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR_1.v:15$728'.
+  created $dff cell `$procdff$1330' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR_1.\state_1' using process `\MaxPeriodFibonacciLFSR_1.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR_1.v:15$728'.
+  created $dff cell `$procdff$1331' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR_1.\state_2' using process `\MaxPeriodFibonacciLFSR_1.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR_1.v:15$728'.
+  created $dff cell `$procdff$1332' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_0' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1333' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_1' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1334' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_2' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1335' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_3' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1336' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_4' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1337' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_5' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1338' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_6' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1339' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_7' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1340' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_8' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1341' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_9' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1342' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_10' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1343' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_11' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1344' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_12' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1345' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_13' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1346' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_14' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1347' with positive edge clock.
+Creating register for signal `\MaxPeriodFibonacciLFSR.\state_15' using process `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+  created $dff cell `$procdff$1348' with positive edge clock.
+Creating register for signal `\ysyx_25030077_arbiter.\state_reg' using process `\ysyx_25030077_arbiter.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:70$666'.
+  created $dff cell `$procdff$1349' with positive edge clock.
+Creating register for signal `\ysyx_25030077_arbiter.\inst_reg' using process `\ysyx_25030077_arbiter.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:70$666'.
+  created $dff cell `$procdff$1350' with positive edge clock.
+Creating register for signal `\ysyx_25030077_MEM.\validReg' using process `\ysyx_25030077_MEM.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:121$634'.
+  created $dff cell `$procdff$1351' with positive edge clock.
+Creating register for signal `\ysyx_25030077_MEM.\mem_data_Reg' using process `\ysyx_25030077_MEM.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:121$634'.
+  created $dff cell `$procdff$1352' with positive edge clock.
+Creating register for signal `\ysyx_25030077_MEM.\delayCnt' using process `\ysyx_25030077_MEM.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:121$634'.
+  created $dff cell `$procdff$1353' with positive edge clock.
+Creating register for signal `\Queue.\maybe_full' using process `\Queue.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:33$327'.
+  created $dff cell `$procdff$1354' with positive edge clock.
+Creating register for signal `\Queue.$memwr$\ram_addr$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:35$319_ADDR' using process `\Queue.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:33$327'.
+  created $dff cell `$procdff$1355' with positive edge clock.
+Creating register for signal `\Queue.$memwr$\ram_addr$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:35$319_DATA' using process `\Queue.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:33$327'.
+  created $dff cell `$procdff$1356' with positive edge clock.
+Creating register for signal `\Queue.$memwr$\ram_addr$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:35$319_EN' using process `\Queue.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:33$327'.
+  created $dff cell `$procdff$1357' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_0' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1358' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_1' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1359' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_2' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1360' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_3' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1361' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_4' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1362' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_5' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1363' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_6' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1364' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_7' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1365' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_8' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1366' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_9' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1367' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_10' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1368' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_11' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1369' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_12' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1370' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_13' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1371' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_14' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1372' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_15' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1373' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_16' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1374' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_17' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1375' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_18' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1376' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_19' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1377' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_20' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1378' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_21' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1379' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_22' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1380' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_23' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1381' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_24' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1382' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_25' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1383' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_26' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1384' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_27' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1385' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_28' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1386' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_29' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1387' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_30' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1388' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\regs_31' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1389' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\validReg' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1390' with positive edge clock.
+Creating register for signal `\ysyx_25030077_reg.\pc_next_reg' using process `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+  created $dff cell `$procdff$1391' with positive edge clock.
+
+16.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+16.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\MaxPeriodFibonacciLFSR_1.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR_1.v:15$728'.
+Removing empty process `MaxPeriodFibonacciLFSR_1.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR_1.v:15$728'.
+Found and cleaned up 15 empty switches in `\MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+Removing empty process `MaxPeriodFibonacciLFSR.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/MaxPeriodFibonacciLFSR.v:54$670'.
+Found and cleaned up 7 empty switches in `\ysyx_25030077_arbiter.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:70$666'.
+Removing empty process `ysyx_25030077_arbiter.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:70$666'.
+Found and cleaned up 6 empty switches in `\ysyx_25030077_MEM.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:121$634'.
+Removing empty process `ysyx_25030077_MEM.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:121$634'.
+Found and cleaned up 3 empty switches in `\Queue.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:33$327'.
+Removing empty process `Queue.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IFU.v:33$327'.
+Found and cleaned up 163 empty switches in `\ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+Removing empty process `ysyx_25030077_reg.$proc$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:208$187'.
+Cleaned up 196 empty switches.
+
+16.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module ysyx_25030077_PC_next.
+<suppressed ~2 debug messages>
+Optimizing module MaxPeriodFibonacciLFSR_1.
+Optimizing module ysyx_25030077_DATA_CONTROL.
+Optimizing module ysyx_25030077_ALU.
+Optimizing module ysyx_25030077_EXIT.
+Optimizing module MaxPeriodFibonacciLFSR.
+Optimizing module ysyx_25030077_arbiter.
+<suppressed ~2 debug messages>
+Optimizing module ysyx_25030077_MEM.
+<suppressed ~3 debug messages>
+Optimizing module ysyx_25030077_Imm.
+Optimizing module ysyx_25030077_IDU.
+Optimizing module ysyx_25030077_IFU.
+Optimizing module Queue.
+<suppressed ~2 debug messages>
+Optimizing module ysyx_25030077_reg.
+<suppressed ~34 debug messages>
+
+16.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module ysyx_25030077_PC_next.
+Deleting now unused module MaxPeriodFibonacciLFSR_1.
+Deleting now unused module ysyx_25030077_DATA_CONTROL.
+Deleting now unused module ysyx_25030077_ALU.
+Deleting now unused module ysyx_25030077_EXIT.
+Deleting now unused module MaxPeriodFibonacciLFSR.
+Deleting now unused module ysyx_25030077_arbiter.
+Deleting now unused module ysyx_25030077_MEM.
+Deleting now unused module ysyx_25030077_Imm.
+Deleting now unused module ysyx_25030077_IDU.
+Deleting now unused module ysyx_25030077_IFU.
+Deleting now unused module Queue.
+Deleting now unused module ysyx_25030077_reg.
+<suppressed ~14 debug messages>
+
+16.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~2 debug messages>
+
+16.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 31 unused cells and 823 unused wires.
+<suppressed ~44 debug messages>
+
+16.6. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Warning: Wire top.\g_mem.io_imm is used but has no driver.
+Warning: Wire top.\g_mem.io_rs2 is used but has no driver.
+Warning: Wire top.\g_mem.io_rs1 is used but has no driver.
+Found and reported 3 problems.
+
+16.7. Executing OPT pass (performing simple optimizations).
+
+16.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~396 debug messages>
+Removed a total of 132 cells.
+
+16.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $flatten\c_arbiter.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:47$645.
+    dead port 2/2 on $mux $flatten\f_gpr.$procmux$1321.
+    dead port 2/2 on $mux $flatten\f_gpr.$procmux$883.
+Removed 3 multiplexer ports.
+<suppressed ~1205 debug messages>
+
+16.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+16.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~270 debug messages>
+Removed a total of 90 cells.
+
+16.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 264 unused wires.
+<suppressed ~42 debug messages>
+
+16.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1235 debug messages>
+
+16.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+16.7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+16.7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.7.16. Finished OPT passes. (There is nothing left to do.)
+
+16.8. Executing FSM pass (extract and optimize FSM).
+
+16.8.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+16.8.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+16.8.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+16.8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+16.8.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+16.8.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+16.8.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+16.8.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+16.9. Executing OPT pass (performing simple optimizations).
+
+16.9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1235 debug messages>
+
+16.9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+16.9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.9.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $flatten\g_mem.\delayCnt_prng.$procdff$1332 ($dff) from module top (D = \g_mem.delayCnt_prng.state_1, Q = \g_mem.delayCnt_prng.state_2, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\delayCnt_prng.$procdff$1331 ($dff) from module top (D = \g_mem.delayCnt_prng.state_0, Q = \g_mem.delayCnt_prng.state_1, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1348 ($dff) from module top (D = \g_mem.canAccept_prng.state_14, Q = \g_mem.canAccept_prng.state_15, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1347 ($dff) from module top (D = \g_mem.canAccept_prng.state_13, Q = \g_mem.canAccept_prng.state_14, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1346 ($dff) from module top (D = \g_mem.canAccept_prng.state_12, Q = \g_mem.canAccept_prng.state_13, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1345 ($dff) from module top (D = \g_mem.canAccept_prng.state_11, Q = \g_mem.canAccept_prng.state_12, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1344 ($dff) from module top (D = \g_mem.canAccept_prng.state_10, Q = \g_mem.canAccept_prng.state_11, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1343 ($dff) from module top (D = \g_mem.canAccept_prng.state_9, Q = \g_mem.canAccept_prng.state_10, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1342 ($dff) from module top (D = \g_mem.canAccept_prng.state_8, Q = \g_mem.canAccept_prng.state_9, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1341 ($dff) from module top (D = \g_mem.canAccept_prng.state_7, Q = \g_mem.canAccept_prng.state_8, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1340 ($dff) from module top (D = \g_mem.canAccept_prng.state_6, Q = \g_mem.canAccept_prng.state_7, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1339 ($dff) from module top (D = \g_mem.canAccept_prng.state_5, Q = \g_mem.canAccept_prng.state_6, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1338 ($dff) from module top (D = \g_mem.canAccept_prng.state_4, Q = \g_mem.canAccept_prng.state_5, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1337 ($dff) from module top (D = \g_mem.canAccept_prng.state_3, Q = \g_mem.canAccept_prng.state_4, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1336 ($dff) from module top (D = \g_mem.canAccept_prng.state_2, Q = \g_mem.canAccept_prng.state_3, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1335 ($dff) from module top (D = \g_mem.canAccept_prng.state_1, Q = \g_mem.canAccept_prng.state_2, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.\canAccept_prng.$procdff$1334 ($dff) from module top (D = \g_mem.canAccept_prng.state_0, Q = \g_mem.canAccept_prng.state_1, rval = 1'0).
+Adding SRST signal on $flatten\g_mem.$procdff$1353 ($dff) from module top (D = $flatten\g_mem.$procmux$848_Y, Q = \g_mem.delayCnt, rval = 3'000).
+Adding SRST signal on $flatten\g_mem.$procdff$1352 ($dff) from module top (D = $flatten\g_mem.$procmux$856_Y, Q = \g_mem.mem_data_Reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1425 ($sdff) from module top (D = \g_mem.read_data, Q = \g_mem.mem_data_Reg).
+Adding SRST signal on $flatten\g_mem.$procdff$1351 ($dff) from module top (D = $flatten\g_mem.$or$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:130$635_Y, Q = \g_mem.validReg, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1348 ($dff) from module top (D = \f_gpr.canAccept_prng.state_14, Q = \f_gpr.canAccept_prng.state_15, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1347 ($dff) from module top (D = \f_gpr.canAccept_prng.state_13, Q = \f_gpr.canAccept_prng.state_14, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1346 ($dff) from module top (D = \f_gpr.canAccept_prng.state_12, Q = \f_gpr.canAccept_prng.state_13, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1345 ($dff) from module top (D = \f_gpr.canAccept_prng.state_11, Q = \f_gpr.canAccept_prng.state_12, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1344 ($dff) from module top (D = \f_gpr.canAccept_prng.state_10, Q = \f_gpr.canAccept_prng.state_11, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1343 ($dff) from module top (D = \f_gpr.canAccept_prng.state_9, Q = \f_gpr.canAccept_prng.state_10, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1342 ($dff) from module top (D = \f_gpr.canAccept_prng.state_8, Q = \f_gpr.canAccept_prng.state_9, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1341 ($dff) from module top (D = \f_gpr.canAccept_prng.state_7, Q = \f_gpr.canAccept_prng.state_8, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1340 ($dff) from module top (D = \f_gpr.canAccept_prng.state_6, Q = \f_gpr.canAccept_prng.state_7, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1339 ($dff) from module top (D = \f_gpr.canAccept_prng.state_5, Q = \f_gpr.canAccept_prng.state_6, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1338 ($dff) from module top (D = \f_gpr.canAccept_prng.state_4, Q = \f_gpr.canAccept_prng.state_5, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1337 ($dff) from module top (D = \f_gpr.canAccept_prng.state_3, Q = \f_gpr.canAccept_prng.state_4, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1336 ($dff) from module top (D = \f_gpr.canAccept_prng.state_2, Q = \f_gpr.canAccept_prng.state_3, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1335 ($dff) from module top (D = \f_gpr.canAccept_prng.state_1, Q = \f_gpr.canAccept_prng.state_2, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.\canAccept_prng.$procdff$1334 ($dff) from module top (D = \f_gpr.canAccept_prng.state_0, Q = \f_gpr.canAccept_prng.state_1, rval = 1'0).
+Adding SRST signal on $flatten\f_gpr.$procdff$1391 ($dff) from module top (D = $flatten\f_gpr.$procmux$878_Y, Q = \f_gpr.pc_next_reg, rval = 32'10000000000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1443 ($sdff) from module top (D = \f_gpr.io_pc_next, Q = \f_gpr.pc_next_reg).
+Adding SRST signal on $flatten\f_gpr.$procdff$1390 ($dff) from module top (D = $flatten\f_gpr.$or$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:690$318_Y, Q = \f_gpr.validReg, rval = 1'1).
+Adding SRST signal on $flatten\f_gpr.$procdff$1389 ($dff) from module top (D = $flatten\f_gpr.$procmux$891_Y, Q = \f_gpr.regs_31, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1450 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1013_Y, Q = \f_gpr.regs_31).
+Adding SRST signal on $flatten\f_gpr.$procdff$1388 ($dff) from module top (D = $flatten\f_gpr.$procmux$905_Y, Q = \f_gpr.regs_30, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1454 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_30).
+Adding SRST signal on $flatten\f_gpr.$procdff$1387 ($dff) from module top (D = $flatten\f_gpr.$procmux$919_Y, Q = \f_gpr.regs_29, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1456 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_29).
+Adding SRST signal on $flatten\f_gpr.$procdff$1386 ($dff) from module top (D = $flatten\f_gpr.$procmux$933_Y, Q = \f_gpr.regs_28, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1458 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_28).
+Adding SRST signal on $flatten\f_gpr.$procdff$1385 ($dff) from module top (D = $flatten\f_gpr.$procmux$947_Y, Q = \f_gpr.regs_27, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1460 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_27).
+Adding SRST signal on $flatten\f_gpr.$procdff$1384 ($dff) from module top (D = $flatten\f_gpr.$procmux$961_Y, Q = \f_gpr.regs_26, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1462 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_26).
+Adding SRST signal on $flatten\f_gpr.$procdff$1383 ($dff) from module top (D = $flatten\f_gpr.$procmux$975_Y, Q = \f_gpr.regs_25, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1464 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_25).
+Adding SRST signal on $flatten\f_gpr.$procdff$1382 ($dff) from module top (D = $flatten\f_gpr.$procmux$989_Y, Q = \f_gpr.regs_24, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1466 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_24).
+Adding SRST signal on $flatten\f_gpr.$procdff$1381 ($dff) from module top (D = $flatten\f_gpr.$procmux$1003_Y, Q = \f_gpr.regs_23, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1468 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_23).
+Adding SRST signal on $flatten\f_gpr.$procdff$1380 ($dff) from module top (D = $flatten\f_gpr.$procmux$1017_Y, Q = \f_gpr.regs_22, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1470 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_22).
+Adding SRST signal on $flatten\f_gpr.$procdff$1379 ($dff) from module top (D = $flatten\f_gpr.$procmux$1031_Y, Q = \f_gpr.regs_21, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1472 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_21).
+Adding SRST signal on $flatten\f_gpr.$procdff$1378 ($dff) from module top (D = $flatten\f_gpr.$procmux$1045_Y, Q = \f_gpr.regs_20, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1474 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_20).
+Adding SRST signal on $flatten\f_gpr.$procdff$1377 ($dff) from module top (D = $flatten\f_gpr.$procmux$1059_Y, Q = \f_gpr.regs_19, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1476 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_19).
+Adding SRST signal on $flatten\f_gpr.$procdff$1376 ($dff) from module top (D = $flatten\f_gpr.$procmux$1073_Y, Q = \f_gpr.regs_18, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1478 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_18).
+Adding SRST signal on $flatten\f_gpr.$procdff$1375 ($dff) from module top (D = $flatten\f_gpr.$procmux$1087_Y, Q = \f_gpr.regs_17, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1480 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_17).
+Adding SRST signal on $flatten\f_gpr.$procdff$1374 ($dff) from module top (D = $flatten\f_gpr.$procmux$1101_Y, Q = \f_gpr.regs_16, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1482 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_16).
+Adding SRST signal on $flatten\f_gpr.$procdff$1373 ($dff) from module top (D = $flatten\f_gpr.$procmux$1115_Y, Q = \f_gpr.regs_15, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1484 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_15).
+Adding SRST signal on $flatten\f_gpr.$procdff$1372 ($dff) from module top (D = $flatten\f_gpr.$procmux$1129_Y, Q = \f_gpr.regs_14, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1486 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_14).
+Adding SRST signal on $flatten\f_gpr.$procdff$1371 ($dff) from module top (D = $flatten\f_gpr.$procmux$1143_Y, Q = \f_gpr.regs_13, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1488 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_13).
+Adding SRST signal on $flatten\f_gpr.$procdff$1370 ($dff) from module top (D = $flatten\f_gpr.$procmux$1157_Y, Q = \f_gpr.regs_12, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1490 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_12).
+Adding SRST signal on $flatten\f_gpr.$procdff$1369 ($dff) from module top (D = $flatten\f_gpr.$procmux$1171_Y, Q = \f_gpr.regs_11, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1492 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_11).
+Adding SRST signal on $flatten\f_gpr.$procdff$1368 ($dff) from module top (D = $flatten\f_gpr.$procmux$1185_Y, Q = \f_gpr.regs_10, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1494 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_10).
+Adding SRST signal on $flatten\f_gpr.$procdff$1367 ($dff) from module top (D = $flatten\f_gpr.$procmux$1199_Y, Q = \f_gpr.regs_9, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1496 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_9).
+Adding SRST signal on $flatten\f_gpr.$procdff$1366 ($dff) from module top (D = $flatten\f_gpr.$procmux$1213_Y, Q = \f_gpr.regs_8, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1498 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_8).
+Adding SRST signal on $flatten\f_gpr.$procdff$1365 ($dff) from module top (D = $flatten\f_gpr.$procmux$1227_Y, Q = \f_gpr.regs_7, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1500 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_7).
+Adding SRST signal on $flatten\f_gpr.$procdff$1364 ($dff) from module top (D = $flatten\f_gpr.$procmux$1241_Y, Q = \f_gpr.regs_6, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1502 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_6).
+Adding SRST signal on $flatten\f_gpr.$procdff$1363 ($dff) from module top (D = $flatten\f_gpr.$procmux$1255_Y, Q = \f_gpr.regs_5, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1504 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_5).
+Adding SRST signal on $flatten\f_gpr.$procdff$1362 ($dff) from module top (D = $flatten\f_gpr.$procmux$1269_Y, Q = \f_gpr.regs_4, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1506 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_4).
+Adding SRST signal on $flatten\f_gpr.$procdff$1361 ($dff) from module top (D = $flatten\f_gpr.$procmux$1283_Y, Q = \f_gpr.regs_3, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1508 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_3).
+Adding SRST signal on $flatten\f_gpr.$procdff$1360 ($dff) from module top (D = $flatten\f_gpr.$procmux$1297_Y, Q = \f_gpr.regs_2, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1510 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_2).
+Adding SRST signal on $flatten\f_gpr.$procdff$1359 ($dff) from module top (D = $flatten\f_gpr.$procmux$1311_Y, Q = \f_gpr.regs_1, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1512 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1001_Y, Q = \f_gpr.regs_1).
+Adding SRST signal on $flatten\f_gpr.$procdff$1358 ($dff) from module top (D = $flatten\f_gpr.$procmux$1325_Y, Q = \f_gpr.regs_0, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1514 ($sdff) from module top (D = $flatten\f_gpr.$procmux$1323_Y, Q = \f_gpr.regs_0).
+Adding SRST signal on $flatten\c_arbiter.$procdff$1350 ($dff) from module top (D = $flatten\c_arbiter.$procmux$839_Y, Q = \c_arbiter.inst_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1516 ($sdff) from module top (D = \g_mem.mem_data_Reg, Q = \c_arbiter.inst_reg).
+Adding SRST signal on $flatten\c_arbiter.$procdff$1349 ($dff) from module top (D = $flatten\c_arbiter.$procmux$834_Y [0], Q = \c_arbiter.state_reg [0], rval = 1'0).
+Adding SRST signal on $flatten\c_arbiter.$procdff$1349 ($dff) from module top (D = $flatten\c_arbiter.$procmux$831_Y [1], Q = \c_arbiter.state_reg [1], rval = 1'0).
+Adding SRST signal on $flatten\b_ifu.\reqQ.$procdff$1354 ($dff) from module top (D = $flatten\b_ifu.\reqQ.$procmux$870_Y, Q = \b_ifu.reqQ.maybe_full, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1522 ($sdff) from module top (D = \b_ifu.reqQ.do_enq, Q = \b_ifu.reqQ.maybe_full).
+
+16.9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 109 unused cells and 109 unused wires.
+<suppressed ~110 debug messages>
+
+16.9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~470 debug messages>
+
+16.9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+16.9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+16.9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.9.16. Finished OPT passes. (There is nothing left to do.)
+
+16.10. Executing WREDUCE pass (reducing word size of cells).
+Removed top 2 bits (of 4) from port B of cell top.$auto$opt_dff.cc:248:make_patterns_logic$1446 ($ne).
+Removed top 1 bits (of 2) from mux cell top.$flatten\c_arbiter.$procmux$834 ($mux).
+Removed top 1 bits (of 2) from port B of cell top.$flatten\c_arbiter.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:42$639 ($eq).
+Removed top 2 bits (of 3) from port B of cell top.$flatten\c_arbiter.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:41$638 ($eq).
+Removed top 2 bits (of 4) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:235$548 ($mux).
+Removed top 1 bits (of 3) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:209$522 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:208$521 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:207$520 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:206$519 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:205$518 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:204$517 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:203$516 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:202$515 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:201$514 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:200$513 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:199$512 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:198$511 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:197$510 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:196$509 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:195$508 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:194$507 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:193$506 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:192$505 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:191$504 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:190$503 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:189$502 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:188$501 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:187$500 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:186$499 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:185$498 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:184$497 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:183$496 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:182$495 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:181$494 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:180$493 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:179$492 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:178$491 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:177$490 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:176$489 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:175$488 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:174$487 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:173$486 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:172$485 ($mux).
+Removed top 1 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:171$484 ($mux).
+Removed top 3 bits (of 5) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:170$483 ($mux).
+Removed top 2 bits (of 3) from mux cell top.$flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:66$379 ($mux).
+Removed top 2 bits (of 32) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:65$378 ($eq).
+Removed top 25 bits (of 32) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:64$377 ($eq).
+Removed top 11 bits (of 32) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:63$376 ($eq).
+Removed top 1 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:62$375 ($eq).
+Removed top 2 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:61$374 ($eq).
+Removed top 1 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:60$373 ($eq).
+Removed top 1 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:59$372 ($eq).
+Removed top 8 bits (of 17) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:58$371 ($eq).
+Removed top 8 bits (of 17) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:57$370 ($eq).
+Removed top 9 bits (of 17) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:56$369 ($eq).
+Removed top 2 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:54$367 ($eq).
+Removed top 1 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:53$366 ($eq).
+Removed top 8 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:52$365 ($eq).
+Removed top 2 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:50$363 ($eq).
+Removed top 4 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:49$362 ($eq).
+Removed top 1 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:44$357 ($eq).
+Removed top 3 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:43$356 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:41$354 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:40$353 ($eq).
+Removed top 1 bits (of 17) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:39$352 ($eq).
+Removed top 7 bits (of 17) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:38$351 ($eq).
+Removed top 7 bits (of 17) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:37$350 ($eq).
+Removed top 7 bits (of 17) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:36$349 ($eq).
+Removed top 11 bits (of 17) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:35$348 ($eq).
+Removed top 2 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:33$347 ($eq).
+Removed top 3 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:32$346 ($eq).
+Removed top 6 bits (of 16) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:31$345 ($eq).
+Removed top 1 bits (of 16) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:30$344 ($eq).
+Removed top 8 bits (of 16) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:29$343 ($eq).
+Removed top 6 bits (of 16) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:28$342 ($eq).
+Removed top 1 bits (of 16) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:27$341 ($eq).
+Removed top 5 bits (of 10) from port B of cell top.$flatten\d_idu.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:22$337 ($eq).
+Removed top 20 bits (of 32) from mux cell top.$flatten\e_imm.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_Imm.v:20$614 ($mux).
+Removed top 1 bits (of 3) from port B of cell top.$flatten\e_imm.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_Imm.v:16$610 ($eq).
+Removed top 1 bits (of 3) from port B of cell top.$flatten\e_imm.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_Imm.v:15$609 ($eq).
+Removed top 2 bits (of 3) from port B of cell top.$flatten\e_imm.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_Imm.v:14$608 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:164$151 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:163$149 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:162$147 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:161$145 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:160$143 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:159$141 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:158$139 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:157$137 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:156$135 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:155$133 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:154$131 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:153$129 ($eq).
+Removed top 3 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:152$127 ($eq).
+Removed top 3 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:151$125 ($eq).
+Removed top 4 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:150$123 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:133$90 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:132$88 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:131$86 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:130$84 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:129$82 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:128$80 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:127$78 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:126$76 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:125$74 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:124$72 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:123$70 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:122$68 ($eq).
+Removed top 3 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:121$66 ($eq).
+Removed top 3 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:120$64 ($eq).
+Removed top 4 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:119$62 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:103$30 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:102$28 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:101$26 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:100$24 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:99$22 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:98$20 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:97$18 ($eq).
+Removed top 1 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:96$16 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:95$14 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:94$12 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:93$10 ($eq).
+Removed top 2 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:92$8 ($eq).
+Removed top 3 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:91$6 ($eq).
+Removed top 3 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:90$4 ($eq).
+Removed top 4 bits (of 5) from port A of cell top.$flatten\f_gpr.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_reg.v:89$2 ($eq).
+Removed top 2 bits (of 3) from port B of cell top.$flatten\g_mem.$sub$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:80$626 ($sub).
+Removed top 29 bits (of 32) from port B of cell top.$flatten\g_mem.$xor$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:73$621 ($xor).
+Removed top 29 bits (of 32) from port Y of cell top.$flatten\g_mem.$xor$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:73$621 ($xor).
+Removed top 31 bits (of 32) from port Y of cell top.$flatten\g_mem.$and$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:71$620 ($and).
+Removed top 1 bits (of 3) from port B of cell top.$flatten\h_data_control.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_DATA_CONTROL.v:23$722 ($eq).
+Removed top 1 bits (of 3) from port B of cell top.$flatten\h_data_control.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_DATA_CONTROL.v:22$721 ($eq).
+Removed top 2 bits (of 3) from port B of cell top.$flatten\h_data_control.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_DATA_CONTROL.v:21$720 ($eq).
+Removed top 31 bits (of 64) from port B of cell top.$flatten\i_alu.$or$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:53$707 ($or).
+Removed top 31 bits (of 64) from port Y of cell top.$flatten\i_alu.$or$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:53$707 ($or).
+Removed top 31 bits (of 64) from port A of cell top.$flatten\i_alu.$or$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:53$707 ($or).
+Removed top 31 bits (of 64) from port B of cell top.$flatten\i_alu.$or$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:51$706 ($or).
+Removed top 31 bits (of 64) from port Y of cell top.$flatten\i_alu.$or$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:51$706 ($or).
+Removed top 31 bits (of 64) from port A of cell top.$flatten\i_alu.$or$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:51$706 ($or).
+Removed top 31 bits (of 64) from port A of cell top.$flatten\i_alu.$or$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:49$705 ($or).
+Removed top 31 bits (of 64) from port Y of cell top.$flatten\i_alu.$or$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:49$705 ($or).
+Removed top 31 bits (of 64) from port B of cell top.$flatten\i_alu.$or$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:49$705 ($or).
+Removed top 32 bits (of 33) from mux cell top.$flatten\i_alu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:41$698 ($mux).
+Removed top 1 bits (of 33) from mux cell top.$flatten\i_alu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:40$697 ($mux).
+Removed top 31 bits (of 64) from mux cell top.$flatten\i_alu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:39$696 ($mux).
+Removed top 1 bits (of 33) from mux cell top.$flatten\i_alu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:38$695 ($mux).
+Removed top 1 bits (of 33) from mux cell top.$flatten\i_alu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:37$694 ($mux).
+Removed top 1 bits (of 33) from mux cell top.$flatten\i_alu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:36$693 ($mux).
+Removed top 1 bits (of 33) from mux cell top.$flatten\i_alu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:35$692 ($mux).
+Removed top 32 bits (of 33) from mux cell top.$flatten\i_alu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:34$691 ($mux).
+Removed top 31 bits (of 63) from port A of cell top.$flatten\i_alu.$shl$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:21$686 ($shl).
+Removed top 30 bits (of 63) from port Y of cell top.$flatten\i_alu.$shl$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:21$686 ($shl).
+Removed top 15 bits (of 16) from port A of cell top.$flatten\i_alu.$shl$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:12$678 ($shl).
+Removed top 3 bits (of 16) from port Y of cell top.$flatten\i_alu.$shl$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:12$678 ($shl).
+Removed top 2 bits (of 4) from port B of cell top.$flatten\j_pc_next.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:64$772 ($eq).
+Removed top 1 bits (of 4) from port B of cell top.$flatten\j_pc_next.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:24$736 ($eq).
+Removed top 1 bits (of 4) from port B of cell top.$flatten\j_pc_next.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:23$735 ($eq).
+Removed top 1 bits (of 4) from port B of cell top.$flatten\j_pc_next.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:22$734 ($eq).
+Removed top 1 bits (of 4) from port B of cell top.$flatten\j_pc_next.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:21$733 ($eq).
+Removed top 2 bits (of 4) from port B of cell top.$flatten\j_pc_next.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:20$732 ($eq).
+Removed top 3 bits (of 4) from port B of cell top.$flatten\j_pc_next.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:19$731 ($eq).
+Removed top 29 bits (of 32) from port B of cell top.$flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:18$730 ($add).
+Removed top 1 bits (of 2) from wire top.$flatten\c_arbiter.$procmux$834_Y.
+
+16.11. Executing PEEPOPT pass (run peephole optimizers).
+
+16.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+16.13. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module top:
+  creating $macc model for $flatten\g_mem.$sub$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:80$626 ($sub).
+  creating $macc model for $flatten\i_alu.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:13$679 ($add).
+  creating $macc model for $flatten\i_alu.$sub$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:14$680 ($sub).
+  creating $macc model for $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:18$730 ($add).
+  creating $macc model for $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:38$749 ($add).
+  creating $macc model for $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:49$758 ($add).
+  creating $macc model for $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:52$760 ($add).
+  creating $alu model for $macc $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:52$760.
+  creating $alu model for $macc $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:49$758.
+  creating $alu model for $macc $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:38$749.
+  creating $alu model for $macc $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:18$730.
+  creating $alu model for $macc $flatten\i_alu.$sub$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:14$680.
+  creating $alu model for $macc $flatten\i_alu.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:13$679.
+  creating $alu model for $macc $flatten\g_mem.$sub$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:80$626.
+  creating $alu model for $flatten\i_alu.$lt$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:22$687 ($lt): merged with $flatten\i_alu.$sub$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:14$680.
+  creating $alu model for $flatten\i_alu.$lt$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:23$688 ($lt): new $alu
+  creating $alu model for $flatten\j_pc_next.$ge$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:31$744 ($ge): new $alu
+  creating $alu model for $flatten\j_pc_next.$ge$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:33$746 ($ge): new $alu
+  creating $alu model for $flatten\j_pc_next.$lt$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:32$745 ($lt): merged with $flatten\j_pc_next.$ge$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:31$744.
+  creating $alu model for $flatten\j_pc_next.$lt$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:34$747 ($lt): merged with $flatten\j_pc_next.$ge$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:33$746.
+  creating $alu model for $flatten\c_arbiter.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:41$638 ($eq): merged with $flatten\g_mem.$sub$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:80$626.
+  creating $alu model for $flatten\j_pc_next.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:30$743 ($eq): merged with $flatten\j_pc_next.$ge$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:33$746.
+  creating $alu cell for $flatten\j_pc_next.$ge$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:33$746, $flatten\j_pc_next.$lt$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:34$747, $flatten\j_pc_next.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:30$743: $auto$alumacc.cc:495:replace_alu$1528
+  creating $alu cell for $flatten\j_pc_next.$ge$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:31$744, $flatten\j_pc_next.$lt$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:32$745: $auto$alumacc.cc:495:replace_alu$1541
+  creating $alu cell for $flatten\g_mem.$sub$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_MEM.v:80$626, $flatten\c_arbiter.$eq$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:41$638: $auto$alumacc.cc:495:replace_alu$1556
+  creating $alu cell for $flatten\i_alu.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:13$679: $auto$alumacc.cc:495:replace_alu$1561
+  creating $alu cell for $flatten\i_alu.$lt$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:23$688: $auto$alumacc.cc:495:replace_alu$1564
+  creating $alu cell for $flatten\i_alu.$sub$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:14$680, $flatten\i_alu.$lt$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:22$687: $auto$alumacc.cc:495:replace_alu$1571
+  creating $alu cell for $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:18$730: $auto$alumacc.cc:495:replace_alu$1576
+  creating $alu cell for $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:38$749: $auto$alumacc.cc:495:replace_alu$1579
+  creating $alu cell for $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:49$758: $auto$alumacc.cc:495:replace_alu$1582
+  creating $alu cell for $flatten\j_pc_next.$add$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_PC_next.v:52$760: $auto$alumacc.cc:495:replace_alu$1585
+  created 10 $alu and 0 $macc cells.
+
+16.14. Executing SHARE pass (SAT-based resource sharing).
+Found 3 cells in module top that may be considered for resource sharing.
+  Analyzing resource sharing options for $flatten\i_alu.$sshr$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:18$684 ($sshr):
+    Found 1 activation_patterns using ctrl signal \i_alu.oneHot [5].
+    No candidates found.
+  Analyzing resource sharing options for $flatten\i_alu.$shr$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:19$685 ($shr):
+    Found 1 activation_patterns using ctrl signal \i_alu.oneHot [9].
+    No candidates found.
+  Analyzing resource sharing options for $flatten\i_alu.$shl$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_ALU.v:21$686 ($shl):
+    Found 1 activation_patterns using ctrl signal \i_alu.oneHot [8].
+    No candidates found.
+
+16.15. Executing OPT pass (performing simple optimizations).
+
+16.15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~1 debug messages>
+
+16.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~470 debug messages>
+
+16.15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+16.15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.15.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~1 debug messages>
+
+16.15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.15.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.15.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~470 debug messages>
+
+16.15.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+16.15.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.15.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.15.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+16.15.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.15.16. Finished OPT passes. (There is nothing left to do.)
+
+16.16. Executing MEMORY pass.
+
+16.16.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+16.16.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+16.16.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+16.16.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+16.16.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+16.16.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+16.16.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+16.16.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+16.16.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+16.16.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+16.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+16.18. Executing OPT pass (performing simple optimizations).
+
+16.18.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~153 debug messages>
+
+16.18.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.18.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:266:slice$1444 ($sdffe) from module top (D = \f_gpr.io_pc_next [1], Q = \f_gpr.pc_next_reg [1]).
+Adding EN signal on $auto$ff.cc:266:slice$1444 ($sdffe) from module top (D = \f_gpr.io_pc_next [0], Q = \f_gpr.pc_next_reg [0]).
+
+16.18.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 14 unused wires.
+<suppressed ~1 debug messages>
+
+16.18.5. Rerunning OPT passes. (Removed registers in this run.)
+
+16.18.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~2 debug messages>
+
+16.18.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.18.8. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$1426 ($sdffe) from module top.
+
+16.18.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+16.18.10. Rerunning OPT passes. (Removed registers in this run.)
+
+16.18.11. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.18.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.18.13. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$1517 ($sdffe) from module top.
+
+16.18.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+16.18.15. Rerunning OPT passes. (Removed registers in this run.)
+
+16.18.16. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~751 debug messages>
+
+16.18.17. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~87 debug messages>
+Removed a total of 29 cells.
+
+16.18.18. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:266:slice$1633 ($sdffe) from module top (D = \f_gpr.io_pc_next [31:2], Q = \f_gpr.pc_next_reg [31:2]).
+Adding EN signal on $auto$ff.cc:266:slice$1609 ($sdffe) from module top (D = \f_gpr.io_pc_next [1], Q = \f_gpr.pc_next_reg [1]).
+Handling never-active EN on $auto$ff.cc:266:slice$1509 ($sdffe) from module top (connecting SRST instead).
+Handling never-active EN on $auto$ff.cc:266:slice$1451 ($sdffe) from module top (connecting SRST instead).
+Removing always-active EN on $auto$ff.cc:266:slice$1515 ($sdffe) from module top.
+Handling never-active EN on $auto$ff.cc:266:slice$1513 ($sdffe) from module top (connecting SRST instead).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$1513 ($dffe) from module top.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$1451 ($dffe) from module top.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$1509 ($dffe) from module top.
+
+16.18.19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 13 unused cells and 119 unused wires.
+<suppressed ~17 debug messages>
+
+16.18.20. Rerunning OPT passes. (Removed registers in this run.)
+
+16.18.21. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~89 debug messages>
+
+16.18.22. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+16.18.23. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:266:slice$1515 ($sdff) from module top (D = 0, Q = \f_gpr.regs_0).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$1670 ($sdffe) from module top.
+
+16.18.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 1 unused cells and 9 unused wires.
+<suppressed ~2 debug messages>
+
+16.18.25. Rerunning OPT passes. (Removed registers in this run.)
+
+16.18.26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~102 debug messages>
+
+16.18.27. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.18.28. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.18.29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 41 unused cells and 170 unused wires.
+<suppressed ~106 debug messages>
+
+16.18.30. Finished fast OPT passes.
+
+16.19. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+16.20. Executing OPT pass (performing simple optimizations).
+
+16.20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~102 debug messages>
+
+16.20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~22 debug messages>
+
+16.20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $mux cell $flatten\c_arbiter.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:49$647:
+      Old ports: A=2'10, B=2'00, Y=\c_arbiter._state_reg_T_14
+      New ports: A=1'1, B=1'0, Y=\c_arbiter._state_reg_T_14 [1]
+      New connections: \c_arbiter._state_reg_T_14 [0] = 1'0
+    Consolidated identical input bits for $mux cell $flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:253$566:
+      Old ports: A=4'0011, B=4'0000, Y=\d_idu._io_pc_next_type_T_18
+      New ports: A=1'1, B=1'0, Y=\d_idu._io_pc_next_type_T_18 [0]
+      New connections: \d_idu._io_pc_next_type_T_18 [3:1] = { 2'00 \d_idu._io_pc_next_type_T_18 [0] }
+    Consolidated identical input bits for $mux cell $flatten\d_idu.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_IDU.v:276$589:
+      Old ports: A=3'000, B=3'101, Y=\c_arbiter.io_r_mask
+      New ports: A=1'0, B=1'1, Y=\c_arbiter.io_r_mask [0]
+      New connections: \c_arbiter.io_r_mask [2:1] = { \c_arbiter.io_r_mask [0] 1'0 }
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $mux cell $flatten\c_arbiter.$procmux$825:
+      Old ports: A=2'00, B=\c_arbiter._state_reg_T_14, Y=$flatten\c_arbiter.$procmux$825_Y
+      New ports: A=1'0, B=\c_arbiter._state_reg_T_14 [1], Y=$flatten\c_arbiter.$procmux$825_Y [1]
+      New connections: $flatten\c_arbiter.$procmux$825_Y [0] = 1'0
+    Consolidated identical input bits for $mux cell $flatten\c_arbiter.$ternary$/home/meowth/ysyx/ysyx-workbench/project/0_meopc1/vsrc/ysyx_25030077_arbiter.v:52$650:
+      Old ports: A=3'000, B=\c_arbiter.io_r_mask, Y=\c_arbiter._io_axi_ar_strb_T_2
+      New ports: A=1'0, B=\c_arbiter.io_r_mask [0], Y=\c_arbiter._io_axi_ar_strb_T_2 [0]
+      New connections: \c_arbiter._io_axi_ar_strb_T_2 [2:1] = { \c_arbiter._io_axi_ar_strb_T_2 [0] 1'0 }
+  Optimizing cells in module \top.
+Performed a total of 5 changes.
+
+16.20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.20.6. Executing OPT_SHARE pass.
+
+16.20.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.20.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+16.20.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~7 debug messages>
+
+16.20.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.20.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~16 debug messages>
+
+16.20.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+16.20.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+16.20.14. Executing OPT_SHARE pass.
+
+16.20.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.20.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+16.20.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.20.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.20.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~16 debug messages>
+
+16.20.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+16.20.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+16.20.22. Executing OPT_SHARE pass.
+
+16.20.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.20.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+16.20.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.20.26. Finished OPT passes. (There is nothing left to do.)
+
+16.21. Executing TECHMAP pass (map to technology primitives).
+
+16.21.1. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/oss-cad-suite-linux-x64-20250830/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/meowth/ysyx/ysyx-workbench/oss-cad-suite-linux-x64-20250830/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+16.21.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using template $paramod$b8c0a997bce700f23568a5ada79cc6781d1f5ca0\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~309 debug messages>
+
+16.22. Executing OPT pass (performing simple optimizations).
+
+16.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~35 debug messages>
+
+16.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~15 debug messages>
+Removed a total of 5 cells.
+
+16.22.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 3 unused cells and 44 unused wires.
+<suppressed ~4 debug messages>
+
+16.22.5. Finished fast OPT passes.
+
+16.23. Executing ABC pass (technology mapping using ABC).
+
+16.23.1. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
+Extracted 70 gates and 97 wires to a netlist network with 25 inputs and 18 outputs.
+
+16.23.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+16.23.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        5
+ABC RESULTS:            ANDNOT cells:        9
+ABC RESULTS:               MUX cells:       10
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:               NOR cells:        7
+ABC RESULTS:               NOT cells:        3
+ABC RESULTS:                OR cells:        9
+ABC RESULTS:             ORNOT cells:        4
+ABC RESULTS:              XNOR cells:        4
+ABC RESULTS:               XOR cells:        4
+ABC RESULTS:        internal signals:       54
+ABC RESULTS:           input signals:       25
+ABC RESULTS:          output signals:       18
+Removing temp directory.
+
+16.24. Executing OPT pass (performing simple optimizations).
+
+16.24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+16.24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+16.24.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 103 unused wires.
+<suppressed ~40 debug messages>
+
+16.24.5. Finished fast OPT passes.
+
+16.25. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `top'. Setting top module to top.
+
+16.25.1. Analyzing design hierarchy..
+Top module:  \top
+
+16.25.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+16.26. Printing statistics.
+
+=== top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      818 wires
+     9455 wire bits
+      768 public wires
+     9405 public wire bits
+        5 ports
+        5 port bits
+      119 cells
+        9   $_ANDNOT_
+        5   $_AND_
+        3   $_DFF_P_
+        9   $_MUX_
+        2   $_NAND_
+        7   $_NOR_
+        3   $_NOT_
+        4   $_ORNOT_
+        9   $_OR_
+        7   $_SDFFE_PP0P_
+       38   $_SDFF_PP0_
+        1   $_SDFF_PP1_
+        4   $_XNOR_
+        4   $_XOR_
+       14   $scopeinfo
+
+16.27. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+17. Executing AUTONAME pass.
+Renamed 277 objects in module top (11 iterations).
+<suppressed ~155 debug messages>
+
+18. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+19. Executing OPT pass (performing simple optimizations).
+
+19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+19.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+19.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 14 unused cells and 9346 unused wires.
+<suppressed ~9360 debug messages>
+
+19.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+19.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+19.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+19.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+19.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+19.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+19.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+19.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+19.16. Finished OPT passes. (There is nothing left to do.)
+
+20. Executing CLOCK_GATE pass (extract clock gating out of flip flops).
+Selected rising edge ICG \CLKGATE_X1 from Liberty file
+Converted 7 FFs.
+<suppressed ~31 debug messages>
+
+21. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell DFF_X1 (noninv, pins=4, area=4.52) is a direct match for cell type $_DFF_P_.
+  cell DFFR_X1 (noninv, pins=5, area=5.32) is a direct match for cell type $_DFF_PN0_.
+  cell DFFS_X1 (noninv, pins=5, area=5.32) is a direct match for cell type $_DFF_PN1_.
+  cell DFFRS_X1 (noninv, pins=6, area=6.38) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \DFF_X1 _DFF_P_ (.CK( C), .D( D), .Q( Q), .QN(~Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \DFFR_X1 _DFF_PN0_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .RN( R));
+    \DFFS_X1 _DFF_PN1_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .SN( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    unmapped dff cell: $_DFFE_PP_
+    unmapped dff cell: $_DFFSR_NNN_
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \DFFRS_X1 _DFFSR_PNN_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .RN( R), .SN( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+21.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+<suppressed ~8 debug messages>
+Mapping DFF cells in module `\top':
+  mapped 49 $_DFF_P_ cells to \DFF_X1 cells.
+
+22. Executing OPT pass (performing simple optimizations).
+
+22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+22.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 1 unused cells and 2 unused wires.
+<suppressed ~2 debug messages>
+
+22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+22.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+22.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+22.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+22.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+22.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+22.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+22.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+22.16. Finished OPT passes. (There is nothing left to do.)
+
+23. Executing ABC pass (technology mapping using ABC).
+
+23.1. Extracting gate netlist of module `\top' to `/tmp/yosys-abc-mnexa2/input.blif'..
+Extracted 101 gates and 154 wires to a netlist network with 51 inputs and 53 outputs.
+
+23.1.1. Executing ABC.
+Running ABC command: "/home/meowth/ysyx/ysyx-workbench/oss-cad-suite-linux-x64-20250830/oss-cad-suite/lib/yosys-abc" -s -f /tmp/yosys-abc-mnexa2/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-mnexa2/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-mnexa2/input.blif 
+ABC: + read_lib -w /home/meowth/ysyx/ysyx-workbench/yosys/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.05 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X16" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "NangateOpenCellLibrary" from "/home/meowth/ysyx/ysyx-workbench/yosys/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib" has 90 cells (44 skipped: 21 seq; 6 tri-state; 8 no func; 9 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.08 sec
+ABC: Memory =   11.38 MB. Time =     0.08 sec
+ABC: Warning: Detected 2 multi-output cells (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-mnexa2/output.blif 
+
+23.1.2. Re-integrating ABC results.
+ABC RESULTS:           AND2_X1 cells:       34
+ABC RESULTS:           AND2_X2 cells:        1
+ABC RESULTS:           AND2_X4 cells:        2
+ABC RESULTS:           AND3_X1 cells:        2
+ABC RESULTS:           AND4_X1 cells:        1
+ABC RESULTS:         AOI211_X1 cells:        3
+ABC RESULTS:          AOI21_X1 cells:        6
+ABC RESULTS:          AOI21_X4 cells:        1
+ABC RESULTS:         AOI221_X2 cells:        1
+ABC RESULTS:          AOI22_X1 cells:        1
+ABC RESULTS:         CLKBUF_X2 cells:        3
+ABC RESULTS:            INV_X1 cells:       11
+ABC RESULTS:           INV_X16 cells:        1
+ABC RESULTS:            INV_X4 cells:        1
+ABC RESULTS:           MUX2_X1 cells:        1
+ABC RESULTS:          NAND2_X1 cells:        3
+ABC RESULTS:          NAND2_X4 cells:        3
+ABC RESULTS:          NAND3_X1 cells:        1
+ABC RESULTS:          NAND4_X1 cells:        2
+ABC RESULTS:          NAND4_X4 cells:        1
+ABC RESULTS:           NOR2_X1 cells:        4
+ABC RESULTS:           NOR2_X4 cells:        1
+ABC RESULTS:           NOR3_X1 cells:        3
+ABC RESULTS:         OAI211_X1 cells:        3
+ABC RESULTS:          OAI21_X1 cells:        5
+ABC RESULTS:            OR2_X2 cells:        2
+ABC RESULTS:            OR3_X1 cells:        1
+ABC RESULTS:          XNOR2_X1 cells:        3
+ABC RESULTS:           XOR2_X1 cells:        2
+ABC RESULTS:        internal signals:       50
+ABC RESULTS:           input signals:       51
+ABC RESULTS:          output signals:       53
+Removing temp directory.
+
+24. Executing HILOMAP pass (mapping to constant drivers).
+
+25. Executing SETUNDEF pass (replace undef values with defined constants).
+
+26. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 153 unused wires.
+<suppressed ~49 debug messages>
+
+27. Executing Liberty frontend: /home/meowth/ysyx/ysyx-workbench/yosys/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib
+Imported 134 cell types from liberty file.
+
+28. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+29. Printing statistics.
+
+=== top ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      208        - wires
+      208        - wire bits
+       61        - public wires
+       61        - public wire bits
+        5        - ports
+        5        - port bits
+      156  362.026 cells
+       34   36.176   AND2_X1
+        1     1.33   AND2_X2
+        2    4.788   AND2_X4
+        2     2.66   AND3_X1
+        1    1.596   AND4_X1
+        3     3.99   AOI211_X1
+        6    6.384   AOI21_X1
+        1    3.458   AOI21_X4
+        1    2.926   AOI221_X2
+        1     1.33   AOI22_X1
+        3    3.192   CLKBUF_X2
+        3   10.374   CLKGATE_X1
+       49  221.578   DFF_X1
+       11    5.852   INV_X1
+        1    4.522   INV_X16
+        1     1.33   INV_X4
+        1    0.532   LOGIC0_X1
+        1    1.862   MUX2_X1
+        3    2.394   NAND2_X1
+        3    7.182   NAND2_X4
+        1    1.064   NAND3_X1
+        2     2.66   NAND4_X1
+        1    4.788   NAND4_X4
+        4    3.192   NOR2_X1
+        1    2.394   NOR2_X4
+        3    3.192   NOR3_X1
+        3     3.99   OAI211_X1
+        5     5.32   OAI21_X1
+        2     2.66   OR2_X2
+        1     1.33   OR3_X1
+        3    4.788   XNOR2_X1
+        2    3.192   XOR2_X1
+
+   Chip area for module '\top': 362.026000
+     of which used for sequential elements: 221.578000 (61.20%)
+
+30. Executing Verilog backend.
+Dumping module `\top'.
+
+Warnings: 6 unique messages, 6 total
+End of script. Logfile hash: 8205482533, CPU: user 1.73s system 0.05s, MEM: 41.59 MB peak
+Yosys 0.56+197 (git sha1 d4c4b2106, clang++ 18.1.8 -fPIC -O3)
+Time spent: 26% 29x opt_clean (0 sec), 16% 31x opt_expr (0 sec), ...

@@ -1,0 +1,9 @@
+{
+    "value": [
+        "ref:v0:c984eca8:/home/meowth/ysyx/ysyx-workbench/ysyxSoC/rocket-chip/macros/compile-resources",
+        "ref:v0:c984eca8:/home/meowth/ysyx/ysyx-workbench/ysyxSoC/rocket-chip/macros/src/main/resources",
+        "ref:v0:fb98fd80:/home/meowth/ysyx/ysyx-workbench/ysyxSoC/out/rocketchip/macros/compile.dest/classes"
+    ],
+    "valueHash": 918929700,
+    "inputsHash": 360180066
+}

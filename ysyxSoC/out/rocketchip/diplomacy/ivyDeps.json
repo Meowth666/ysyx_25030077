@@ -1,0 +1,8 @@
+{
+    "value": [
+        "org.chipsalliance::chisel:7.0.0-M2",
+        "com.lihaoyi::sourcecode:0.3.1"
+    ],
+    "valueHash": -935515778,
+    "inputsHash": 383985849
+}

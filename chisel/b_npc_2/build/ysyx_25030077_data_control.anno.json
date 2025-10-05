@@ -1,0 +1,29 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"build"
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~ysyx_25030077_data_control|ysyx_25030077_data_control>io_data_1",
+    "sources":[
+      "~ysyx_25030077_data_control|ysyx_25030077_data_control>io_pc_count",
+      "~ysyx_25030077_data_control|ysyx_25030077_data_control>io_data_control",
+      "~ysyx_25030077_data_control|ysyx_25030077_data_control>io_mem_data",
+      "~ysyx_25030077_data_control|ysyx_25030077_data_control>io_rs1_data"
+    ]
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~ysyx_25030077_data_control|ysyx_25030077_data_control>io_data_2",
+    "sources":[
+      "~ysyx_25030077_data_control|ysyx_25030077_data_control>io_data_control",
+      "~ysyx_25030077_data_control|ysyx_25030077_data_control>io_rs2_data",
+      "~ysyx_25030077_data_control|ysyx_25030077_data_control>io_imm"
+    ]
+  }
+]

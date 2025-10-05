@@ -1,0 +1,18 @@
+{
+    "value": [
+        "qref:v1:50f48d81:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-compiler_3/3.7.3/scala3-compiler_3-3.7.3.jar",
+        "qref:v1:6cca4d93:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.7.3/scala3-library_3-3.7.3.jar",
+        "qref:v1:01acc195:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-interfaces/3.7.3/scala3-interfaces-3.7.3.jar",
+        "qref:v1:41122736:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/tasty-core_3/3.7.3/tasty-core_3-3.7.3.jar",
+        "qref:v1:6874bf2e:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-asm/9.8.0-scala-1/scala-asm-9.8.0-scala-1.jar",
+        "qref:v1:2f96adb3:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.10.7/compiler-interface-1.10.7.jar",
+        "qref:v1:f8f3600c:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jline/jline-reader/3.29.0/jline-reader-3.29.0.jar",
+        "qref:v1:6cfd7080:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jline/jline-terminal/3.29.0/jline-terminal-3.29.0.jar",
+        "qref:v1:55c1a6d6:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jline/jline-terminal-jni/3.29.0/jline-terminal-jni-3.29.0.jar",
+        "qref:v1:af4b3a3d:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16.jar",
+        "qref:v1:a243d5f2:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/util-interface/1.10.7/util-interface-1.10.7.jar",
+        "qref:v1:df8472ea:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jline/jline-native/3.29.0/jline-native-3.29.0.jar"
+    ],
+    "valueHash": -1539610533,
+    "inputsHash": 2074153170
+}

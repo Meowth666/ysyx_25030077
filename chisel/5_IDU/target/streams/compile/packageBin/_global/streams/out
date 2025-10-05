@@ -1,0 +1,13 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/meowth/ysyx/ysyx-workbench/chisel/5_IDU/target/scala-2.12/root-5_idu_2.12-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MyOperators$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/5_IDU/target/scala-2.12/classes/MyOperators$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IDU.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/5_IDU/target/scala-2.12/classes/IDU.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MyOperators.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/5_IDU/target/scala-2.12/classes/MyOperators.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IDU$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/5_IDU/target/scala-2.12/classes/IDU$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MyOperators$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/5_IDU/target/scala-2.12/classes/MyOperators$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

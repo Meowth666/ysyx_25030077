@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+release_bindir="$(dirname "${BASH_SOURCE[0]}")"
+release_bindir_abs="$(readlink -f "$release_bindir")"
+release_topdir_abs="$(readlink -f "$release_bindir/..")"
+export PATH="$release_bindir_abs:$PATH"
+unset GTK_MODULES
+unset GTK3_MODULES
+export GTK_PATH="$release_topdir_abs/lib"
+export GTK_IM_MODULE=""
+export GTK_IM_MODULE_FILE="/dev/null"
+export GTK_EXE_PREFIX="$release_topdir_abs"
+export GTK_DATA_PREFIX="$release_topdir_abs"
+export GDK_PIXBUF_MODULEDIR="$release_topdir_abs/lib/gdk-pixbuf-2.0/loaders"
+export GTK_THEME="Adwaita"
+export XDG_DATA_DIRS="$release_topdir_abs"/share
+export XDG_CONFIG_DIRS="$release_topdir_abs"
+export XDG_CONFIG_HOME=$HOME/.config/yosyshq
+export XDG_CACHE_HOME=$HOME/.cache/yosyshq
+export XDG_DATA_HOME=$HOME/.local/share/yosyshq
+export XDG_CURRENT_DESKTOP="KDE"
+export LC_ALL="C"
+export GDK_PIXBUF_MODULE_FILE="$XDG_CACHE_HOME/loaders.cache"
+mkdir -p $XDG_CONFIG_HOME $XDG_CACHE_HOME $XDG_DATA_HOME
+"$release_topdir_abs"/lib/ld-linux-x86-64.so.2 --inhibit-cache --inhibit-rpath "" --library-path "$release_topdir_abs"/lib "$release_topdir_abs"/libexec/gdk-pixbuf-query-loaders --update-cache
+export FONTCONFIG_FILE="$XDG_CONFIG_HOME/fonts.conf"
+export FONTCONFIG_PATH="$release_topdir_abs/etc/fonts"
+sed "s|TARGET_DIR|$release_topdir_abs|g" "$release_topdir_abs/etc/fonts/fonts.conf.template" > $FONTCONFIG_FILE
+exec "$release_topdir_abs"/lib/ld-linux-x86-64.so.2 --inhibit-cache --inhibit-rpath "" --library-path "$release_topdir_abs"/lib "$release_topdir_abs"/libexec/twinwave "$@"

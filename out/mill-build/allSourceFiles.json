@@ -1,0 +1,9 @@
+{
+    "value": [
+        "ref:v0:bdb1c0c7:/home/meowth/ysyx/ysyx-workbench/out/mill-build/generatedScriptSources.dest/support/build_/MillMiscInfo.scala",
+        "ref:v0:220d5bb3:/home/meowth/ysyx/ysyx-workbench/out/mill-build/generatedScriptSources.dest/support/build_/BuildFileImpl.scala",
+        "ref:v0:ba68b742:/home/meowth/ysyx/ysyx-workbench/out/mill-build/generatedScriptSources.dest/wrapped/build_/build.mill"
+    ],
+    "valueHash": 1608164892,
+    "inputsHash": 447810722
+}

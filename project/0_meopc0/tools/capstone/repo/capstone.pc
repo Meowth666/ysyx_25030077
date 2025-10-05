@@ -1,0 +1,10 @@
+Name: capstone
+Description: Capstone disassembly engine
+Version: 5.0.0
+libdir=/usr/lib
+includedir=/usr/include/capstone
+archive=${libdir}/libcapstone.a
+Libs: -L${libdir} -lcapstone
+Libs.private: -L${libdir} -l:libcapstone.a
+Cflags: -I${includedir}
+archs=x86|mips|riscv|loongarch

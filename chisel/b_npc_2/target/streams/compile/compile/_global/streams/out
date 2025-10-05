@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/b_npc_2/src/main/scala/ysyx_25030077.scala:17:26: not found: type mem[0m
+[0m[[0m[31merror[0m] [0m[0m  val g_mem = Module(new mem())[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

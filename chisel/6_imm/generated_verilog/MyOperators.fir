@@ -1,0 +1,41 @@
+circuit MyOperators :
+  module MyOperators :
+    input clock : Clock
+    input reset : UInt<1>
+    output io : { flip instruction : UInt<32>, flip imm_type : UInt<3>, imm : UInt<32>}
+
+    node _Imm_type1_T = bits(io.instruction, 31, 31) @[module.scala 15:46]
+    node _Imm_type1_T_1 = bits(_Imm_type1_T, 0, 0) @[Bitwise.scala 74:15]
+    node _Imm_type1_T_2 = mux(_Imm_type1_T_1, UInt<20>("hfffff"), UInt<20>("h0")) @[Bitwise.scala 74:12]
+    node _Imm_type1_T_3 = bits(io.instruction, 31, 20) @[module.scala 15:70]
+    node Imm_type1 = cat(_Imm_type1_T_2, _Imm_type1_T_3) @[Cat.scala 31:58]
+    node _Imm_type2_T = bits(io.instruction, 31, 12) @[module.scala 16:38]
+    node _Imm_type2_T_1 = mux(UInt<1>("h0"), UInt<12>("hfff"), UInt<12>("h0")) @[Bitwise.scala 74:12]
+    node Imm_type2 = cat(_Imm_type2_T, _Imm_type2_T_1) @[Cat.scala 31:58]
+    node _Imm_type4_T = bits(io.instruction, 31, 31) @[module.scala 17:46]
+    node _Imm_type4_T_1 = bits(_Imm_type4_T, 0, 0) @[Bitwise.scala 74:15]
+    node _Imm_type4_T_2 = mux(_Imm_type4_T_1, UInt<20>("hfffff"), UInt<20>("h0")) @[Bitwise.scala 74:12]
+    node _Imm_type4_T_3 = bits(io.instruction, 31, 25) @[module.scala 17:70]
+    node _Imm_type4_T_4 = bits(io.instruction, 11, 7) @[module.scala 17:93]
+    node Imm_type4_hi = cat(_Imm_type4_T_2, _Imm_type4_T_3) @[Cat.scala 31:58]
+    node Imm_type4 = cat(Imm_type4_hi, _Imm_type4_T_4) @[Cat.scala 31:58]
+    node _Imm_type5_T = mux(UInt<1>("h0"), UInt<27>("h7ffffff"), UInt<27>("h0")) @[Bitwise.scala 74:12]
+    node _Imm_type5_T_1 = bits(io.instruction, 24, 20) @[module.scala 18:55]
+    node Imm_type5 = cat(_Imm_type5_T, _Imm_type5_T_1) @[Cat.scala 31:58]
+    node _Imm_type6_T = mux(UInt<1>("h0"), UInt<20>("hfffff"), UInt<20>("h0")) @[Bitwise.scala 74:12]
+    node _Imm_type6_T_1 = bits(io.instruction, 31, 20) @[module.scala 19:55]
+    node Imm_type6 = cat(_Imm_type6_T, _Imm_type6_T_1) @[Cat.scala 31:58]
+    node is_type1 = eq(io.imm_type, UInt<1>("h1")) @[module.scala 21:31]
+    node is_type2 = eq(io.imm_type, UInt<2>("h2")) @[module.scala 22:31]
+    node is_type3 = eq(io.imm_type, UInt<2>("h3")) @[module.scala 23:31]
+    node is_type4 = eq(io.imm_type, UInt<3>("h4")) @[module.scala 24:31]
+    node is_type5 = eq(io.imm_type, UInt<3>("h5")) @[module.scala 25:31]
+    node is_type6 = eq(io.imm_type, UInt<3>("h6")) @[module.scala 26:31]
+    node _io_imm_T = mux(is_type6, Imm_type6, UInt<32>("h0")) @[Mux.scala 101:16]
+    node _io_imm_T_1 = mux(is_type5, Imm_type5, _io_imm_T) @[Mux.scala 101:16]
+    node _io_imm_T_2 = mux(is_type4, Imm_type4, _io_imm_T_1) @[Mux.scala 101:16]
+    node _io_imm_T_3 = mux(is_type3, UInt<32>("h4"), _io_imm_T_2) @[Mux.scala 101:16]
+    node _io_imm_T_4 = mux(is_type2, Imm_type2, _io_imm_T_3) @[Mux.scala 101:16]
+    node _io_imm_T_5 = mux(is_type1, Imm_type1, _io_imm_T_4) @[Mux.scala 101:16]
+    io.imm <= _io_imm_T_5 @[module.scala 29:10]
+

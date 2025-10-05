@@ -1,0 +1,15 @@
+Generate the report at 2025-09-25T17:35:00, GitVersion: aa25008b3778a76ae1975c839d4cc459f7f7b3b7.
++-----------------------------------------------+-----------+--------+-------------+-------------+------+
+| Net / Pin                                     | MaxFanout | Fanout | FanoutSlack | LibCellPort | Note |
++-----------------------------------------------+-----------+--------+-------------+-------------+------+
+| _066_                                         |           |        |             |             |      |
+| _183_:ZN                                      | NA        | 3      | NA          | INV_X1/ZN   |      |
+| f_gpr._canAccept_T[15]                        |           |        |             |             |      |
+| f_gpr.canAccept_prng.state_15_$_SDFF_PP0__Q:Q | NA        | 1      | NA          | DFF_X1/Q    |      |
+| _086_                                         |           |        |             |             |      |
+| _231_:ZN                                      | NA        | 1      | NA          | AOI22_X1/ZN |      |
+| c_arbiter.io_axi_b_ready                      |           |        |             |             |      |
+| f_gpr.canAccept_prng.state_0_$_DFF_P__Q:Q     | NA        | 1      | NA          | DFF_X1/Q    |      |
+| f_gpr._canAccept_T[10]                        |           |        |             |             |      |
+| f_gpr.canAccept_prng.state_10_$_SDFF_PP0__Q:Q | NA        | 2      | NA          | DFF_X1/Q    |      |
++-----------------------------------------------+-----------+--------+-------------+-------------+------+

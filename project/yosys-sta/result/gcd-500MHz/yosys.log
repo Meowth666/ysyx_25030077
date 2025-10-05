@@ -1,0 +1,1184 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.53+60 (git sha1 209df95fb, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `-' --
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v
+Parsing SystemVerilog input from `/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v' to AST representation.
+Generating RTLIL representation for module `\gcd'.
+Generating RTLIL representation for module `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e'.
+Generating RTLIL representation for module `\RegRst_0x9f365fdf6c8998a'.
+Generating RTLIL representation for module `\GcdUnitDpathRTL_0x4d0fc71ead8d3d9e'.
+Generating RTLIL representation for module `\RegEn_0x68db79c4ec1d6e5b'.
+Generating RTLIL representation for module `\LtComparator_0x422b1f52edd46a85'.
+Generating RTLIL representation for module `\ZeroComparator_0x422b1f52edd46a85'.
+Generating RTLIL representation for module `\Mux_0x683fa1a418b072c9'.
+Generating RTLIL representation for module `\Mux_0xdd6473406d1a99a'.
+Generating RTLIL representation for module `\Subtractor_0x422b1f52edd46a85'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/verilog/blackbox.v
+Parsing Verilog input from `/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/verilog/blackbox.v' to AST representation.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/verilog/cells_clkgate.v
+Parsing Verilog input from `/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/verilog/cells_clkgate.v' to AST representation.
+Generating RTLIL representation for module `\OPENROAD_CLKGATE'.
+Successfully finished Verilog frontend.
+
+4. Executing SYNTH pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \gcd
+Used module:     \GcdUnitDpathRTL_0x4d0fc71ead8d3d9e
+Used module:         \RegEn_0x68db79c4ec1d6e5b
+Used module:         \Subtractor_0x422b1f52edd46a85
+Used module:         \Mux_0xdd6473406d1a99a
+Used module:         \Mux_0x683fa1a418b072c9
+Used module:         \ZeroComparator_0x422b1f52edd46a85
+Used module:         \LtComparator_0x422b1f52edd46a85
+Used module:     \GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e
+Used module:         \RegRst_0x9f365fdf6c8998a
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \gcd
+Used module:     \GcdUnitDpathRTL_0x4d0fc71ead8d3d9e
+Used module:         \RegEn_0x68db79c4ec1d6e5b
+Used module:         \Subtractor_0x422b1f52edd46a85
+Used module:         \Mux_0xdd6473406d1a99a
+Used module:         \Mux_0x683fa1a418b072c9
+Used module:         \ZeroComparator_0x422b1f52edd46a85
+Used module:         \LtComparator_0x422b1f52edd46a85
+Used module:     \GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e
+Used module:         \RegRst_0x9f365fdf6c8998a
+Removing unused module `\OPENROAD_CLKGATE'.
+Removed 1 unused modules.
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:720$29 in module Mux_0xdd6473406d1a99a.
+Marked 1 switch rules as full_case in process $proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:720$29 in module Mux_0xdd6473406d1a99a.
+Marked 1 switch rules as full_case in process $proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:679$23 in module Mux_0x683fa1a418b072c9.
+Marked 1 switch rules as full_case in process $proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:352$16 in module RegRst_0x9f365fdf6c8998a.
+Marked 3 switch rules as full_case in process $proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10 in module GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.
+Marked 6 switch rules as full_case in process $proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:192$1 in module GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.
+Removed a total of 1 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 26 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~13 debug messages>
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\Subtractor_0x422b1f52edd46a85.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:751$34'.
+Creating decoders for process `\Mux_0xdd6473406d1a99a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:0$33'.
+Creating decoders for process `\Mux_0xdd6473406d1a99a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:720$29'.
+     1/1: $1$mem2reg_rd$\in_$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:721$28_DATA[15:0]$32
+Creating decoders for process `\Mux_0x683fa1a418b072c9.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:0$27'.
+Creating decoders for process `\Mux_0x683fa1a418b072c9.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:679$23'.
+     1/1: $1$mem2reg_rd$\in_$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:680$22_DATA[15:0]$26
+Creating decoders for process `\ZeroComparator_0x422b1f52edd46a85.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:636$20'.
+Creating decoders for process `\LtComparator_0x422b1f52edd46a85.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:606$18'.
+Creating decoders for process `\RegEn_0x68db79c4ec1d6e5b.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:571$17'.
+     1/1: $0\out[15:0]
+Creating decoders for process `\RegRst_0x9f365fdf6c8998a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:352$16'.
+     1/1: $0\out[1:0]
+Creating decoders for process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10'.
+     1/22: $3\b_reg_en[0:0]
+     2/22: $3\b_mux_sel[0:0]
+     3/22: $3\a_reg_en[0:0]
+     4/22: $3\a_mux_sel[1:0]
+     5/22: $3\resp_val[0:0]
+     6/22: $3\req_rdy[0:0]
+     7/22: $2\b_reg_en[0:0]
+     8/22: $2\b_mux_sel[0:0]
+     9/22: $2\a_reg_en[0:0]
+    10/22: $2\a_mux_sel[1:0]
+    11/22: $2\resp_val[0:0]
+    12/22: $2\req_rdy[0:0]
+    13/22: $2\do_sub[0:0]
+    14/22: $2\do_swap[0:0]
+    15/22: $1\b_reg_en[0:0]
+    16/22: $1\b_mux_sel[0:0]
+    17/22: $1\a_reg_en[0:0]
+    18/22: $1\a_mux_sel[1:0]
+    19/22: $1\resp_val[0:0]
+    20/22: $1\req_rdy[0:0]
+    21/22: $1\do_swap[0:0]
+    22/22: $1\do_sub[0:0]
+Creating decoders for process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:192$1'.
+     1/6: $6\next_state__0[1:0]
+     2/6: $5\next_state__0[1:0]
+     3/6: $4\next_state__0[1:0]
+     4/6: $3\next_state__0[1:0]
+     5/6: $2\next_state__0[1:0]
+     6/6: $1\next_state__0[1:0]
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\Subtractor_0x422b1f52edd46a85.\out' from process `\Subtractor_0x422b1f52edd46a85.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:751$34'.
+No latch inferred for signal `\Mux_0xdd6473406d1a99a.\in_[0]' from process `\Mux_0xdd6473406d1a99a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:0$33'.
+No latch inferred for signal `\Mux_0xdd6473406d1a99a.\in_[1]' from process `\Mux_0xdd6473406d1a99a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:0$33'.
+No latch inferred for signal `\Mux_0xdd6473406d1a99a.\out' from process `\Mux_0xdd6473406d1a99a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:720$29'.
+No latch inferred for signal `\Mux_0xdd6473406d1a99a.$mem2reg_rd$\in_$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:721$28_ADDR' from process `\Mux_0xdd6473406d1a99a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:720$29'.
+No latch inferred for signal `\Mux_0xdd6473406d1a99a.$mem2reg_rd$\in_$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:721$28_DATA' from process `\Mux_0xdd6473406d1a99a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:720$29'.
+No latch inferred for signal `\Mux_0x683fa1a418b072c9.\in_[0]' from process `\Mux_0x683fa1a418b072c9.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:0$27'.
+No latch inferred for signal `\Mux_0x683fa1a418b072c9.\in_[1]' from process `\Mux_0x683fa1a418b072c9.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:0$27'.
+No latch inferred for signal `\Mux_0x683fa1a418b072c9.\in_[2]' from process `\Mux_0x683fa1a418b072c9.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:0$27'.
+No latch inferred for signal `\Mux_0x683fa1a418b072c9.\out' from process `\Mux_0x683fa1a418b072c9.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:679$23'.
+No latch inferred for signal `\Mux_0x683fa1a418b072c9.$mem2reg_rd$\in_$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:680$22_ADDR' from process `\Mux_0x683fa1a418b072c9.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:679$23'.
+No latch inferred for signal `\Mux_0x683fa1a418b072c9.$mem2reg_rd$\in_$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:680$22_DATA' from process `\Mux_0x683fa1a418b072c9.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:679$23'.
+No latch inferred for signal `\ZeroComparator_0x422b1f52edd46a85.\out' from process `\ZeroComparator_0x422b1f52edd46a85.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:636$20'.
+No latch inferred for signal `\LtComparator_0x422b1f52edd46a85.\out' from process `\LtComparator_0x422b1f52edd46a85.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:606$18'.
+No latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\req_rdy' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10'.
+No latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\resp_val' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10'.
+No latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\a_mux_sel' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10'.
+No latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\b_mux_sel' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10'.
+No latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\b_reg_en' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10'.
+No latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\a_reg_en' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10'.
+No latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\current_state__1' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10'.
+Latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\do_sub' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10': $auto$proc_dlatch.cc:432:proc_dlatch$197
+Latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\do_swap' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10': $auto$proc_dlatch.cc:432:proc_dlatch$228
+No latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\curr_state__0' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:192$1'.
+No latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\next_state__0' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:192$1'.
+No latch inferred for signal `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.\state$in_' from process `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:192$1'.
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\RegEn_0x68db79c4ec1d6e5b.\out' using process `\RegEn_0x68db79c4ec1d6e5b.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:571$17'.
+  created $dff cell `$procdff$231' with positive edge clock.
+Creating register for signal `\RegRst_0x9f365fdf6c8998a.\out' using process `\RegRst_0x9f365fdf6c8998a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:352$16'.
+  created $dff cell `$procdff$232' with positive edge clock.
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `Subtractor_0x422b1f52edd46a85.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:751$34'.
+Removing empty process `Mux_0xdd6473406d1a99a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:0$33'.
+Found and cleaned up 1 empty switch in `\Mux_0xdd6473406d1a99a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:720$29'.
+Removing empty process `Mux_0xdd6473406d1a99a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:720$29'.
+Removing empty process `Mux_0x683fa1a418b072c9.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:0$27'.
+Found and cleaned up 1 empty switch in `\Mux_0x683fa1a418b072c9.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:679$23'.
+Removing empty process `Mux_0x683fa1a418b072c9.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:679$23'.
+Removing empty process `ZeroComparator_0x422b1f52edd46a85.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:636$20'.
+Removing empty process `LtComparator_0x422b1f52edd46a85.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:606$18'.
+Found and cleaned up 1 empty switch in `\RegEn_0x68db79c4ec1d6e5b.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:571$17'.
+Removing empty process `RegEn_0x68db79c4ec1d6e5b.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:571$17'.
+Found and cleaned up 1 empty switch in `\RegRst_0x9f365fdf6c8998a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:352$16'.
+Removing empty process `RegRst_0x9f365fdf6c8998a.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:352$16'.
+Found and cleaned up 3 empty switches in `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10'.
+Removing empty process `GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:277$10'.
+Found and cleaned up 6 empty switches in `\GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:192$1'.
+Removing empty process `GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.$proc$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:192$1'.
+Cleaned up 13 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Subtractor_0x422b1f52edd46a85.
+Optimizing module Mux_0xdd6473406d1a99a.
+<suppressed ~1 debug messages>
+Optimizing module Mux_0x683fa1a418b072c9.
+<suppressed ~1 debug messages>
+Optimizing module ZeroComparator_0x422b1f52edd46a85.
+<suppressed ~1 debug messages>
+Optimizing module LtComparator_0x422b1f52edd46a85.
+Optimizing module RegEn_0x68db79c4ec1d6e5b.
+Optimizing module GcdUnitDpathRTL_0x4d0fc71ead8d3d9e.
+Optimizing module RegRst_0x9f365fdf6c8998a.
+Optimizing module GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.
+<suppressed ~18 debug messages>
+Optimizing module gcd.
+
+4.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module Subtractor_0x422b1f52edd46a85.
+Deleting now unused module Mux_0xdd6473406d1a99a.
+Deleting now unused module Mux_0x683fa1a418b072c9.
+Deleting now unused module ZeroComparator_0x422b1f52edd46a85.
+Deleting now unused module LtComparator_0x422b1f52edd46a85.
+Deleting now unused module RegEn_0x68db79c4ec1d6e5b.
+Deleting now unused module GcdUnitDpathRTL_0x4d0fc71ead8d3d9e.
+Deleting now unused module RegRst_0x9f365fdf6c8998a.
+Deleting now unused module GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e.
+<suppressed ~10 debug messages>
+
+4.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+4.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 11 unused cells and 150 unused wires.
+<suppressed ~14 debug messages>
+
+4.6. Executing CHECK pass (checking for obvious problems).
+Checking module gcd...
+Found and reported 0 problems.
+
+4.7. Executing OPT pass (performing simple optimizations).
+
+4.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+4.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+4.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gcd..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$102.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$108.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$114.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$120.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$126.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$132.
+    dead port 2/2 on $mux $flatten\ctrl.$procmux$174.
+    dead port 2/2 on $mux $flatten\ctrl.$procmux$183.
+    dead port 2/2 on $mux $flatten\ctrl.$procmux$192.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$52.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$55.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$60.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$63.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$68.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$71.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$76.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$79.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$85.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$88.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$93.
+    dead port 1/2 on $mux $flatten\ctrl.$procmux$96.
+Removed 21 multiplexer ports.
+<suppressed ~11 debug messages>
+
+4.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gcd.
+  Optimizing cells in module \gcd.
+Performed a total of 2 changes.
+
+4.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 0 unused cells and 26 unused wires.
+<suppressed ~1 debug messages>
+
+4.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+4.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gcd..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+4.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gcd.
+Performed a total of 0 changes.
+
+4.7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+4.7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+
+4.7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+4.7.16. Finished OPT passes. (There is nothing left to do.)
+
+4.8. Executing FSM pass (extract and optimize FSM).
+
+4.8.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register gcd.ctrl.state.out.
+
+4.8.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\ctrl.state.out' from module `\gcd'.
+  found $dff cell for state register: $flatten\ctrl.\state.$procdff$232
+  root of input selection tree: $flatten\ctrl.\state.$0\out[1:0]
+  found reset state: 2'00 (guessed from mux tree)
+  found ctrl input: \reset
+  found ctrl input: $flatten\ctrl.$eq$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:213$8_Y
+  found ctrl input: $flatten\ctrl.$eq$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:204$5_Y
+  found ctrl input: $flatten\ctrl.$auto$rtlil.cc:2992:And$224
+  found ctrl input: $flatten\ctrl.$logic_and$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:196$4_Y
+  found state code: 2'01
+  found ctrl input: $flatten\ctrl.$logic_and$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:205$7_Y
+  found state code: 2'10
+  found ctrl input: $flatten\ctrl.$logic_and$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:214$9_Y
+  found state code: 2'00
+  found ctrl output: $flatten\ctrl.$eq$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:213$8_Y
+  found ctrl output: $flatten\ctrl.$eq$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:204$5_Y
+  found ctrl output: $flatten\ctrl.$auto$rtlil.cc:2992:And$224
+  ctrl inputs: { $flatten\ctrl.$logic_and$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:196$4_Y $flatten\ctrl.$logic_and$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:205$7_Y $flatten\ctrl.$logic_and$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:214$9_Y \reset }
+  ctrl outputs: { $flatten\ctrl.$eq$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:204$5_Y $flatten\ctrl.$eq$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:213$8_Y $flatten\ctrl.$auto$rtlil.cc:2992:And$224 $flatten\ctrl.\state.$0\out[1:0] }
+  transition:       2'00 4'0--0 ->       2'00 5'00100
+  transition:       2'00 4'1--0 ->       2'01 5'00101
+  transition:       2'00 4'---1 ->       2'00 5'00100
+  transition:       2'10 4'--00 ->       2'10 5'01010
+  transition:       2'10 4'--10 ->       2'00 5'01000
+  transition:       2'10 4'---1 ->       2'00 5'01000
+  transition:       2'01 4'-0-0 ->       2'01 5'10001
+  transition:       2'01 4'-1-0 ->       2'10 5'10010
+  transition:       2'01 4'---1 ->       2'00 5'10000
+
+4.8.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\ctrl.state.out$243' from module `\gcd'.
+
+4.8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 11 unused cells and 16 unused wires.
+<suppressed ~18 debug messages>
+
+4.8.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\ctrl.state.out$243' from module `\gcd'.
+  Removing unused output signal $flatten\ctrl.\state.$0\out[1:0] [0].
+  Removing unused output signal $flatten\ctrl.\state.$0\out[1:0] [1].
+
+4.8.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\ctrl.state.out$243' from module `\gcd' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  00 -> --1
+  10 -> -1-
+  01 -> 1--
+
+4.8.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\ctrl.state.out$243' from module `gcd':
+-------------------------------------
+
+  Information on FSM $fsm$\ctrl.state.out$243 (\ctrl.state.out):
+
+  Number of input signals:    4
+  Number of output signals:   3
+  Number of state bits:       3
+
+  Input signals:
+    0: \reset
+    1: $flatten\ctrl.$logic_and$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:214$9_Y
+    2: $flatten\ctrl.$logic_and$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:205$7_Y
+    3: $flatten\ctrl.$logic_and$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:196$4_Y
+
+  Output signals:
+    0: $flatten\ctrl.$auto$rtlil.cc:2992:And$224
+    1: $flatten\ctrl.$eq$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:213$8_Y
+    2: $flatten\ctrl.$eq$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:204$5_Y
+
+  State encoding:
+    0:      3'--1  <RESET STATE>
+    1:      3'-1-
+    2:      3'1--
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 4'0--0   ->     0 3'001
+      1:     0 4'---1   ->     0 3'001
+      2:     0 4'1--0   ->     2 3'001
+      3:     1 4'--10   ->     0 3'010
+      4:     1 4'---1   ->     0 3'010
+      5:     1 4'--00   ->     1 3'010
+      6:     2 4'---1   ->     0 3'100
+      7:     2 4'-1-0   ->     1 3'100
+      8:     2 4'-0-0   ->     2 3'100
+
+-------------------------------------
+
+4.8.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\ctrl.state.out$243' from module `\gcd'.
+
+4.9. Executing OPT pass (performing simple optimizations).
+
+4.9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+<suppressed ~4 debug messages>
+
+4.9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+4.9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gcd..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+4.9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gcd.
+Performed a total of 0 changes.
+
+4.9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+4.9.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\dpath.\b_reg.$procdff$231 ($dff) from module gcd (D = \dpath.b_reg.in_, Q = \dpath.b_reg.out).
+Adding EN signal on $flatten\dpath.\a_reg.$procdff$231 ($dff) from module gcd (D = \dpath.a_reg.in_, Q = \dpath.a_reg.out).
+
+4.9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 2 unused cells and 9 unused wires.
+<suppressed ~3 debug messages>
+
+4.9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+4.9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gcd..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+4.9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gcd.
+Performed a total of 0 changes.
+
+4.9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+4.9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+
+4.9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+4.9.16. Finished OPT passes. (There is nothing left to do.)
+
+4.10. Executing WREDUCE pass (reducing word size of cells).
+Removed top 30 bits (of 32) from mux cell gcd.$flatten\ctrl.$ternary$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:293$14 ($mux).
+Removed top 1 bits (of 2) from port B of cell gcd.$flatten\dpath.\a_mux.$procmux$42_CMP0 ($eq).
+Removed top 30 bits (of 32) from wire gcd.$flatten\ctrl.$ternary$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:293$14_Y.
+
+4.11. Executing PEEPOPT pass (run peephole optimizers).
+
+4.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.13. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module gcd:
+  creating $macc model for $flatten\dpath.\sub.$sub$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:752$35 ($sub).
+  creating $alu model for $macc $flatten\dpath.\sub.$sub$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:752$35.
+  creating $alu model for $flatten\dpath.\a_lt_b.$lt$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:607$19 ($lt): merged with $flatten\dpath.\sub.$sub$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:752$35.
+  creating $alu cell for $flatten\dpath.\sub.$sub$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:752$35, $flatten\dpath.\a_lt_b.$lt$/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/example/gcd.v:607$19: $auto$alumacc.cc:495:replace_alu$284
+  created 1 $alu and 0 $macc cells.
+
+4.14. Executing SHARE pass (SAT-based resource sharing).
+
+4.15. Executing OPT pass (performing simple optimizations).
+
+4.15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+<suppressed ~2 debug messages>
+
+4.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+4.15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gcd..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+4.15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gcd.
+Performed a total of 0 changes.
+
+4.15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+4.15.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+4.15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+4.15.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.15.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gcd..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+4.15.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gcd.
+Performed a total of 0 changes.
+
+4.15.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+4.15.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.15.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+
+4.15.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+4.15.16. Finished OPT passes. (There is nothing left to do.)
+
+4.16. Executing MEMORY pass.
+
+4.16.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.16.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.16.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.16.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.16.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.16.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+
+4.16.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.16.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.16.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+
+4.16.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+
+4.18. Executing OPT pass (performing simple optimizations).
+
+4.18.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+<suppressed ~8 debug messages>
+
+4.18.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+4.18.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.18.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 2 unused cells and 4 unused wires.
+<suppressed ~3 debug messages>
+
+4.18.5. Finished fast OPT passes.
+
+4.19. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.20. Executing OPT pass (performing simple optimizations).
+
+4.20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+4.20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+4.20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gcd..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gcd.
+Performed a total of 0 changes.
+
+4.20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+4.20.6. Executing OPT_SHARE pass.
+
+4.20.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.20.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+
+4.20.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+4.20.10. Finished OPT passes. (There is nothing left to do.)
+
+4.21. Executing TECHMAP pass (map to technology primitives).
+
+4.21.1. Executing Verilog-2005 frontend: /home/meowth/ysyx/ysyx-workbench/project/oss-cad-suite-linux-x64-20250524/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/meowth/ysyx/ysyx-workbench/project/oss-cad-suite-linux-x64-20250524/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.21.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$6df0329addda9228fcc2546de2aaf14ad26c98e1\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$0d149ffe75563ef6fcc1a3dddc59d00af28651a7\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+No more expansions possible.
+<suppressed ~357 debug messages>
+
+4.22. Executing OPT pass (performing simple optimizations).
+
+4.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+<suppressed ~30 debug messages>
+
+4.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.22.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 0 unused cells and 96 unused wires.
+<suppressed ~1 debug messages>
+
+4.22.5. Finished fast OPT passes.
+
+4.23. Executing ABC pass (technology mapping using ABC).
+
+4.23.1. Extracting gate netlist of module `\gcd' to `<abc-temp-dir>/input.blif'..
+Extracted 269 gates and 340 wires to a netlist network with 70 inputs and 54 outputs.
+
+4.23.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.23.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        6
+ABC RESULTS:            ANDNOT cells:       95
+ABC RESULTS:               MUX cells:       32
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:               NOR cells:        6
+ABC RESULTS:               NOT cells:       23
+ABC RESULTS:                OR cells:       41
+ABC RESULTS:             ORNOT cells:       22
+ABC RESULTS:              XNOR cells:        6
+ABC RESULTS:               XOR cells:       25
+ABC RESULTS:        internal signals:      216
+ABC RESULTS:           input signals:       70
+ABC RESULTS:          output signals:       54
+Removing temp directory.
+
+4.24. Executing OPT pass (performing simple optimizations).
+
+4.24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+4.24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+4.24.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 0 unused cells and 232 unused wires.
+<suppressed ~19 debug messages>
+
+4.24.5. Finished fast OPT passes.
+
+4.25. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `gcd'. Setting top module to gcd.
+
+4.25.1. Analyzing design hierarchy..
+Top module:  \gcd
+
+4.25.2. Analyzing design hierarchy..
+Top module:  \gcd
+Removed 0 unused modules.
+
+4.26. Printing statistics.
+
+=== gcd ===
+
+   Number of wires:                329
+   Number of wire bits:           1082
+   Number of public wires:         122
+   Number of public wire bits:     875
+   Number of ports:                  8
+   Number of port bits:             54
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                303
+     $_ANDNOT_                      95
+     $_AND_                          6
+     $_DFFE_PP_                     32
+     $_DFF_P_                        3
+     $_MUX_                         32
+     $_NAND_                         2
+     $_NOR_                          6
+     $_NOT_                         23
+     $_ORNOT_                       22
+     $_OR_                          41
+     $_XNOR_                         6
+     $_XOR_                         25
+     $scopeinfo                     10
+
+4.27. Executing CHECK pass (checking for obvious problems).
+Checking module gcd...
+Found and reported 0 problems.
+
+5. Executing AUTONAME pass.
+Renamed 1173 objects in module gcd (22 iterations).
+<suppressed ~500 debug messages>
+
+6. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gcd..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gcd.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 10 unused cells and 753 unused wires.
+<suppressed ~763 debug messages>
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gcd..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gcd.
+Performed a total of 0 changes.
+
+7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+
+7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+7.16. Finished OPT passes. (There is nothing left to do.)
+
+8. Executing CLOCK_GATE pass (extract clock gating out of flip flops).
+Selected rising edge ICG \CLKGATE_X1 from Liberty file
+Converted 32 FFs.
+<suppressed ~56 debug messages>
+
+9. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell DFF_X1 (noninv, pins=4, area=4.52) is a direct match for cell type $_DFF_P_.
+  cell DFFR_X1 (noninv, pins=5, area=5.32) is a direct match for cell type $_DFF_PN0_.
+  cell DFFS_X1 (noninv, pins=5, area=5.32) is a direct match for cell type $_DFF_PN1_.
+  cell DFFRS_X1 (noninv, pins=6, area=6.38) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \DFF_X1 _DFF_P_ (.CK( C), .D( D), .Q( Q), .QN(~Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \DFFR_X1 _DFF_PN0_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .RN( R));
+    \DFFS_X1 _DFF_PN1_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .SN( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    unmapped dff cell: $_DFFE_PP_
+    unmapped dff cell: $_DFFSR_NNN_
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \DFFRS_X1 _DFFSR_PNN_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .RN( R), .SN( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+9.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+<suppressed ~8 debug messages>
+Mapping DFF cells in module `\gcd':
+  mapped 35 $_DFF_P_ cells to \DFF_X1 cells.
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gcd..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gcd.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 1 unused cells and 2 unused wires.
+<suppressed ~2 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \gcd..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \gcd.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\gcd'.
+Removed a total of 0 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module gcd.
+
+10.16. Finished OPT passes. (There is nothing left to do.)
+
+11. Executing ABC pass (technology mapping using ABC).
+
+11.1. Extracting gate netlist of module `\gcd' to `/tmp/yosys-abc-ravXIb/input.blif'..
+Extracted 257 gates and 328 wires to a netlist network with 71 inputs and 54 outputs.
+
+11.1.1. Executing ABC.
+Running ABC command: "/home/meowth/ysyx/ysyx-workbench/project/oss-cad-suite-linux-x64-20250524/oss-cad-suite/lib/yosys-abc" -s -f /tmp/yosys-abc-ravXIb/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-ravXIb/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-ravXIb/input.blif 
+ABC: + read_lib -w /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.05 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X16" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "NangateOpenCellLibrary" from "/home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib" has 90 cells (35 skipped: 21 seq; 6 tri-state; 8 no func; 9 dont_use).  Time =     0.07 sec
+ABC: Memory =   11.38 MB. Time =     0.07 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-ravXIb/output.blif 
+
+11.1.2. Re-integrating ABC results.
+ABC RESULTS:           AND2_X1 cells:       12
+ABC RESULTS:           AND2_X2 cells:        4
+ABC RESULTS:           AND2_X4 cells:        5
+ABC RESULTS:           AND3_X1 cells:        4
+ABC RESULTS:           AND3_X4 cells:        2
+ABC RESULTS:         AOI211_X2 cells:        1
+ABC RESULTS:          AOI21_X1 cells:        4
+ABC RESULTS:          AOI21_X2 cells:        2
+ABC RESULTS:          AOI21_X4 cells:        1
+ABC RESULTS:         AOI221_X2 cells:        1
+ABC RESULTS:         AOI221_X4 cells:        1
+ABC RESULTS:            BUF_X4 cells:        1
+ABC RESULTS:            BUF_X8 cells:        1
+ABC RESULTS:            INV_X1 cells:       14
+ABC RESULTS:            INV_X2 cells:        2
+ABC RESULTS:            INV_X4 cells:        9
+ABC RESULTS:            INV_X8 cells:        3
+ABC RESULTS:           MUX2_X1 cells:       28
+ABC RESULTS:           MUX2_X2 cells:        4
+ABC RESULTS:          NAND2_X1 cells:       23
+ABC RESULTS:          NAND2_X2 cells:        9
+ABC RESULTS:          NAND3_X1 cells:        7
+ABC RESULTS:          NAND3_X4 cells:        2
+ABC RESULTS:          NAND4_X1 cells:        1
+ABC RESULTS:           NOR2_X1 cells:       13
+ABC RESULTS:           NOR2_X2 cells:        8
+ABC RESULTS:           NOR2_X4 cells:        2
+ABC RESULTS:           NOR3_X1 cells:        2
+ABC RESULTS:           NOR3_X4 cells:        1
+ABC RESULTS:           NOR4_X1 cells:        3
+ABC RESULTS:          OAI21_X1 cells:        2
+ABC RESULTS:          OAI21_X2 cells:       11
+ABC RESULTS:          OAI21_X4 cells:        1
+ABC RESULTS:          OAI22_X1 cells:        1
+ABC RESULTS:            OR2_X1 cells:        2
+ABC RESULTS:            OR2_X4 cells:        1
+ABC RESULTS:            OR3_X1 cells:        2
+ABC RESULTS:          XNOR2_X1 cells:       14
+ABC RESULTS:          XNOR2_X2 cells:       12
+ABC RESULTS:           XOR2_X1 cells:        3
+ABC RESULTS:        internal signals:      203
+ABC RESULTS:           input signals:       71
+ABC RESULTS:          output signals:       54
+Removing temp directory.
+
+12. Executing HILOMAP pass (mapping to constant drivers).
+
+13. Executing SETUNDEF pass (replace undef values with defined constants).
+
+14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \gcd..
+Removed 0 unused cells and 328 unused wires.
+<suppressed ~204 debug messages>
+
+15. Executing Liberty frontend: /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib
+Imported 134 cell types from liberty file.
+
+16. Executing CHECK pass (checking for obvious problems).
+Checking module gcd...
+Found and reported 0 problems.
+
+17. Printing statistics.
+
+=== gcd ===
+
+   Number of wires:                327
+   Number of wire bits:            327
+   Number of public wires:         126
+   Number of public wire bits:     126
+   Number of ports:                 54
+   Number of port bits:             54
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                256
+     AND2_X1                        12
+     AND2_X2                         4
+     AND2_X4                         5
+     AND3_X1                         4
+     AND3_X4                         2
+     AOI211_X2                       1
+     AOI21_X1                        4
+     AOI21_X2                        2
+     AOI21_X4                        1
+     AOI221_X2                       1
+     AOI221_X4                       1
+     BUF_X4                          1
+     BUF_X8                          1
+     CLKGATE_X1                      2
+     DFF_X1                         35
+     INV_X1                         14
+     INV_X2                          2
+     INV_X4                          9
+     INV_X8                          3
+     MUX2_X1                        28
+     MUX2_X2                         4
+     NAND2_X1                       23
+     NAND2_X2                        9
+     NAND3_X1                        7
+     NAND3_X4                        2
+     NAND4_X1                        1
+     NOR2_X1                        13
+     NOR2_X2                         8
+     NOR2_X4                         2
+     NOR3_X1                         2
+     NOR3_X4                         1
+     NOR4_X1                         3
+     OAI21_X1                        2
+     OAI21_X2                       11
+     OAI21_X4                        1
+     OAI22_X1                        1
+     OR2_X1                          2
+     OR2_X4                          1
+     OR3_X1                          2
+     XNOR2_X1                       14
+     XNOR2_X2                       12
+     XOR2_X1                         3
+
+   Chip area for module '\gcd': 497.154000
+     of which used for sequential elements: 158.270000 (31.84%)
+
+18. Executing Verilog backend.
+Dumping module `\gcd'.
+
+End of script. Logfile hash: 602611c652, CPU: user 0.45s system 0.03s, MEM: 36.75 MB peak
+Yosys 0.53+60 (git sha1 209df95fb, clang++ 18.1.8 -fPIC -O3)
+Time spent: 37% 2x abc (0 sec), 10% 24x opt_expr (0 sec), ...

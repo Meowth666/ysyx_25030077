@@ -1,0 +1,8 @@
+{
+    "value": [
+        "ref:v0:c984eca8:/home/meowth/ysyx/ysyx-workbench/ysyxSoC/rocket-chip/dependencies/cde/cde/resources",
+        "ref:v0:0df504b6:/home/meowth/ysyx/ysyx-workbench/ysyxSoC/out/rocketchip/cde/compile.dest/classes"
+    ],
+    "valueHash": 1111922653,
+    "inputsHash": -1423889045
+}

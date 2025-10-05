@@ -1,0 +1,82 @@
+error id: file://<WORKSPACE>/chisel/b_npc_2/src/main/scala/clint.scala:foreach.
+file://<WORKSPACE>/chisel/b_npc_2/src/main/scala/clint.scala
+empty definition using pc, found symbol in pc: foreach.
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+	 -chisel3/bundle/elements/foreach.
+	 -chisel3/bundle/elements/foreach#
+	 -chisel3/bundle/elements/foreach().
+	 -chisel3/util/bundle/elements/foreach.
+	 -chisel3/util/bundle/elements/foreach#
+	 -chisel3/util/bundle/elements/foreach().
+	 -bundle/elements/foreach.
+	 -bundle/elements/foreach#
+	 -bundle/elements/foreach().
+	 -scala/Predef.bundle.elements.foreach.
+	 -scala/Predef.bundle.elements.foreach#
+	 -scala/Predef.bundle.elements.foreach().
+offset: 174
+uri: file://<WORKSPACE>/chisel/b_npc_2/src/main/scala/clint.scala
+text:
+```scala
+import chisel3._
+import chisel3.util._
+import chisel3.util.random.LFSR
+
+object ChiselHelpers {
+  def dontTouchBundleRecursive(bundle: Bundle): Unit = {
+    bundle.elements.fo@@reach { case (_, signal) =>
+      signal match {
+        case subBundle: Bundle => 
+          dontTouchBundleRecursive(subBundle)  // 递归处理子Bundle
+        case _ => 
+          dontTouch(signal)
+      }
+    }
+  }
+}
+
+class clint extends Module {
+  val io = IO(new Bundle {
+    val ar  = Flipped(Decoupled(new arReq))
+    val raddr = Input(UInt(32.W))
+    val r_mask = Input(UInt(3.W))
+    val r_valid = Input(Bool())
+    val mem_data = Output(UInt(32.W))
+    val cnt = Output(UInt(3.W))
+    val r  = Decoupled(new rReq)
+  })
+
+  val mem_data_Reg = RegInit(0x0.U(64.W))
+  val validReg = RegInit(false.B)
+  val canAccept =  LFSR(16)(0)
+ 
+  val delayCnt = RegInit(0.U(3.W))  // 延迟最大 7 个周期
+  val startDelay = WireInit(false.B)
+  startDelay := io.ar.valid && canAccept && io.r_valid
+  io.cnt := delayCnt
+
+  delayCnt := Mux(startDelay, LFSR(3),
+              Mux(delayCnt =/= 0.U, delayCnt - 1.U,
+                  0.U))
+  
+  io.r.valid := validReg && (delayCnt === 0.U)
+
+  io.mem_data := Mux(io.raddr === 0xa0000048L.U, mem_data_Reg(31, 0), mem_data_Reg(63, 32))
+  validReg := Mux(io.ar.valid && canAccept, true.B,
+              Mux(io.r.ready && (delayCnt === 0.U), false.B,
+                  validReg))
+  mem_data_Reg := Mux(io.ar.valid && canAccept, mem_data_Reg + 800.U, mem_data_Reg)
+
+  io.ar.ready := canAccept
+}
+
+
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: foreach.

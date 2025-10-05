@@ -1,0 +1,35 @@
+[Data config set] lib = /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib
+[Data config set] sdc = /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/default.sdc
+[Data config set] tech lef = /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lef/Nangate45_tech.lef
+Read LEF file : /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lef/Nangate45_tech.lef
+[Data config set] lef = /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lef/Nangate45_stdcell.lef
+Read LEF file : /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lef/Nangate45_stdcell.lef
+[Data config set] verilog = /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/result/ysyx_25030077_ALU-500MHz/ysyx_25030077_ALU.netlist.syn.v
+Read Verilog file success : /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/result/ysyx_25030077_ALU-500MHz/ysyx_25030077_ALU.netlist.syn.v
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20250525 16:11:45.559686 43305 VerilogParserRustC.cc:41] load verilog file /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/result/ysyx_25030077_ALU-500MHz/ysyx_25030077_ALU.netlist.syn.v
+r str /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/result/ysyx_25030077_ALU-500MHz/ysyx_25030077_ALU.netlist.syn.v
+Processed 1000 pins...
+Processed 2000 pins...
+Processed 1000 nets...
+Processed 2000 nets...
+Processed 1000 components...
+I20250525 16:11:45.597645 43305 Sta.cc:303] load lib start
+I20250525 16:11:45.598711 43307 Sta.cc:281] read liberty /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib start 
+I20250525 16:11:45.599112 43307 LibParserRustC.cc:1285] load liberty file /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib
+rust read lib file /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib
+I20250525 16:11:46.112933 43307 LibParserRustC.cc:1294] load liberty file /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib success.
+I20250525 16:11:46.112970 43307 Sta.cc:291] read liberty /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib end 
+I20250525 16:11:46.113291 43305 Sta.cc:322] load lib end
+I20250525 16:11:46.114565 43427 LibParserRustC.cc:1304] link liberty file /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib start.
+I20250525 16:11:46.115746 43427 LibParserRustC.cc:666] unkown attri name: technology in /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib line no 45
+I20250525 16:11:47.387414 43427 LibParserRustC.cc:1310] link liberty file /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib success.
+I20250525 16:11:47.387626 43305 TimingIDBAdapter.cc:739] core area width -0um height -0um
+I20250525 16:11:47.387691 43305 TimingIDBAdapter.cc:824] build inst num: 1
+I20250525 16:11:47.397550 43305 TimingIDBAdapter.cc:903] build net num: 1
+I20250525 16:11:47.410159 43305 TimingIDBAdapter.cc:912] build instance num: 1845
+I20250525 16:11:47.410202 43305 TimingIDBAdapter.cc:913] build port num: 102
+I20250525 16:11:47.410205 43305 TimingIDBAdapter.cc:914] build net num: 1913
+I20250525 16:11:47.410209 43305 Sta.cc:175] read sdc /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/default.sdc start 
+F20250525 16:11:47.411118 43305 CmdGetPorts.cc:54] get_ports clk was not found.
+*** Check failure stack trace: ***

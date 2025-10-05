@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+release_bindir="$(dirname "${BASH_SOURCE[0]}")"
+release_bindir_abs="$(readlink -f "$release_bindir")"
+release_topdir_abs="$(readlink -f "$release_bindir/..")"
+export PATH="$release_bindir_abs:$PATH"
+export OPENFPGALOADER_SOJ_DIR="$release_topdir_abs/share/openFPGALoader"
+exec "$release_topdir_abs"/lib/ld-linux-x86-64.so.2 --inhibit-cache --inhibit-rpath "" --library-path "$release_topdir_abs"/lib "$release_topdir_abs"/libexec/openFPGALoader "$@"

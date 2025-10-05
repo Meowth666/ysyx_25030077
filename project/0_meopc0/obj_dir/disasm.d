@@ -1,0 +1,44 @@
+disasm.o: \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc0/csrc/utils/disasm.cpp \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/capstone.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/cs_operand.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/platform.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/arm.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/aarch64.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/m68k.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/mips.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/ppc.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/sparc.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/systemz.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/x86.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/xcore.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/tms320c64x.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/m680x.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/evm.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/riscv.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/wasm.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/mos65xx.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/bpf.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/sh.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/tricore.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/alpha.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/hppa.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include/capstone/loongarch.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc0/csrc/utils/../include/common.h \
+ Vtop.h /usr/local/share/verilator/include/verilated.h \
+ /usr/local/share/verilator/include/verilatedos.h \
+ /usr/local/share/verilator/include/verilated_config.h \
+ /usr/local/share/verilator/include/verilated_types.h \
+ /usr/local/share/verilator/include/verilated_funcs.h \
+ /usr/local/share/verilator/include/vltstd/svdpi.h Vtop__Dpi.h \
+ /usr/local/share/verilator/include/verilated_fst_c.h \
+ /usr/local/share/verilator/include/verilated.h \
+ /usr/local/share/verilator/include/verilated_trace.h \
+ /usr/local/share/verilator/include/verilated_trace_defs.h \
+ /usr/local/share/verilator/include/gtkwave/fstapi.h \
+ /usr/local/share/verilator/include/verilated_vcd_c.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc0/csrc/utils/../include/autoconf.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc0/csrc/utils/../include/macro.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc0/csrc/utils/../include/debug.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc0/csrc/utils/../include/common.h \
+ /home/meowth/ysyx/ysyx-workbench/project/0_meopc0/csrc/utils/../include/utils.h

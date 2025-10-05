@@ -1,0 +1,20 @@
+/home/meowth/ysyx/ysyx-workbench/fceux-am/build/native/src/drivers/sdl/sdl-sound.o: \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/sdl-sound.cpp \
+ /home/meowth/ysyx/ysyx-workbench/abstract-machine/klib/include/klib-macros.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/sdl.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/main.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/../../driver.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/../../types.h \
+ /home/meowth/ysyx/ysyx-workbench/abstract-machine/klib/include/klib.h \
+ /home/meowth/ysyx/ysyx-workbench/abstract-machine/am/include/am.h \
+ /home/meowth/ysyx/ysyx-workbench/abstract-machine/am/include/arch/native.h \
+ /home/meowth/ysyx/ysyx-workbench/abstract-machine/am/include/amdev.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/../../git.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/../../utils/md5.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/../../utils/../types.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/../../utils/valuearray.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/../../file.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/../../emufile.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/dface.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/input.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/drivers/sdl/../../config.h

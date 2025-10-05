@@ -1,0 +1,11 @@
+Generate the report at 2025-08-31T15:02:47
+Report : Averaged Power
+ +---------------+----------------+--------------+---------------+-------------+---------+
+| Power Group   | Internal Power | Switch Power | Leakage Power | Total Power | (%)     |
++---------------+----------------+--------------+---------------+-------------+---------+
+| combinational | 0.000e+00      | 0.000e+00    | 0.000e+00     | 0.000e+00   | (-nan%) |
++---------------+----------------+--------------+---------------+-------------+---------+
+Net Switch Power   ==    0.000e+00 (-nan%)
+Cell Internal Power   ==    0.000e+00 (-nan%)
+Cell Leakage Power   ==    0.000e+00 (-nan%)
+Total Power   ==  0.000e+00 W

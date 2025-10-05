@@ -1,0 +1,9 @@
+{
+    "value": [
+        "qref:v1:f5d87568:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.14/scala-reflect-2.13.14.jar",
+        "qref:v1:a789b6b0:/home/meowth/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.14/scala-library-2.13.14.jar",
+        "ref:v0:c984eca8:/home/meowth/ysyx/ysyx-workbench/ysyxSoC/rocket-chip/macros/compile-resources"
+    ],
+    "valueHash": 1540006624,
+    "inputsHash": 2042131016
+}

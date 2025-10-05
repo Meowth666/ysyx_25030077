@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/3_PC/src/main/scala/module.scala:16:3: not found: value start_flag[0m
+[0m[[0m[31merror[0m] [0m[0m  start_flag := flag[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

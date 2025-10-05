@@ -1,0 +1,20 @@
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassExceptions: [0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module MyOperators] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators.io_rdata_rs1[0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators._io_rdata_rs1_T_1	 @[module.scala 22:22][0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators.io_rdata_rs1	 @[module.scala 22:16][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module MyOperators] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators.io_rdata_rs2[0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators._io_rdata_rs2_T_1	 @[module.scala 23:22][0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators.io_rdata_rs2	 @[module.scala 23:16][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 2 errors detected![0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) firrtl.passes.PassExceptions: [0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module MyOperators] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators.io_rdata_rs1[0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators._io_rdata_rs1_T_1	 @[module.scala 22:22][0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators.io_rdata_rs1	 @[module.scala 22:16][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module MyOperators] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators.io_rdata_rs2[0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators._io_rdata_rs2_T_1	 @[module.scala 23:22][0m
+[0m[[0m[31merror[0m] [0m[0mMyOperators.io_rdata_rs2	 @[module.scala 23:16][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 2 errors detected![0m

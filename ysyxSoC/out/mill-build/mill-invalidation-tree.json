@@ -1,0 +1,42 @@
+{
+  "mill.scalalib.ZincWorkerModule.worker": {
+    "compile": {
+      "methodCodeHashSignatures": {},
+      "localRunClasspath": {}
+    }
+  },
+  "allIvyDeps": {
+    "transitiveIvyDeps": {}
+  },
+  "scalacOptions": {
+    "allScalacOptions": {}
+  },
+  "scalacPluginClasspath": {},
+  "unmanagedClasspath": {
+    "localCompileClasspath": {
+      "compileClasspath": {},
+      "localClasspath": {
+        "runClasspath": {}
+      }
+    }
+  },
+  "scriptSources": {
+    "allSourceFiles": {},
+    "sources": {
+      "allSources": {}
+    },
+    "parseBuildFiles": {
+      "ivyDeps": {},
+      "lineNumberPluginClasspath": {},
+      "resolvedIvyDeps": {},
+      "resources": {},
+      "scalacPluginClasspath.super.ScalaModule": {},
+      "resolvedRunIvyDeps": {},
+      "enablePluginScalacOptions.super.ScalaModule": {},
+      "scalaCompilerClasspath": {}
+    },
+    "generateScriptSources": {
+      "generatedSources": {}
+    }
+  }
+}

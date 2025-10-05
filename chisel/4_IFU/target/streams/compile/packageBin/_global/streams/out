@@ -1,0 +1,29 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/root-4_ifu_2.12-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IFU$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/IFU$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IFU.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/IFU.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GenerateVerilog$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/GenerateVerilog$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/top.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	addr_gen$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/addr_gen$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/top$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SRAM.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/SRAM.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GenerateVerilog$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/GenerateVerilog$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SRAM$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/SRAM$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	addr_gen.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/addr_gen.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InstReq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/InstReq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	addrReq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/addrReq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GenerateVerilog.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/4_IFU/target/scala-2.12/classes/GenerateVerilog.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

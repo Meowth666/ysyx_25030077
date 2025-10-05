@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+release_bindir="$(dirname "${BASH_SOURCE[0]}")"
+release_bindir_abs="$(readlink -f "$release_bindir/../bin")"
+release_topdir_abs="$(readlink -f "$release_bindir/..")"
+export PATH="$release_bindir_abs:$PATH"
+export PYTHONEXECUTABLE="$release_bindir_abs/tabbypy3"
+exec $release_bindir_abs/tabbypy3 "$release_topdir_abs"/libexec/hexinfo "$@"

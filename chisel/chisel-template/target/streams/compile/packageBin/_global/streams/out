@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/meowth/ysyx/ysyx-workbench/chisel/chisel-template/target/scala-2.13/-name-_2.13-0.1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ParameterizedAdder$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/chisel-template/target/scala-2.13/classes/ParameterizedAdder$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ParameterizedAdder$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/chisel-template/target/scala-2.13/classes/ParameterizedAdder$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ParameterizedAdder$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/chisel-template/target/scala-2.13/classes/ParameterizedAdder$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ParameterizedAdder.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/meowth/ysyx/ysyx-workbench/chisel/chisel-template/target/scala-2.13/classes/ParameterizedAdder.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/8_data_control/src/main/scala/module.scala:31:17: not found: value rs2_data[0m
+[0m[[0m[31merror[0m] [0m[0m    control3 -> rs2_data[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

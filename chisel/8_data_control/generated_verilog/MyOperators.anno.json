@@ -1,0 +1,29 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"generated_verilog"
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~MyOperators|MyOperators>io_data_1",
+    "sources":[
+      "~MyOperators|MyOperators>io_pc_count",
+      "~MyOperators|MyOperators>io_data_control",
+      "~MyOperators|MyOperators>io_mem_data",
+      "~MyOperators|MyOperators>io_rs1_data"
+    ]
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~MyOperators|MyOperators>io_data_2",
+    "sources":[
+      "~MyOperators|MyOperators>io_data_control",
+      "~MyOperators|MyOperators>io_rs2_data",
+      "~MyOperators|MyOperators>io_imm"
+    ]
+  }
+]

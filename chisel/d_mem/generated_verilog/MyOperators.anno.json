@@ -1,0 +1,20 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"generated_verilog"
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~MyOperators|MyOperators>io_mem_data",
+    "sources":[
+      "~MyOperators|MyOperators>io_imm_data",
+      "~MyOperators|MyOperators>io_rs2_data",
+      "~MyOperators|MyOperators>io_instruction",
+      "~MyOperators|MyOperators>io_rs1_data"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+/home/meowth/ysyx/ysyx-workbench/fceux-am/build/native/src/filter.o: \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/filter.cpp \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/types.h \
+ /home/meowth/ysyx/ysyx-workbench/abstract-machine/klib/include/klib.h \
+ /home/meowth/ysyx/ysyx-workbench/abstract-machine/am/include/am.h \
+ /home/meowth/ysyx/ysyx-workbench/abstract-machine/am/include/arch/native.h \
+ /home/meowth/ysyx/ysyx-workbench/abstract-machine/am/include/amdev.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/sound.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/x6502.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/x6502struct.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/fceu.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/git.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/utils/md5.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/utils/../types.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/utils/valuearray.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/filter.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/fcoeffs.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/fir/c44100ntsc.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/fir/c48000ntsc.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/fir/c96000ntsc.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/fir/c44100pal.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/fir/c48000pal.h \
+ /home/meowth/ysyx/ysyx-workbench/fceux-am/src/fir/c96000pal.h

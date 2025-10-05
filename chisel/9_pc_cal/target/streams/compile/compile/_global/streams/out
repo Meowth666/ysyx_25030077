@@ -1,0 +1,6 @@
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/9_pc_cal/src/main/scala/module.scala:28:32: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m required: String[0m
+[0m[[0m[31merror[0m] [0m[0m    is_eql -> io.pc_count + Cat(Fill(19, io.instruction(31,31)), io.instruction(31,31), io.instruction(7,7), io.instruction(30,25), io.instruction(11,8), 0.U(1.W))[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

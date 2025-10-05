@@ -1,0 +1,42 @@
+circuit MyOperators :
+  module MyOperators :
+    input clock : Clock
+    input reset : UInt<1>
+    output io : { flip rs1_data : UInt<32>, flip instruction : UInt<32>, flip pc_next_type : UInt<3>, flip pc_count : UInt<32>, pc_next : UInt<32>, is_unknown_instruction : UInt<1>}
+
+    node _default_pc_next_T = add(io.pc_count, UInt<32>("h4")) @[module.scala 14:37]
+    node default_pc_next = tail(_default_pc_next_T, 1) @[module.scala 14:37]
+    node is_type1 = eq(io.pc_next_type, UInt<1>("h1")) @[module.scala 17:34]
+    node is_type2 = eq(io.pc_next_type, UInt<2>("h2")) @[module.scala 18:34]
+    node is_type3 = eq(io.pc_next_type, UInt<2>("h3")) @[module.scala 19:34]
+    node is_type4 = eq(io.pc_next_type, UInt<3>("h4")) @[module.scala 20:34]
+    node _io_pc_next_T = bits(io.instruction, 31, 31) @[module.scala 23:59]
+    node _io_pc_next_T_1 = bits(_io_pc_next_T, 0, 0) @[Bitwise.scala 74:15]
+    node _io_pc_next_T_2 = mux(_io_pc_next_T_1, UInt<11>("h7ff"), UInt<11>("h0")) @[Bitwise.scala 74:12]
+    node _io_pc_next_T_3 = bits(io.instruction, 31, 31) @[module.scala 23:83]
+    node _io_pc_next_T_4 = bits(io.instruction, 19, 12) @[module.scala 23:106]
+    node _io_pc_next_T_5 = bits(io.instruction, 20, 20) @[module.scala 23:129]
+    node _io_pc_next_T_6 = bits(io.instruction, 30, 21) @[module.scala 23:149]
+    node io_pc_next_lo_hi = cat(_io_pc_next_T_5, _io_pc_next_T_6) @[Cat.scala 31:58]
+    node io_pc_next_lo = cat(io_pc_next_lo_hi, UInt<1>("h0")) @[Cat.scala 31:58]
+    node io_pc_next_hi_hi = cat(_io_pc_next_T_2, _io_pc_next_T_3) @[Cat.scala 31:58]
+    node io_pc_next_hi = cat(io_pc_next_hi_hi, _io_pc_next_T_4) @[Cat.scala 31:58]
+    node _io_pc_next_T_7 = cat(io_pc_next_hi, io_pc_next_lo) @[Cat.scala 31:58]
+    node _io_pc_next_T_8 = add(io.pc_count, _io_pc_next_T_7) @[module.scala 23:30]
+    node _io_pc_next_T_9 = tail(_io_pc_next_T_8, 1) @[module.scala 23:30]
+    node _io_pc_next_T_10 = bits(io.instruction, 31, 31) @[module.scala 24:60]
+    node _io_pc_next_T_11 = bits(_io_pc_next_T_10, 0, 0) @[Bitwise.scala 74:15]
+    node _io_pc_next_T_12 = mux(_io_pc_next_T_11, UInt<20>("hfffff"), UInt<20>("h0")) @[Bitwise.scala 74:12]
+    node _io_pc_next_T_13 = bits(io.instruction, 31, 20) @[module.scala 24:84]
+    node _io_pc_next_T_14 = cat(_io_pc_next_T_12, _io_pc_next_T_13) @[Cat.scala 31:58]
+    node _io_pc_next_T_15 = add(io.rs1_data, _io_pc_next_T_14) @[module.scala 24:31]
+    node _io_pc_next_T_16 = tail(_io_pc_next_T_15, 1) @[module.scala 24:31]
+    node _io_pc_next_T_17 = not(UInt<32>("h1")) @[module.scala 24:97]
+    node _io_pc_next_T_18 = and(_io_pc_next_T_16, _io_pc_next_T_17) @[module.scala 24:94]
+    node _io_pc_next_T_19 = mux(is_type4, io.pc_count, default_pc_next) @[Mux.scala 101:16]
+    node _io_pc_next_T_20 = mux(is_type2, _io_pc_next_T_18, _io_pc_next_T_19) @[Mux.scala 101:16]
+    node _io_pc_next_T_21 = mux(is_type1, _io_pc_next_T_9, _io_pc_next_T_20) @[Mux.scala 101:16]
+    io.pc_next <= _io_pc_next_T_21 @[module.scala 22:14]
+    node _io_is_unknown_instruction_T = mux(is_type3, UInt<1>("h1"), UInt<1>("h0")) @[Mux.scala 101:16]
+    io.is_unknown_instruction <= _io_is_unknown_instruction_T @[module.scala 28:29]
+

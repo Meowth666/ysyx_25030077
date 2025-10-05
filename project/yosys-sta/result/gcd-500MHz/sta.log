@@ -1,0 +1,21 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20250525 15:47:22.343089 40590 Sta.cc:377] read verilog file /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/result/gcd-500MHz/gcd.netlist.fixed.v start
+I20250525 15:47:22.343225 40590 VerilogParserRustC.cc:41] load verilog file /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/result/gcd-500MHz/gcd.netlist.fixed.v
+r str /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/result/gcd-500MHz/gcd.netlist.fixed.v
+Error:  --> 1:1
+  |
+1 | 
+  | ^---
+  |
+  = expected yosys_hierarchy_declaration
+I20250525 15:47:22.343300 40590 Sta.cc:385] read verilog end
+I20250525 15:47:22.343315 40590 Sta.cc:303] load lib start
+I20250525 15:47:22.344449 40592 Sta.cc:281] read liberty /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib start 
+I20250525 15:47:22.344931 40592 LibParserRustC.cc:1285] load liberty file /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib
+rust read lib file /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib
+I20250525 15:47:22.804545 40592 LibParserRustC.cc:1294] load liberty file /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib success.
+I20250525 15:47:22.804580 40592 Sta.cc:291] read liberty /home/meowth/ysyx/ysyx-workbench/project/yosys-sta/scripts/../pdk/nangate45/lib/Nangate45_typ.lib end 
+I20250525 15:47:22.804831 40590 Sta.cc:322] load lib end
+I20250525 15:47:22.804880 40590 Sta.cc:411] link design gcd start
+F20250525 15:47:22.804893 40590 Sta.cc:418] top module not found.
+*** Check failure stack trace: ***

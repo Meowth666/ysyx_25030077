@@ -1,0 +1,22 @@
+{
+    "value": [
+        {
+            "analysisFile": "/home/meowth/ysyx/ysyx-workbench/ysyxSoC/out/rocketchip/macros/compile.dest/zinc",
+            "classes": "ref:v0:fb98fd80:/home/meowth/ysyx/ysyx-workbench/ysyxSoC/out/rocketchip/macros/compile.dest/classes"
+        },
+        {
+            "analysisFile": "/home/meowth/ysyx/ysyx-workbench/ysyxSoC/out/rocketchip/hardfloat/compile.dest/zinc",
+            "classes": "ref:v0:7e24c417:/home/meowth/ysyx/ysyx-workbench/ysyxSoC/out/rocketchip/hardfloat/compile.dest/classes"
+        },
+        {
+            "analysisFile": "/home/meowth/ysyx/ysyx-workbench/ysyxSoC/out/rocketchip/cde/compile.dest/zinc",
+            "classes": "ref:v0:0df504b6:/home/meowth/ysyx/ysyx-workbench/ysyxSoC/out/rocketchip/cde/compile.dest/classes"
+        },
+        {
+            "analysisFile": "/home/meowth/ysyx/ysyx-workbench/ysyxSoC/out/rocketchip/diplomacy/compile.dest/zinc",
+            "classes": "ref:v0:a79eefd1:/home/meowth/ysyx/ysyx-workbench/ysyxSoC/out/rocketchip/diplomacy/compile.dest/classes"
+        }
+    ],
+    "valueHash": 204150950,
+    "inputsHash": -24723244
+}

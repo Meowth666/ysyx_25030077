@@ -1,0 +1,11 @@
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/9_pc_cal/src/main/scala/module.scala:19:34: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m required: String[0m
+[0m[[0m[31merror[0m] [0m[0m    is_type1 -> io.pc_count + Cat(Fill(11, io.instruction(31,31)), io.instruction(31,31), io.instruction(19,12), io.instruction(20), io.instruction(30,21), 0.U(1.W)),[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/9_pc_cal/src/main/scala/module.scala:20:34: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m required: String[0m
+[0m[[0m[31merror[0m] [0m[0m    is_type2 -> io.rs1_data + Cat(Fill(20, io.instruction(31,31)), io.instruction(31,20)) & (~1.U(32.W))[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

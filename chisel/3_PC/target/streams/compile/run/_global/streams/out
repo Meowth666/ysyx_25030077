@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module MyOperators]  Reference io is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : io.instruction <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) firrtl.passes.CheckInitialization$RefNotInitializedException:  : [module MyOperators]  Reference io is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : io.instruction <= VOID[0m

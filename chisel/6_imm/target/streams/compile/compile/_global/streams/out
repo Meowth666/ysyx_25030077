@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/6_imm/src/main/scala/module.scala:17:17: not found: value instruction_type[0m
+[0m[[0m[31merror[0m] [0m[0m  val isType1 = instruction_type === "b001".U[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

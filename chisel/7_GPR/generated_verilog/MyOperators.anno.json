@@ -1,0 +1,24 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"generated_verilog"
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~MyOperators|MyOperators>io_rdata_rs2",
+    "sources":[
+      "~MyOperators|MyOperators>io_raddr_rs2"
+    ]
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~MyOperators|MyOperators>io_rdata_rs1",
+    "sources":[
+      "~MyOperators|MyOperators>io_raddr_rs1"
+    ]
+  }
+]
