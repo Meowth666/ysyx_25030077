@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-release_bindir="$(dirname "${BASH_SOURCE[0]}")"
-release_bindir_abs="$(readlink -f "$release_bindir")"
-release_topdir_abs="$(readlink -f "$release_bindir/..")"
-export PATH="$release_bindir_abs:$PATH"
-export GHDL_PREFIX="$release_topdir_abs/lib/ghdl"
-export TCL_LIBRARY="$release_topdir_abs/lib/tcl8.6"
-export TK_LIBRARY="$release_topdir_abs/lib/tk8.6"
-exec "$release_topdir_abs"/lib/ld-linux-x86-64.so.2 --inhibit-cache --inhibit-rpath "" --library-path "$release_topdir_abs"/lib "$release_topdir_abs"/libexec/yosys "$@"

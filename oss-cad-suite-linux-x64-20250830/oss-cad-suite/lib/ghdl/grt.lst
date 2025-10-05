@@ -1,5 +1,0 @@
-@/libgrt.a
--ldl
--lm
--L./
--lz

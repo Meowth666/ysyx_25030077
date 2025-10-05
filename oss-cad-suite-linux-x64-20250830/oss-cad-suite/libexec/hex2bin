@@ -1,4 +1,0 @@
-#!/work/_builds/linux-x64/python-programmers/python3-native/yosyshq/bin/python3.11
-# EASY-INSTALL-SCRIPT: 'intelhex==2.3.0','hex2bin.py'
-__requires__ = 'intelhex==2.3.0'
-__import__('pkg_resources').run_script('intelhex==2.3.0', 'hex2bin.py')

@@ -1,3 +1,0 @@
-# link options for executables
--Wl,--version-script=@/grt.ver
--Wl,--export-dynamic
