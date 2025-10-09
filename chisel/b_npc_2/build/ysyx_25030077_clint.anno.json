@@ -21,23 +21,27 @@
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~ysyx_25030077_clint|ysyx_25030077_clint>io_r_valid"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
     "target":"~ysyx_25030077_clint|ysyx_25030077_clint>io_mem_data"
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~ysyx_25030077_clint|ysyx_25030077_clint>io_cnt"
+    "target":"~ysyx_25030077_clint|ysyx_25030077_clint>io_r_ready"
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~ysyx_25030077_clint|ysyx_25030077_clint>io_r__ready"
+    "target":"~ysyx_25030077_clint|ysyx_25030077_clint>io_r_valid"
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~ysyx_25030077_clint|ysyx_25030077_clint>io_r__valid"
+    "target":"~ysyx_25030077_clint|ysyx_25030077_clint>io_b_ready"
+  },
+  {
+    "class":"firrtl.transforms.DontTouchAnnotation",
+    "target":"~ysyx_25030077_clint|ysyx_25030077_clint>io_b_valid"
+  },
+  {
+    "class":"firrtl.transforms.DontTouchAnnotation",
+    "target":"~ysyx_25030077_clint|ysyx_25030077_clint>io_b_resp"
   },
   {
     "class":"firrtl.transforms.BlackBoxTargetDirAnno",

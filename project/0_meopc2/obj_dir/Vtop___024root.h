@@ -7,9 +7,10 @@
 
 #include "verilated.h"
 
+
 class Vtop__Syms;
 
-class Vtop___024root final : public VerilatedModule {
+class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final : public VerilatedModule {
   public:
 
     // DESIGN SPECIFIC STATE
@@ -27,18 +28,10 @@ class Vtop___024root final : public VerilatedModule {
         CData/*2:0*/ ysyx_25030077_top__DOT__data_control;
         CData/*3:0*/ ysyx_25030077_top__DOT__pc_next_type;
         CData/*0:0*/ ysyx_25030077_top__DOT__is_break_out;
-        CData/*2:0*/ ysyx_25030077_top__DOT__i2__DOT___io_imm_type_T_18;
-        CData/*4:0*/ ysyx_25030077_top__DOT__i2__DOT___io_rs1_T_12;
-        CData/*4:0*/ ysyx_25030077_top__DOT__i2__DOT___io_rs1_T_25;
-        CData/*4:0*/ ysyx_25030077_top__DOT__i2__DOT___io_rs2_T_12;
-        CData/*4:0*/ ysyx_25030077_top__DOT__i2__DOT___io_rd_T_12;
-        CData/*4:0*/ ysyx_25030077_top__DOT__i2__DOT___io_rd_T_24;
-        CData/*2:0*/ ysyx_25030077_top__DOT__i2__DOT___io_data_control_T_19;
-        CData/*3:0*/ ysyx_25030077_top__DOT__i2__DOT___io_pc_next_type_T_19;
-        CData/*0:0*/ ysyx_25030077_top__DOT__i6__DOT____VdfgTmp_h0adca177__0;
         CData/*0:0*/ ysyx_25030077_top__DOT__i7__DOT__is_eql;
         CData/*0:0*/ __Vfunc_ysyx_25030077_top__DOT__i2__DOT__is_break__1__Vfuncout;
-        CData/*0:0*/ __Vtrigrprev__TOP__clock;
+        CData/*0:0*/ __VstlFirstIteration;
+        CData/*0:0*/ __Vtrigprevexpr___TOP__clock__0;
         CData/*0:0*/ __VactContinue;
         SData/*9:0*/ ysyx_25030077_top__DOT__i2__DOT___isaddi_T_2;
         SData/*15:0*/ ysyx_25030077_top__DOT__i2__DOT___issrai_T_3;
@@ -79,8 +72,6 @@ class Vtop___024root final : public VerilatedModule {
         IData/*31:0*/ ysyx_25030077_top__DOT__i4__DOT__regs_22;
         IData/*31:0*/ ysyx_25030077_top__DOT__i4__DOT__regs_23;
         IData/*31:0*/ ysyx_25030077_top__DOT__i4__DOT__regs_24;
-    };
-    struct {
         IData/*31:0*/ ysyx_25030077_top__DOT__i4__DOT__regs_25;
         IData/*31:0*/ ysyx_25030077_top__DOT__i4__DOT__regs_26;
         IData/*31:0*/ ysyx_25030077_top__DOT__i4__DOT__regs_27;
@@ -88,21 +79,18 @@ class Vtop___024root final : public VerilatedModule {
         IData/*31:0*/ ysyx_25030077_top__DOT__i4__DOT__regs_29;
         IData/*31:0*/ ysyx_25030077_top__DOT__i4__DOT__regs_30;
         IData/*31:0*/ ysyx_25030077_top__DOT__i4__DOT__regs_31;
-        IData/*31:0*/ ysyx_25030077_top__DOT__i4__DOT___GEN_53;
-        IData/*31:0*/ ysyx_25030077_top__DOT__i4__DOT___GEN_85;
-        IData/*31:0*/ ysyx_25030077_top__DOT__i5__DOT___io_data_2_T;
         IData/*31:0*/ ysyx_25030077_top__DOT__i6__DOT__csr_data;
+    };
+    struct {
         IData/*31:0*/ ysyx_25030077_top__DOT__i7__DOT__ecall_dnpc;
         IData/*31:0*/ ysyx_25030077_top__DOT__i7__DOT___beq_result_T_9;
         IData/*31:0*/ __Vfunc_ysyx_25030077_top__DOT__i1__DOT__addr_read__0__Vfuncout;
         IData/*31:0*/ __Vfunc_ysyx_25030077_top__DOT__i6__DOT__csr_read__2__Vfuncout;
         IData/*31:0*/ __Vfunc_ysyx_25030077_top__DOT__i7__DOT__ecall_read__3__Vfuncout;
         IData/*31:0*/ __Vfunc_ysyx_25030077_top__DOT__i9__DOT__mem_data_read__4__Vfuncout;
-        IData/*31:0*/ __VstlIterCount;
         IData/*31:0*/ __VactIterCount;
         QData/*32:0*/ ysyx_25030077_top__DOT__i6__DOT__addResult;
         QData/*32:0*/ ysyx_25030077_top__DOT__i6__DOT__subResult;
-        QData/*62:0*/ ysyx_25030077_top__DOT__i6__DOT___io_out_T_39;
         VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
     };
     VlTriggerVec<1> __VstlTriggered;
@@ -119,7 +107,7 @@ class Vtop___024root final : public VerilatedModule {
 
     // INTERNAL METHODS
     void __Vconfigure(bool first);
-} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
+};
 
 
 #endif  // guard

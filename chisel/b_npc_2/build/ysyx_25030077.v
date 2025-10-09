@@ -138,42 +138,26 @@ module ysyx_25030077_arbiter(
   input         clock,
   input         reset,
   input         io_ifu_valid,
-  input  [2:0]  io_delay_cnt_mem,
-  input  [2:0]  io_delay_cnt_clint,
   input  [31:0] io_pc,
   input  [31:0] io_rs1_data,
   input  [31:0] io_rs2_data,
   input  [31:0] io_imm,
   input  [2:0]  io_r_mask,
   input  [2:0]  io_w_mask,
-  output        io_axi_ar_valid_mem,
-  output [31:0] io_axi_ar_addr_mem,
-  output [2:0]  io_axi_ar_strb_mem,
-  input         io_axi_ar_ready_mem,
-  output        io_axi_ar_valid_clint,
-  output [31:0] io_axi_ar_addr_clint,
-  output [2:0]  io_axi_ar_strb_clint,
-  input         io_axi_ar_ready_clint,
-  output        io_axi_aw_valid_mem,
-  output [31:0] io_axi_aw_addr_mem,
-  input         io_axi_aw_ready_mem,
-  output        io_axi_w_valid_mem,
-  output [31:0] io_axi_w_data_mem,
-  output [2:0]  io_axi_w_strb_mem,
-  input         io_axi_w_ready_mem,
-  output        io_axi_aw_valid_uart,
-  output [31:0] io_axi_aw_addr_uart,
-  input         io_axi_aw_ready_uart,
-  output        io_axi_w_valid_uart,
-  output [31:0] io_axi_w_data_uart,
-  output [2:0]  io_axi_w_strb_uart,
-  input         io_axi_w_ready_uart,
-  input         io_axi_r_valid_mem,
-  input  [31:0] io_axi_r_data_mem,
-  output        io_axi_r_ready_mem,
-  input         io_axi_r_valid_clint,
-  input  [31:0] io_axi_r_data_clint,
-  output        io_axi_r_ready_clint,
+  output        io_axi_ar_valid,
+  output [31:0] io_axi_ar_addr,
+  output [2:0]  io_axi_ar_strb,
+  input         io_axi_ar_ready,
+  output        io_axi_aw_valid,
+  output [31:0] io_axi_aw_addr,
+  input         io_axi_aw_ready,
+  output        io_axi_w_valid,
+  output [31:0] io_axi_w_data,
+  output [2:0]  io_axi_w_strb,
+  input         io_axi_w_ready,
+  input         io_axi_r_valid,
+  input  [31:0] io_axi_r_data,
+  output        io_axi_r_ready,
   input         io_axi_b_valid,
   output        io_axi_b_ready,
   input  [1:0]  io_axi_b_resp,
@@ -185,91 +169,69 @@ module ysyx_25030077_arbiter(
   output [31:0] io_gpr_data,
   output [31:0] io_inst,
   output        io_ifu_ready,
-  input         io_r_valid_lsu,
-  output        io_is_r
+  input         io_r_valid_lsu
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
   reg [31:0] _RAND_1;
+  reg [31:0] _RAND_2;
 `endif // RANDOMIZE_REG_INIT
-  reg [1:0] state_reg; // @[ysyx_25030077_arbiter.scala 73:28]
-  reg [31:0] inst_reg; // @[ysyx_25030077_arbiter.scala 74:27]
-  wire [32:0] _axi_ar_addr_T = io_rs1_data + io_imm; // @[ysyx_25030077_arbiter.scala 76:44]
-  wire  _axi_ar_addr_T_2 = state_reg == 2'h0; // @[ysyx_25030077_arbiter.scala 77:42]
-  wire [31:0] axi_ar_addr = _axi_ar_addr_T_2 ? io_pc : _axi_ar_addr_T[31:0]; // @[Mux.scala 101:16]
-  wire  _delay_cnt_T_2 = axi_ar_addr == 32'ha0000048 | axi_ar_addr == 32'ha000004c; // @[ysyx_25030077_arbiter.scala 80:58]
-  wire [2:0] delay_cnt = axi_ar_addr == 32'ha0000048 | axi_ar_addr == 32'ha000004c ? io_delay_cnt_clint :
-    io_delay_cnt_mem; // @[ysyx_25030077_arbiter.scala 80:24]
-  wire  axi_r_valid = io_axi_r_valid_mem | io_axi_r_valid_clint; // @[ysyx_25030077_arbiter.scala 81:42]
-  wire  axi_ar_ready = _delay_cnt_T_2 ? io_axi_ar_ready_clint : io_axi_ar_ready_mem; // @[ysyx_25030077_arbiter.scala 82:27]
-  wire [31:0] axi_r_data = _delay_cnt_T_2 ? io_axi_r_data_clint : io_axi_r_data_mem; // @[ysyx_25030077_arbiter.scala 83:25]
-  wire  _state_reg_T_1 = delay_cnt == 3'h1; // @[ysyx_25030077_arbiter.scala 86:46]
-  wire  _state_reg_T_3 = state_reg == 2'h1; // @[ysyx_25030077_arbiter.scala 87:20]
-  wire [1:0] _state_reg_T_6 = _state_reg_T_1 ? 2'h2 : 2'h1; // @[ysyx_25030077_arbiter.scala 88:71]
-  wire  _state_reg_T_7 = ~io_r_valid_lsu; // @[ysyx_25030077_arbiter.scala 89:53]
-  wire [1:0] _state_reg_T_10 = axi_r_valid & (io_axi_ar_ready_clint | io_axi_ar_ready_mem) ? 2'h2 : 2'h1; // @[ysyx_25030077_arbiter.scala 89:72]
-  wire [1:0] _state_reg_T_11 = _state_reg_T_7 ? _state_reg_T_10 : 2'h0; // @[Mux.scala 101:16]
-  wire  _state_reg_T_13 = state_reg == 2'h2; // @[ysyx_25030077_arbiter.scala 91:20]
-  wire [1:0] _state_reg_T_15 = axi_r_valid & axi_ar_ready ? 2'h0 : 2'h2; // @[ysyx_25030077_arbiter.scala 91:35]
-  wire [31:0] axi_aw_addr = _state_reg_T_3 ? _axi_ar_addr_T[31:0] : 32'h0; // @[Mux.scala 101:16]
-  wire  _io_axi_aw_addr_mem_T = axi_aw_addr == 32'ha00003f8; // @[ysyx_25030077_arbiter.scala 97:44]
-  wire  axi_aw_valid = _state_reg_T_3 & axi_r_valid; // @[Mux.scala 101:16]
-  wire  axi_ar_valid = _axi_ar_addr_T_2 ? io_ifu_valid : axi_aw_valid; // @[Mux.scala 101:16]
-  wire [2:0] _axi_ar_strb_T_2 = _state_reg_T_3 ? io_r_mask : 3'h0; // @[Mux.scala 101:16]
-  wire [2:0] axi_ar_strb = _axi_ar_addr_T_2 ? 3'h6 : _axi_ar_strb_T_2; // @[Mux.scala 101:16]
-  wire [31:0] axi_w_data = _state_reg_T_3 ? io_rs2_data : 32'h0; // @[Mux.scala 101:16]
-  wire [2:0] axi_w_strb = _state_reg_T_3 ? io_w_mask : 3'h0; // @[Mux.scala 101:16]
-  wire  _inst_reg_T_2 = _state_reg_T_1 & _axi_ar_addr_T_2; // @[ysyx_25030077_arbiter.scala 159:50]
-  assign io_axi_ar_valid_mem = _delay_cnt_T_2 ? 1'h0 : axi_ar_valid; // @[ysyx_25030077_arbiter.scala 113:34]
-  assign io_axi_ar_addr_mem = _delay_cnt_T_2 ? 32'h80000000 : axi_ar_addr; // @[ysyx_25030077_arbiter.scala 106:33]
-  assign io_axi_ar_strb_mem = _delay_cnt_T_2 ? 3'h0 : axi_ar_strb; // @[ysyx_25030077_arbiter.scala 120:33]
-  assign io_axi_ar_valid_clint = _delay_cnt_T_2 & axi_ar_valid; // @[ysyx_25030077_arbiter.scala 114:34]
-  assign io_axi_ar_addr_clint = _delay_cnt_T_2 ? axi_ar_addr : 32'h80000000; // @[ysyx_25030077_arbiter.scala 107:33]
-  assign io_axi_ar_strb_clint = _delay_cnt_T_2 ? axi_ar_strb : 3'h0; // @[ysyx_25030077_arbiter.scala 121:33]
-  assign io_axi_aw_valid_mem = _io_axi_aw_addr_mem_T ? 1'h0 : axi_aw_valid; // @[ysyx_25030077_arbiter.scala 103:32]
-  assign io_axi_aw_addr_mem = axi_aw_addr == 32'ha00003f8 ? 32'h0 : axi_aw_addr; // @[ysyx_25030077_arbiter.scala 97:31]
-  assign io_axi_w_valid_mem = _io_axi_aw_addr_mem_T ? 1'h0 : axi_aw_valid; // @[ysyx_25030077_arbiter.scala 126:31]
-  assign io_axi_w_data_mem = _io_axi_aw_addr_mem_T ? 32'h0 : axi_w_data; // @[ysyx_25030077_arbiter.scala 132:30]
-  assign io_axi_w_strb_mem = _io_axi_aw_addr_mem_T ? 3'h0 : axi_w_strb; // @[ysyx_25030077_arbiter.scala 138:30]
-  assign io_axi_aw_valid_uart = _io_axi_aw_addr_mem_T & axi_aw_valid; // @[ysyx_25030077_arbiter.scala 104:32]
-  assign io_axi_aw_addr_uart = _io_axi_aw_addr_mem_T ? 32'ha00003f8 : 32'h0; // @[ysyx_25030077_arbiter.scala 98:31]
-  assign io_axi_w_valid_uart = _io_axi_aw_addr_mem_T & axi_aw_valid; // @[ysyx_25030077_arbiter.scala 127:31]
-  assign io_axi_w_data_uart = _io_axi_aw_addr_mem_T ? axi_w_data : 32'h0; // @[ysyx_25030077_arbiter.scala 133:30]
-  assign io_axi_w_strb_uart = _io_axi_aw_addr_mem_T ? axi_w_strb : 3'h0; // @[ysyx_25030077_arbiter.scala 139:30]
-  assign io_axi_r_ready_mem = io_gpr_r_ready; // @[ysyx_25030077_arbiter.scala 142:27]
-  assign io_axi_r_ready_clint = io_gpr_r_ready; // @[ysyx_25030077_arbiter.scala 141:27]
-  assign io_axi_b_ready = io_gpr_b_ready; // @[ysyx_25030077_arbiter.scala 143:21]
-  assign io_gpr_b_resp = _state_reg_T_13 ? io_axi_b_resp : 2'h0; // @[Mux.scala 101:16]
-  assign io_gpr_r_valid = _state_reg_T_13 & axi_r_valid; // @[Mux.scala 101:16]
-  assign io_gpr_b_valid = _state_reg_T_13 & io_axi_b_valid; // @[Mux.scala 101:16]
-  assign io_gpr_data = _state_reg_T_13 ? axi_r_data : 32'h0; // @[Mux.scala 101:16]
-  assign io_inst = inst_reg; // @[ysyx_25030077_arbiter.scala 161:21]
-  assign io_ifu_ready = io_axi_ar_ready_mem; // @[ysyx_25030077_arbiter.scala 144:21]
-  assign io_is_r = _axi_ar_addr_T_2 | _state_reg_T_3 & io_r_valid_lsu; // @[Mux.scala 101:16]
+  reg [1:0] state_reg; // @[ysyx_25030077_arbiter.scala 53:28]
+  reg [31:0] inst_reg; // @[ysyx_25030077_arbiter.scala 54:27]
+  reg  axi_r_valid_delay; // @[ysyx_25030077_arbiter.scala 55:36]
+  wire [32:0] _io_axi_ar_addr_T = io_rs1_data + io_imm; // @[ysyx_25030077_arbiter.scala 57:44]
+  wire  _io_axi_ar_addr_T_2 = state_reg == 2'h0; // @[ysyx_25030077_arbiter.scala 58:42]
+  wire  _state_reg_T_3 = state_reg == 2'h1; // @[ysyx_25030077_arbiter.scala 63:20]
+  wire [1:0] _state_reg_T_8 = io_axi_r_valid & ~axi_r_valid_delay ? 2'h2 : 2'h1; // @[ysyx_25030077_arbiter.scala 64:71]
+  wire  _state_reg_T_9 = ~io_r_valid_lsu; // @[ysyx_25030077_arbiter.scala 65:53]
+  wire  _state_reg_T_10 = io_axi_r_valid & io_axi_ar_ready; // @[ysyx_25030077_arbiter.scala 65:88]
+  wire [1:0] _state_reg_T_11 = io_axi_r_valid & io_axi_ar_ready ? 2'h2 : 2'h1; // @[ysyx_25030077_arbiter.scala 65:72]
+  wire [1:0] _state_reg_T_12 = _state_reg_T_9 ? _state_reg_T_11 : 2'h0; // @[Mux.scala 101:16]
+  wire  _state_reg_T_14 = state_reg == 2'h2; // @[ysyx_25030077_arbiter.scala 67:20]
+  wire [1:0] _state_reg_T_16 = _state_reg_T_10 ? 2'h0 : 2'h2; // @[ysyx_25030077_arbiter.scala 67:35]
+  wire [2:0] _io_axi_ar_strb_T_2 = _state_reg_T_3 ? io_r_mask : 3'h0; // @[Mux.scala 101:16]
+  wire  _inst_reg_T_2 = io_axi_r_valid & _io_axi_ar_addr_T_2; // @[ysyx_25030077_arbiter.scala 111:55]
+  assign io_axi_ar_valid = _io_axi_ar_addr_T_2 ? io_ifu_valid : _state_reg_T_3 & io_axi_r_valid; // @[Mux.scala 101:16]
+  assign io_axi_ar_addr = _io_axi_ar_addr_T_2 ? io_pc : _io_axi_ar_addr_T[31:0]; // @[Mux.scala 101:16]
+  assign io_axi_ar_strb = _io_axi_ar_addr_T_2 ? 3'h6 : _io_axi_ar_strb_T_2; // @[Mux.scala 101:16]
+  assign io_axi_aw_valid = _state_reg_T_3 & io_axi_r_valid; // @[Mux.scala 101:16]
+  assign io_axi_aw_addr = _state_reg_T_3 ? _io_axi_ar_addr_T[31:0] : 32'h0; // @[Mux.scala 101:16]
+  assign io_axi_w_valid = _state_reg_T_3 & io_axi_r_valid; // @[Mux.scala 101:16]
+  assign io_axi_w_data = _state_reg_T_3 ? io_rs2_data : 32'h0; // @[Mux.scala 101:16]
+  assign io_axi_w_strb = _state_reg_T_3 ? io_w_mask : 3'h0; // @[Mux.scala 101:16]
+  assign io_axi_r_ready = io_gpr_r_ready; // @[ysyx_25030077_arbiter.scala 94:21]
+  assign io_axi_b_ready = io_gpr_b_ready; // @[ysyx_25030077_arbiter.scala 95:21]
+  assign io_gpr_b_resp = _state_reg_T_14 ? io_axi_b_resp : 2'h0; // @[Mux.scala 101:16]
+  assign io_gpr_r_valid = _state_reg_T_14 & io_axi_r_valid; // @[Mux.scala 101:16]
+  assign io_gpr_b_valid = _state_reg_T_14 & io_axi_b_valid; // @[Mux.scala 101:16]
+  assign io_gpr_data = _state_reg_T_14 ? io_axi_r_data : 32'h0; // @[Mux.scala 101:16]
+  assign io_inst = inst_reg; // @[ysyx_25030077_arbiter.scala 113:21]
+  assign io_ifu_ready = io_axi_ar_ready; // @[ysyx_25030077_arbiter.scala 96:21]
   always @(posedge clock) begin
-    if (reset) begin // @[ysyx_25030077_arbiter.scala 73:28]
-      state_reg <= 2'h0; // @[ysyx_25030077_arbiter.scala 73:28]
-    end else if (_axi_ar_addr_T_2) begin // @[Mux.scala 101:16]
-      state_reg <= {{1'd0}, _state_reg_T_1};
+    if (reset) begin // @[ysyx_25030077_arbiter.scala 53:28]
+      state_reg <= 2'h0; // @[ysyx_25030077_arbiter.scala 53:28]
+    end else if (_io_axi_ar_addr_T_2) begin // @[Mux.scala 101:16]
+      state_reg <= {{1'd0}, io_axi_r_valid};
     end else if (_state_reg_T_3) begin // @[Mux.scala 101:16]
       if (io_r_valid_lsu) begin // @[Mux.scala 101:16]
-        state_reg <= _state_reg_T_6;
+        state_reg <= _state_reg_T_8;
       end else begin
-        state_reg <= _state_reg_T_11;
+        state_reg <= _state_reg_T_12;
       end
-    end else if (_state_reg_T_13) begin // @[Mux.scala 101:16]
-      state_reg <= _state_reg_T_15;
+    end else if (_state_reg_T_14) begin // @[Mux.scala 101:16]
+      state_reg <= _state_reg_T_16;
     end else begin
       state_reg <= 2'h0;
     end
-    if (reset) begin // @[ysyx_25030077_arbiter.scala 74:27]
-      inst_reg <= 32'h0; // @[ysyx_25030077_arbiter.scala 74:27]
+    if (reset) begin // @[ysyx_25030077_arbiter.scala 54:27]
+      inst_reg <= 32'h0; // @[ysyx_25030077_arbiter.scala 54:27]
     end else if (_inst_reg_T_2) begin // @[Mux.scala 101:16]
-      if (_delay_cnt_T_2) begin // @[ysyx_25030077_arbiter.scala 83:25]
-        inst_reg <= io_axi_r_data_clint;
-      end else begin
-        inst_reg <= io_axi_r_data_mem;
-      end
+      inst_reg <= io_axi_r_data;
+    end
+    if (reset) begin // @[ysyx_25030077_arbiter.scala 55:36]
+      axi_r_valid_delay <= 1'h0; // @[ysyx_25030077_arbiter.scala 55:36]
+    end else begin
+      axi_r_valid_delay <= io_axi_r_valid; // @[ysyx_25030077_arbiter.scala 60:23]
     end
   end
 // Register and memory initialization
@@ -312,6 +274,8 @@ initial begin
   state_reg = _RAND_0[1:0];
   _RAND_1 = {1{`RANDOM}};
   inst_reg = _RAND_1[31:0];
+  _RAND_2 = {1{`RANDOM}};
+  axi_r_valid_delay = _RAND_2[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -1789,11 +1753,9 @@ module ysyx_25030077_mem(
   input  [31:0] io_wdata,
   input  [2:0]  io_r_mask,
   input  [2:0]  io_w_mask,
-  input         io_r_valid,
   output [31:0] io_mem_data,
-  output [2:0]  io_cnt,
-  input         io_r__ready,
-  output        io_r__valid,
+  input         io_r_ready,
+  output        io_r_valid,
   input         io_b_ready,
   output        io_b_valid,
   output [1:0]  io_b_resp
@@ -1821,31 +1783,33 @@ module ysyx_25030077_mem(
   wire  canAccept_prng_io_out_13; // @[PRNG.scala 91:22]
   wire  canAccept_prng_io_out_14; // @[PRNG.scala 91:22]
   wire  canAccept_prng_io_out_15; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_clock; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_reset; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_0; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_1; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_2; // @[PRNG.scala 91:22]
-  reg [31:0] mem_data_Reg; // @[ysyx_25030077_mem.scala 23:29]
-  reg  validReg; // @[ysyx_25030077_mem.scala 24:25]
+  wire  lfsrValue_prng_clock; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_reset; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_0; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_1; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_2; // @[PRNG.scala 91:22]
+  reg [31:0] mem_data_Reg; // @[ysyx_25030077_mem.scala 22:29]
+  reg  validReg; // @[ysyx_25030077_mem.scala 23:25]
   wire [7:0] canAccept_lo = {canAccept_prng_io_out_7,canAccept_prng_io_out_6,canAccept_prng_io_out_5,
     canAccept_prng_io_out_4,canAccept_prng_io_out_3,canAccept_prng_io_out_2,canAccept_prng_io_out_1,
     canAccept_prng_io_out_0}; // @[PRNG.scala 95:17]
   wire [15:0] _canAccept_T = {canAccept_prng_io_out_15,canAccept_prng_io_out_14,canAccept_prng_io_out_13,
     canAccept_prng_io_out_12,canAccept_prng_io_out_11,canAccept_prng_io_out_10,canAccept_prng_io_out_9,
     canAccept_prng_io_out_8,canAccept_lo}; // @[PRNG.scala 95:17]
-  wire  canAccept = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 25:28]
-  wire [31:0] _read_data_T = io_waddr ^ io_raddr; // @[ysyx_25030077_mem.scala 26:29]
-  wire [2:0] _read_data_T_1 = io_r_mask | io_w_mask; // @[ysyx_25030077_mem.scala 26:68]
+  wire  canAccept = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 24:28]
+  wire [31:0] _read_data_T = io_waddr ^ io_raddr; // @[ysyx_25030077_mem.scala 25:29]
+  wire [2:0] _read_data_T_1 = io_r_mask | io_w_mask; // @[ysyx_25030077_mem.scala 25:68]
   wire [31:0] _read_data_T_2 = {27'h0,_read_data_T_1,io_aw_valid,io_w_valid}; // @[Cat.scala 31:58]
-  wire [31:0] read_data = _read_data_T ^ _read_data_T_2; // @[ysyx_25030077_mem.scala 26:40]
-  reg [2:0] delayCnt; // @[ysyx_25030077_mem.scala 28:25]
-  wire  _startDelay_T = io_ar_valid & canAccept; // @[ysyx_25030077_mem.scala 30:29]
-  wire  startDelay = io_ar_valid & canAccept & io_r_valid; // @[ysyx_25030077_mem.scala 30:42]
-  wire [2:0] _delayCnt_T = {delayCnt_prng_io_out_2,delayCnt_prng_io_out_1,delayCnt_prng_io_out_0}; // @[PRNG.scala 95:17]
-  wire [2:0] _delayCnt_T_3 = delayCnt - 3'h1; // @[ysyx_25030077_mem.scala 34:46]
-  wire  _io_r_valid_T = delayCnt == 3'h0; // @[ysyx_25030077_mem.scala 37:39]
-  wire  _validReg_T_4 = io_b_ready & io_r__ready & _io_r_valid_T ? 1'h0 : validReg; // @[ysyx_25030077_mem.scala 44:18]
+  wire [31:0] read_data = _read_data_T ^ _read_data_T_2; // @[ysyx_25030077_mem.scala 25:40]
+  reg [2:0] delayCnt; // @[ysyx_25030077_mem.scala 27:25]
+  wire  r_valid_1 = io_r_mask > 3'h0; // @[ysyx_25030077_mem.scala 29:29]
+  wire  _startDelay_T = io_ar_valid & canAccept; // @[ysyx_25030077_mem.scala 31:29]
+  wire  startDelay = io_ar_valid & canAccept & r_valid_1; // @[ysyx_25030077_mem.scala 31:42]
+  wire [2:0] lfsrValue = {lfsrValue_prng_io_out_2,lfsrValue_prng_io_out_1,lfsrValue_prng_io_out_0}; // @[PRNG.scala 95:17]
+  wire  _delayCnt_T = delayCnt == 3'h0; // @[ysyx_25030077_mem.scala 37:43]
+  wire [2:0] _delayCnt_T_4 = delayCnt - 3'h1; // @[ysyx_25030077_mem.scala 38:46]
+  wire  _io_r_valid_T_2 = _delayCnt_T | delayCnt == 3'h1; // @[ysyx_25030077_mem.scala 41:47]
+  wire  _validReg_T_4 = io_b_ready & io_r_ready & _delayCnt_T ? 1'h0 : validReg; // @[ysyx_25030077_mem.scala 48:18]
   MaxPeriodFibonacciLFSR canAccept_prng ( // @[PRNG.scala 91:22]
     .clock(canAccept_prng_clock),
     .reset(canAccept_prng_reset),
@@ -1866,42 +1830,45 @@ module ysyx_25030077_mem(
     .io_out_14(canAccept_prng_io_out_14),
     .io_out_15(canAccept_prng_io_out_15)
   );
-  MaxPeriodFibonacciLFSR_2 delayCnt_prng ( // @[PRNG.scala 91:22]
-    .clock(delayCnt_prng_clock),
-    .reset(delayCnt_prng_reset),
-    .io_out_0(delayCnt_prng_io_out_0),
-    .io_out_1(delayCnt_prng_io_out_1),
-    .io_out_2(delayCnt_prng_io_out_2)
+  MaxPeriodFibonacciLFSR_2 lfsrValue_prng ( // @[PRNG.scala 91:22]
+    .clock(lfsrValue_prng_clock),
+    .reset(lfsrValue_prng_reset),
+    .io_out_0(lfsrValue_prng_io_out_0),
+    .io_out_1(lfsrValue_prng_io_out_1),
+    .io_out_2(lfsrValue_prng_io_out_2)
   );
-  assign io_ar_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 25:28]
-  assign io_aw_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 25:28]
-  assign io_w_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 25:28]
-  assign io_mem_data = mem_data_Reg; // @[ysyx_25030077_mem.scala 41:15]
-  assign io_cnt = delayCnt; // @[ysyx_25030077_mem.scala 32:10]
-  assign io_r__valid = validReg & delayCnt == 3'h0; // @[ysyx_25030077_mem.scala 37:26]
-  assign io_b_valid = validReg & _io_r_valid_T; // @[ysyx_25030077_mem.scala 38:26]
-  assign io_b_resp = 2'h0; // @[ysyx_25030077_mem.scala 39:13]
+  assign io_ar_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 24:28]
+  assign io_aw_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 24:28]
+  assign io_w_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 24:28]
+  assign io_mem_data = mem_data_Reg; // @[ysyx_25030077_mem.scala 45:15]
+  assign io_r_valid = validReg & (_delayCnt_T | delayCnt == 3'h1); // @[ysyx_25030077_mem.scala 41:26]
+  assign io_b_valid = validReg & _io_r_valid_T_2; // @[ysyx_25030077_mem.scala 42:26]
+  assign io_b_resp = 2'h0; // @[ysyx_25030077_mem.scala 43:13]
   assign canAccept_prng_clock = clock;
   assign canAccept_prng_reset = reset;
-  assign delayCnt_prng_clock = clock;
-  assign delayCnt_prng_reset = reset;
+  assign lfsrValue_prng_clock = clock;
+  assign lfsrValue_prng_reset = reset;
   always @(posedge clock) begin
-    if (reset) begin // @[ysyx_25030077_mem.scala 23:29]
-      mem_data_Reg <= 32'h0; // @[ysyx_25030077_mem.scala 23:29]
-    end else if (_startDelay_T) begin // @[ysyx_25030077_mem.scala 46:22]
+    if (reset) begin // @[ysyx_25030077_mem.scala 22:29]
+      mem_data_Reg <= 32'h0; // @[ysyx_25030077_mem.scala 22:29]
+    end else if (_startDelay_T) begin // @[ysyx_25030077_mem.scala 50:22]
       mem_data_Reg <= read_data;
     end
-    if (reset) begin // @[ysyx_25030077_mem.scala 24:25]
-      validReg <= 1'h0; // @[ysyx_25030077_mem.scala 24:25]
+    if (reset) begin // @[ysyx_25030077_mem.scala 23:25]
+      validReg <= 1'h0; // @[ysyx_25030077_mem.scala 23:25]
     end else begin
-      validReg <= _startDelay_T | _validReg_T_4; // @[ysyx_25030077_mem.scala 43:12]
+      validReg <= _startDelay_T | _validReg_T_4; // @[ysyx_25030077_mem.scala 47:12]
     end
-    if (reset) begin // @[ysyx_25030077_mem.scala 28:25]
-      delayCnt <= 3'h0; // @[ysyx_25030077_mem.scala 28:25]
-    end else if (startDelay) begin // @[ysyx_25030077_mem.scala 33:18]
-      delayCnt <= _delayCnt_T;
-    end else if (delayCnt != 3'h0) begin // @[ysyx_25030077_mem.scala 34:18]
-      delayCnt <= _delayCnt_T_3;
+    if (reset) begin // @[ysyx_25030077_mem.scala 27:25]
+      delayCnt <= 3'h0; // @[ysyx_25030077_mem.scala 27:25]
+    end else if (startDelay & delayCnt == 3'h0) begin // @[ysyx_25030077_mem.scala 37:18]
+      if (lfsrValue == 3'h1) begin // @[ysyx_25030077_mem.scala 36:25]
+        delayCnt <= 3'h2;
+      end else begin
+        delayCnt <= lfsrValue;
+      end
+    end else if (delayCnt != 3'h0) begin // @[ysyx_25030077_mem.scala 38:18]
+      delayCnt <= _delayCnt_T_4;
     end else begin
       delayCnt <= 3'h0;
     end
@@ -2161,11 +2128,12 @@ module ysyx_25030077_clint(
   input         io_ar_valid,
   input  [31:0] io_raddr,
   input  [2:0]  io_r_mask,
-  input         io_r_valid,
   output [31:0] io_mem_data,
-  output [2:0]  io_cnt,
-  input         io_r__ready,
-  output        io_r__valid
+  input         io_r_ready,
+  output        io_r_valid,
+  input         io_b_ready,
+  output        io_b_valid,
+  output [1:0]  io_b_resp
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [63:0] _RAND_0;
@@ -2190,28 +2158,30 @@ module ysyx_25030077_clint(
   wire  canAccept_prng_io_out_13; // @[PRNG.scala 91:22]
   wire  canAccept_prng_io_out_14; // @[PRNG.scala 91:22]
   wire  canAccept_prng_io_out_15; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_clock; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_reset; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_0; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_1; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_2; // @[PRNG.scala 91:22]
-  reg [63:0] mem_data_Reg; // @[ysyx_25030077_clint.scala 17:29]
-  reg  validReg; // @[ysyx_25030077_clint.scala 18:25]
+  wire  lfsrValue_prng_clock; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_reset; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_0; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_1; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_2; // @[PRNG.scala 91:22]
+  reg [63:0] mem_data_Reg; // @[ysyx_25030077_clint.scala 18:29]
+  reg  validReg; // @[ysyx_25030077_clint.scala 19:25]
   wire [7:0] canAccept_lo = {canAccept_prng_io_out_7,canAccept_prng_io_out_6,canAccept_prng_io_out_5,
     canAccept_prng_io_out_4,canAccept_prng_io_out_3,canAccept_prng_io_out_2,canAccept_prng_io_out_1,
     canAccept_prng_io_out_0}; // @[PRNG.scala 95:17]
   wire [15:0] _canAccept_T = {canAccept_prng_io_out_15,canAccept_prng_io_out_14,canAccept_prng_io_out_13,
     canAccept_prng_io_out_12,canAccept_prng_io_out_11,canAccept_prng_io_out_10,canAccept_prng_io_out_9,
     canAccept_prng_io_out_8,canAccept_lo}; // @[PRNG.scala 95:17]
-  wire  canAccept = _canAccept_T[0]; // @[ysyx_25030077_clint.scala 19:28]
-  reg [2:0] delayCnt; // @[ysyx_25030077_clint.scala 21:25]
-  wire  _startDelay_T = io_ar_valid & canAccept; // @[ysyx_25030077_clint.scala 23:29]
-  wire  startDelay = io_ar_valid & canAccept & io_r_valid; // @[ysyx_25030077_clint.scala 23:42]
-  wire [2:0] _delayCnt_T = {delayCnt_prng_io_out_2,delayCnt_prng_io_out_1,delayCnt_prng_io_out_0}; // @[PRNG.scala 95:17]
-  wire [2:0] _delayCnt_T_3 = delayCnt - 3'h1; // @[ysyx_25030077_clint.scala 27:46]
-  wire  _io_r_valid_T = delayCnt == 3'h0; // @[ysyx_25030077_clint.scala 30:39]
-  wire  _validReg_T_3 = io_r__ready & _io_r_valid_T ? 1'h0 : validReg; // @[ysyx_25030077_clint.scala 34:18]
-  wire [63:0] _mem_data_Reg_T_2 = mem_data_Reg + 64'h320; // @[ysyx_25030077_clint.scala 36:62]
+  wire  canAccept = _canAccept_T[0]; // @[ysyx_25030077_clint.scala 20:28]
+  reg [2:0] delayCnt; // @[ysyx_25030077_clint.scala 22:25]
+  wire  r_valid_1 = io_r_mask > 3'h0; // @[ysyx_25030077_clint.scala 25:29]
+  wire  _startDelay_T = io_ar_valid & canAccept; // @[ysyx_25030077_clint.scala 26:29]
+  wire  startDelay = io_ar_valid & canAccept & r_valid_1; // @[ysyx_25030077_clint.scala 26:42]
+  wire [2:0] lfsrValue = {lfsrValue_prng_io_out_2,lfsrValue_prng_io_out_1,lfsrValue_prng_io_out_0}; // @[PRNG.scala 95:17]
+  wire  _delayCnt_T = delayCnt == 3'h0; // @[ysyx_25030077_clint.scala 31:43]
+  wire [2:0] _delayCnt_T_4 = delayCnt - 3'h1; // @[ysyx_25030077_clint.scala 32:46]
+  wire  _io_r_valid_T_2 = _delayCnt_T | delayCnt == 3'h1; // @[ysyx_25030077_clint.scala 35:47]
+  wire  _validReg_T_3 = io_r_ready & _delayCnt_T ? 1'h0 : validReg; // @[ysyx_25030077_clint.scala 41:18]
+  wire [63:0] _mem_data_Reg_T_2 = mem_data_Reg + 64'h700; // @[ysyx_25030077_clint.scala 43:62]
   MaxPeriodFibonacciLFSR canAccept_prng ( // @[PRNG.scala 91:22]
     .clock(canAccept_prng_clock),
     .reset(canAccept_prng_reset),
@@ -2232,38 +2202,43 @@ module ysyx_25030077_clint(
     .io_out_14(canAccept_prng_io_out_14),
     .io_out_15(canAccept_prng_io_out_15)
   );
-  MaxPeriodFibonacciLFSR_2 delayCnt_prng ( // @[PRNG.scala 91:22]
-    .clock(delayCnt_prng_clock),
-    .reset(delayCnt_prng_reset),
-    .io_out_0(delayCnt_prng_io_out_0),
-    .io_out_1(delayCnt_prng_io_out_1),
-    .io_out_2(delayCnt_prng_io_out_2)
+  MaxPeriodFibonacciLFSR_2 lfsrValue_prng ( // @[PRNG.scala 91:22]
+    .clock(lfsrValue_prng_clock),
+    .reset(lfsrValue_prng_reset),
+    .io_out_0(lfsrValue_prng_io_out_0),
+    .io_out_1(lfsrValue_prng_io_out_1),
+    .io_out_2(lfsrValue_prng_io_out_2)
   );
-  assign io_ar_ready = _canAccept_T[0]; // @[ysyx_25030077_clint.scala 19:28]
-  assign io_mem_data = io_raddr == 32'ha0000048 ? mem_data_Reg[31:0] : mem_data_Reg[63:32]; // @[ysyx_25030077_clint.scala 32:21]
-  assign io_cnt = delayCnt; // @[ysyx_25030077_clint.scala 24:10]
-  assign io_r__valid = validReg & delayCnt == 3'h0; // @[ysyx_25030077_clint.scala 30:26]
+  assign io_ar_ready = _canAccept_T[0]; // @[ysyx_25030077_clint.scala 20:28]
+  assign io_mem_data = io_raddr == 32'ha0000048 ? mem_data_Reg[31:0] : mem_data_Reg[63:32]; // @[ysyx_25030077_clint.scala 39:21]
+  assign io_r_valid = validReg & (_delayCnt_T | delayCnt == 3'h1); // @[ysyx_25030077_clint.scala 35:26]
+  assign io_b_valid = validReg & _io_r_valid_T_2; // @[ysyx_25030077_clint.scala 36:26]
+  assign io_b_resp = 2'h0; // @[ysyx_25030077_clint.scala 37:13]
   assign canAccept_prng_clock = clock;
   assign canAccept_prng_reset = reset;
-  assign delayCnt_prng_clock = clock;
-  assign delayCnt_prng_reset = reset;
+  assign lfsrValue_prng_clock = clock;
+  assign lfsrValue_prng_reset = reset;
   always @(posedge clock) begin
-    if (reset) begin // @[ysyx_25030077_clint.scala 17:29]
-      mem_data_Reg <= 64'h0; // @[ysyx_25030077_clint.scala 17:29]
-    end else if (_startDelay_T) begin // @[ysyx_25030077_clint.scala 36:22]
+    if (reset) begin // @[ysyx_25030077_clint.scala 18:29]
+      mem_data_Reg <= 64'h0; // @[ysyx_25030077_clint.scala 18:29]
+    end else if (_startDelay_T) begin // @[ysyx_25030077_clint.scala 43:22]
       mem_data_Reg <= _mem_data_Reg_T_2;
     end
-    if (reset) begin // @[ysyx_25030077_clint.scala 18:25]
-      validReg <= 1'h0; // @[ysyx_25030077_clint.scala 18:25]
+    if (reset) begin // @[ysyx_25030077_clint.scala 19:25]
+      validReg <= 1'h0; // @[ysyx_25030077_clint.scala 19:25]
     end else begin
-      validReg <= _startDelay_T | _validReg_T_3; // @[ysyx_25030077_clint.scala 33:12]
+      validReg <= _startDelay_T | _validReg_T_3; // @[ysyx_25030077_clint.scala 40:12]
     end
-    if (reset) begin // @[ysyx_25030077_clint.scala 21:25]
-      delayCnt <= 3'h0; // @[ysyx_25030077_clint.scala 21:25]
-    end else if (startDelay) begin // @[ysyx_25030077_clint.scala 26:18]
-      delayCnt <= _delayCnt_T;
-    end else if (delayCnt != 3'h0) begin // @[ysyx_25030077_clint.scala 27:18]
-      delayCnt <= _delayCnt_T_3;
+    if (reset) begin // @[ysyx_25030077_clint.scala 22:25]
+      delayCnt <= 3'h0; // @[ysyx_25030077_clint.scala 22:25]
+    end else if (startDelay & delayCnt == 3'h0) begin // @[ysyx_25030077_clint.scala 31:18]
+      if (lfsrValue == 3'h1) begin // @[ysyx_25030077_clint.scala 30:25]
+        delayCnt <= 3'h2;
+      end else begin
+        delayCnt <= lfsrValue;
+      end
+    end else if (delayCnt != 3'h0) begin // @[ysyx_25030077_clint.scala 32:18]
+      delayCnt <= _delayCnt_T_4;
     end else begin
       delayCnt <= 3'h0;
     end
@@ -2318,6 +2293,86 @@ end // initial
 `endif
 `endif // SYNTHESIS
 endmodule
+module ysyx_25030077_xbar(
+  input         io_axi_ar_valid,
+  input  [31:0] io_axi_ar_addr,
+  input  [2:0]  io_axi_ar_strb,
+  output        io_axi_ar_ready,
+  input         io_axi_aw_valid,
+  input  [31:0] io_axi_aw_addr,
+  output        io_axi_aw_ready,
+  input         io_axi_w_valid,
+  input  [31:0] io_axi_w_data,
+  input  [2:0]  io_axi_w_strb,
+  output        io_axi_w_ready,
+  output        io_axi_r_valid,
+  output [31:0] io_axi_r_data,
+  input         io_axi_r_ready,
+  output        io_axi_b_valid,
+  input         io_axi_b_ready,
+  output        io_axi_ar_valid_mem,
+  output [31:0] io_axi_ar_addr_mem,
+  output [2:0]  io_axi_ar_strb_mem,
+  input         io_axi_ar_ready_mem,
+  output        io_axi_ar_valid_clint,
+  output [31:0] io_axi_ar_addr_clint,
+  output [2:0]  io_axi_ar_strb_clint,
+  input         io_axi_ar_ready_clint,
+  output        io_axi_aw_valid_mem,
+  output [31:0] io_axi_aw_addr_mem,
+  input         io_axi_aw_ready_mem,
+  output        io_axi_w_valid_mem,
+  output [31:0] io_axi_w_data_mem,
+  output [2:0]  io_axi_w_strb_mem,
+  input         io_axi_w_ready_mem,
+  output        io_axi_aw_valid_uart,
+  output [31:0] io_axi_aw_addr_uart,
+  input         io_axi_aw_ready_uart,
+  output        io_axi_w_valid_uart,
+  output [31:0] io_axi_w_data_uart,
+  output [2:0]  io_axi_w_strb_uart,
+  input         io_axi_w_ready_uart,
+  input         io_axi_r_valid_mem,
+  input  [31:0] io_axi_r_data_mem,
+  output        io_axi_r_ready_mem,
+  input         io_axi_b_valid_mem,
+  output        io_axi_b_ready_mem,
+  input         io_axi_b_valid_clint,
+  output        io_axi_b_ready_clint,
+  input         io_axi_r_valid_clint,
+  input  [31:0] io_axi_r_data_clint,
+  output        io_axi_r_ready_clint
+);
+  wire  _io_axi_ar_ready_T_2 = io_axi_ar_addr == 32'ha0000048 | io_axi_ar_addr == 32'ha000004c; // @[ysyx_25030077_xbar.scala 76:64]
+  wire  _io_axi_aw_addr_mem_T = io_axi_aw_addr == 32'ha00003f8; // @[ysyx_25030077_xbar.scala 79:47]
+  assign io_axi_ar_ready = io_axi_ar_addr == 32'ha0000048 | io_axi_ar_addr == 32'ha000004c ? io_axi_ar_ready_clint :
+    io_axi_ar_ready_mem; // @[ysyx_25030077_xbar.scala 76:27]
+  assign io_axi_aw_ready = _io_axi_aw_addr_mem_T ? io_axi_aw_ready_uart : io_axi_aw_ready_mem; // @[ysyx_25030077_xbar.scala 113:27]
+  assign io_axi_w_ready = _io_axi_aw_addr_mem_T ? io_axi_w_ready_uart : io_axi_w_ready_mem; // @[ysyx_25030077_xbar.scala 112:26]
+  assign io_axi_r_valid = io_axi_r_valid_mem | io_axi_r_valid_clint; // @[ysyx_25030077_xbar.scala 75:42]
+  assign io_axi_r_data = _io_axi_ar_ready_T_2 ? io_axi_r_data_clint : io_axi_r_data_mem; // @[ysyx_25030077_xbar.scala 77:25]
+  assign io_axi_b_valid = io_axi_b_valid_mem | io_axi_b_valid_clint; // @[ysyx_25030077_xbar.scala 108:42]
+  assign io_axi_ar_valid_mem = _io_axi_ar_ready_T_2 ? 1'h0 : io_axi_ar_valid; // @[ysyx_25030077_xbar.scala 88:34]
+  assign io_axi_ar_addr_mem = _io_axi_ar_ready_T_2 ? 32'h80000000 : io_axi_ar_addr; // @[ysyx_25030077_xbar.scala 85:33]
+  assign io_axi_ar_strb_mem = _io_axi_ar_ready_T_2 ? 3'h0 : io_axi_ar_strb; // @[ysyx_25030077_xbar.scala 91:33]
+  assign io_axi_ar_valid_clint = _io_axi_ar_ready_T_2 & io_axi_ar_valid; // @[ysyx_25030077_xbar.scala 89:34]
+  assign io_axi_ar_addr_clint = _io_axi_ar_ready_T_2 ? io_axi_ar_addr : 32'h80000000; // @[ysyx_25030077_xbar.scala 86:33]
+  assign io_axi_ar_strb_clint = _io_axi_ar_ready_T_2 ? io_axi_ar_strb : 3'h0; // @[ysyx_25030077_xbar.scala 92:33]
+  assign io_axi_aw_valid_mem = _io_axi_aw_addr_mem_T ? 1'h0 : io_axi_aw_valid; // @[ysyx_25030077_xbar.scala 82:32]
+  assign io_axi_aw_addr_mem = io_axi_aw_addr == 32'ha00003f8 ? 32'h0 : io_axi_aw_addr; // @[ysyx_25030077_xbar.scala 79:31]
+  assign io_axi_w_valid_mem = _io_axi_aw_addr_mem_T ? 1'h0 : io_axi_w_valid; // @[ysyx_25030077_xbar.scala 94:31]
+  assign io_axi_w_data_mem = _io_axi_aw_addr_mem_T ? 32'h0 : io_axi_w_data; // @[ysyx_25030077_xbar.scala 97:30]
+  assign io_axi_w_strb_mem = _io_axi_aw_addr_mem_T ? 3'h0 : io_axi_w_strb; // @[ysyx_25030077_xbar.scala 100:30]
+  assign io_axi_aw_valid_uart = _io_axi_aw_addr_mem_T & io_axi_aw_valid; // @[ysyx_25030077_xbar.scala 83:32]
+  assign io_axi_aw_addr_uart = _io_axi_aw_addr_mem_T ? 32'ha00003f8 : 32'h0; // @[ysyx_25030077_xbar.scala 80:31]
+  assign io_axi_w_valid_uart = _io_axi_aw_addr_mem_T & io_axi_w_valid; // @[ysyx_25030077_xbar.scala 95:31]
+  assign io_axi_w_data_uart = _io_axi_aw_addr_mem_T ? io_axi_w_data : 32'h0; // @[ysyx_25030077_xbar.scala 98:30]
+  assign io_axi_w_strb_uart = _io_axi_aw_addr_mem_T ? io_axi_w_strb : 3'h0; // @[ysyx_25030077_xbar.scala 101:30]
+  assign io_axi_r_ready_mem = io_axi_r_ready; // @[ysyx_25030077_xbar.scala 110:26]
+  assign io_axi_b_ready_mem = io_axi_b_ready; // @[ysyx_25030077_xbar.scala 104:26]
+  assign io_axi_b_ready_clint = io_axi_b_ready; // @[ysyx_25030077_xbar.scala 103:26]
+  assign io_axi_r_ready_clint = io_axi_r_ready; // @[ysyx_25030077_xbar.scala 111:26]
+endmodule
 module ysyx_25030077(
   input   clock,
   input   reset,
@@ -2334,42 +2389,26 @@ module ysyx_25030077(
   wire  c_arbiter_clock; // @[ysyx_25030077.scala 13:25]
   wire  c_arbiter_reset; // @[ysyx_25030077.scala 13:25]
   wire  c_arbiter_io_ifu_valid; // @[ysyx_25030077.scala 13:25]
-  wire [2:0] c_arbiter_io_delay_cnt_mem; // @[ysyx_25030077.scala 13:25]
-  wire [2:0] c_arbiter_io_delay_cnt_clint; // @[ysyx_25030077.scala 13:25]
   wire [31:0] c_arbiter_io_pc; // @[ysyx_25030077.scala 13:25]
   wire [31:0] c_arbiter_io_rs1_data; // @[ysyx_25030077.scala 13:25]
   wire [31:0] c_arbiter_io_rs2_data; // @[ysyx_25030077.scala 13:25]
   wire [31:0] c_arbiter_io_imm; // @[ysyx_25030077.scala 13:25]
   wire [2:0] c_arbiter_io_r_mask; // @[ysyx_25030077.scala 13:25]
   wire [2:0] c_arbiter_io_w_mask; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_ar_valid_mem; // @[ysyx_25030077.scala 13:25]
-  wire [31:0] c_arbiter_io_axi_ar_addr_mem; // @[ysyx_25030077.scala 13:25]
-  wire [2:0] c_arbiter_io_axi_ar_strb_mem; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_ar_ready_mem; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_ar_valid_clint; // @[ysyx_25030077.scala 13:25]
-  wire [31:0] c_arbiter_io_axi_ar_addr_clint; // @[ysyx_25030077.scala 13:25]
-  wire [2:0] c_arbiter_io_axi_ar_strb_clint; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_ar_ready_clint; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_aw_valid_mem; // @[ysyx_25030077.scala 13:25]
-  wire [31:0] c_arbiter_io_axi_aw_addr_mem; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_aw_ready_mem; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_w_valid_mem; // @[ysyx_25030077.scala 13:25]
-  wire [31:0] c_arbiter_io_axi_w_data_mem; // @[ysyx_25030077.scala 13:25]
-  wire [2:0] c_arbiter_io_axi_w_strb_mem; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_w_ready_mem; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_aw_valid_uart; // @[ysyx_25030077.scala 13:25]
-  wire [31:0] c_arbiter_io_axi_aw_addr_uart; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_aw_ready_uart; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_w_valid_uart; // @[ysyx_25030077.scala 13:25]
-  wire [31:0] c_arbiter_io_axi_w_data_uart; // @[ysyx_25030077.scala 13:25]
-  wire [2:0] c_arbiter_io_axi_w_strb_uart; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_w_ready_uart; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_r_valid_mem; // @[ysyx_25030077.scala 13:25]
-  wire [31:0] c_arbiter_io_axi_r_data_mem; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_r_ready_mem; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_r_valid_clint; // @[ysyx_25030077.scala 13:25]
-  wire [31:0] c_arbiter_io_axi_r_data_clint; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_axi_r_ready_clint; // @[ysyx_25030077.scala 13:25]
+  wire  c_arbiter_io_axi_ar_valid; // @[ysyx_25030077.scala 13:25]
+  wire [31:0] c_arbiter_io_axi_ar_addr; // @[ysyx_25030077.scala 13:25]
+  wire [2:0] c_arbiter_io_axi_ar_strb; // @[ysyx_25030077.scala 13:25]
+  wire  c_arbiter_io_axi_ar_ready; // @[ysyx_25030077.scala 13:25]
+  wire  c_arbiter_io_axi_aw_valid; // @[ysyx_25030077.scala 13:25]
+  wire [31:0] c_arbiter_io_axi_aw_addr; // @[ysyx_25030077.scala 13:25]
+  wire  c_arbiter_io_axi_aw_ready; // @[ysyx_25030077.scala 13:25]
+  wire  c_arbiter_io_axi_w_valid; // @[ysyx_25030077.scala 13:25]
+  wire [31:0] c_arbiter_io_axi_w_data; // @[ysyx_25030077.scala 13:25]
+  wire [2:0] c_arbiter_io_axi_w_strb; // @[ysyx_25030077.scala 13:25]
+  wire  c_arbiter_io_axi_w_ready; // @[ysyx_25030077.scala 13:25]
+  wire  c_arbiter_io_axi_r_valid; // @[ysyx_25030077.scala 13:25]
+  wire [31:0] c_arbiter_io_axi_r_data; // @[ysyx_25030077.scala 13:25]
+  wire  c_arbiter_io_axi_r_ready; // @[ysyx_25030077.scala 13:25]
   wire  c_arbiter_io_axi_b_valid; // @[ysyx_25030077.scala 13:25]
   wire  c_arbiter_io_axi_b_ready; // @[ysyx_25030077.scala 13:25]
   wire [1:0] c_arbiter_io_axi_b_resp; // @[ysyx_25030077.scala 13:25]
@@ -2382,7 +2421,6 @@ module ysyx_25030077(
   wire [31:0] c_arbiter_io_inst; // @[ysyx_25030077.scala 13:25]
   wire  c_arbiter_io_ifu_ready; // @[ysyx_25030077.scala 13:25]
   wire  c_arbiter_io_r_valid_lsu; // @[ysyx_25030077.scala 13:25]
-  wire  c_arbiter_io_is_r; // @[ysyx_25030077.scala 13:25]
   wire [31:0] d_idu_io_instruction; // @[ysyx_25030077.scala 14:21]
   wire [2:0] d_idu_io_imm_type; // @[ysyx_25030077.scala 14:21]
   wire [4:0] d_idu_io_rs1; // @[ysyx_25030077.scala 14:21]
@@ -2427,11 +2465,9 @@ module ysyx_25030077(
   wire [31:0] g_mem_io_wdata; // @[ysyx_25030077.scala 17:21]
   wire [2:0] g_mem_io_r_mask; // @[ysyx_25030077.scala 17:21]
   wire [2:0] g_mem_io_w_mask; // @[ysyx_25030077.scala 17:21]
-  wire  g_mem_io_r_valid; // @[ysyx_25030077.scala 17:21]
   wire [31:0] g_mem_io_mem_data; // @[ysyx_25030077.scala 17:21]
-  wire [2:0] g_mem_io_cnt; // @[ysyx_25030077.scala 17:21]
-  wire  g_mem_io_r__ready; // @[ysyx_25030077.scala 17:21]
-  wire  g_mem_io_r__valid; // @[ysyx_25030077.scala 17:21]
+  wire  g_mem_io_r_ready; // @[ysyx_25030077.scala 17:21]
+  wire  g_mem_io_r_valid; // @[ysyx_25030077.scala 17:21]
   wire  g_mem_io_b_ready; // @[ysyx_25030077.scala 17:21]
   wire  g_mem_io_b_valid; // @[ysyx_25030077.scala 17:21]
   wire [1:0] g_mem_io_b_resp; // @[ysyx_25030077.scala 17:21]
@@ -2469,11 +2505,60 @@ module ysyx_25030077(
   wire  m_clint_io_ar_valid; // @[ysyx_25030077.scala 22:23]
   wire [31:0] m_clint_io_raddr; // @[ysyx_25030077.scala 22:23]
   wire [2:0] m_clint_io_r_mask; // @[ysyx_25030077.scala 22:23]
-  wire  m_clint_io_r_valid; // @[ysyx_25030077.scala 22:23]
   wire [31:0] m_clint_io_mem_data; // @[ysyx_25030077.scala 22:23]
-  wire [2:0] m_clint_io_cnt; // @[ysyx_25030077.scala 22:23]
-  wire  m_clint_io_r__ready; // @[ysyx_25030077.scala 22:23]
-  wire  m_clint_io_r__valid; // @[ysyx_25030077.scala 22:23]
+  wire  m_clint_io_r_ready; // @[ysyx_25030077.scala 22:23]
+  wire  m_clint_io_r_valid; // @[ysyx_25030077.scala 22:23]
+  wire  m_clint_io_b_ready; // @[ysyx_25030077.scala 22:23]
+  wire  m_clint_io_b_valid; // @[ysyx_25030077.scala 22:23]
+  wire [1:0] m_clint_io_b_resp; // @[ysyx_25030077.scala 22:23]
+  wire  n_xbar_io_axi_ar_valid; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_ar_addr; // @[ysyx_25030077.scala 23:22]
+  wire [2:0] n_xbar_io_axi_ar_strb; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_ar_ready; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_aw_valid; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_aw_addr; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_aw_ready; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_w_valid; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_w_data; // @[ysyx_25030077.scala 23:22]
+  wire [2:0] n_xbar_io_axi_w_strb; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_w_ready; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_r_valid; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_r_data; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_r_ready; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_b_valid; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_b_ready; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_ar_valid_mem; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_ar_addr_mem; // @[ysyx_25030077.scala 23:22]
+  wire [2:0] n_xbar_io_axi_ar_strb_mem; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_ar_ready_mem; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_ar_valid_clint; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_ar_addr_clint; // @[ysyx_25030077.scala 23:22]
+  wire [2:0] n_xbar_io_axi_ar_strb_clint; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_ar_ready_clint; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_aw_valid_mem; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_aw_addr_mem; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_aw_ready_mem; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_w_valid_mem; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_w_data_mem; // @[ysyx_25030077.scala 23:22]
+  wire [2:0] n_xbar_io_axi_w_strb_mem; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_w_ready_mem; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_aw_valid_uart; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_aw_addr_uart; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_aw_ready_uart; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_w_valid_uart; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_w_data_uart; // @[ysyx_25030077.scala 23:22]
+  wire [2:0] n_xbar_io_axi_w_strb_uart; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_w_ready_uart; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_r_valid_mem; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_r_data_mem; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_r_ready_mem; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_b_valid_mem; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_b_ready_mem; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_b_valid_clint; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_b_ready_clint; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_r_valid_clint; // @[ysyx_25030077.scala 23:22]
+  wire [31:0] n_xbar_io_axi_r_data_clint; // @[ysyx_25030077.scala 23:22]
+  wire  n_xbar_io_axi_r_ready_clint; // @[ysyx_25030077.scala 23:22]
   ysyx_25030077_IFU b_ifu ( // @[ysyx_25030077.scala 12:22]
     .clock(b_ifu_clock),
     .reset(b_ifu_reset),
@@ -2488,42 +2573,26 @@ module ysyx_25030077(
     .clock(c_arbiter_clock),
     .reset(c_arbiter_reset),
     .io_ifu_valid(c_arbiter_io_ifu_valid),
-    .io_delay_cnt_mem(c_arbiter_io_delay_cnt_mem),
-    .io_delay_cnt_clint(c_arbiter_io_delay_cnt_clint),
     .io_pc(c_arbiter_io_pc),
     .io_rs1_data(c_arbiter_io_rs1_data),
     .io_rs2_data(c_arbiter_io_rs2_data),
     .io_imm(c_arbiter_io_imm),
     .io_r_mask(c_arbiter_io_r_mask),
     .io_w_mask(c_arbiter_io_w_mask),
-    .io_axi_ar_valid_mem(c_arbiter_io_axi_ar_valid_mem),
-    .io_axi_ar_addr_mem(c_arbiter_io_axi_ar_addr_mem),
-    .io_axi_ar_strb_mem(c_arbiter_io_axi_ar_strb_mem),
-    .io_axi_ar_ready_mem(c_arbiter_io_axi_ar_ready_mem),
-    .io_axi_ar_valid_clint(c_arbiter_io_axi_ar_valid_clint),
-    .io_axi_ar_addr_clint(c_arbiter_io_axi_ar_addr_clint),
-    .io_axi_ar_strb_clint(c_arbiter_io_axi_ar_strb_clint),
-    .io_axi_ar_ready_clint(c_arbiter_io_axi_ar_ready_clint),
-    .io_axi_aw_valid_mem(c_arbiter_io_axi_aw_valid_mem),
-    .io_axi_aw_addr_mem(c_arbiter_io_axi_aw_addr_mem),
-    .io_axi_aw_ready_mem(c_arbiter_io_axi_aw_ready_mem),
-    .io_axi_w_valid_mem(c_arbiter_io_axi_w_valid_mem),
-    .io_axi_w_data_mem(c_arbiter_io_axi_w_data_mem),
-    .io_axi_w_strb_mem(c_arbiter_io_axi_w_strb_mem),
-    .io_axi_w_ready_mem(c_arbiter_io_axi_w_ready_mem),
-    .io_axi_aw_valid_uart(c_arbiter_io_axi_aw_valid_uart),
-    .io_axi_aw_addr_uart(c_arbiter_io_axi_aw_addr_uart),
-    .io_axi_aw_ready_uart(c_arbiter_io_axi_aw_ready_uart),
-    .io_axi_w_valid_uart(c_arbiter_io_axi_w_valid_uart),
-    .io_axi_w_data_uart(c_arbiter_io_axi_w_data_uart),
-    .io_axi_w_strb_uart(c_arbiter_io_axi_w_strb_uart),
-    .io_axi_w_ready_uart(c_arbiter_io_axi_w_ready_uart),
-    .io_axi_r_valid_mem(c_arbiter_io_axi_r_valid_mem),
-    .io_axi_r_data_mem(c_arbiter_io_axi_r_data_mem),
-    .io_axi_r_ready_mem(c_arbiter_io_axi_r_ready_mem),
-    .io_axi_r_valid_clint(c_arbiter_io_axi_r_valid_clint),
-    .io_axi_r_data_clint(c_arbiter_io_axi_r_data_clint),
-    .io_axi_r_ready_clint(c_arbiter_io_axi_r_ready_clint),
+    .io_axi_ar_valid(c_arbiter_io_axi_ar_valid),
+    .io_axi_ar_addr(c_arbiter_io_axi_ar_addr),
+    .io_axi_ar_strb(c_arbiter_io_axi_ar_strb),
+    .io_axi_ar_ready(c_arbiter_io_axi_ar_ready),
+    .io_axi_aw_valid(c_arbiter_io_axi_aw_valid),
+    .io_axi_aw_addr(c_arbiter_io_axi_aw_addr),
+    .io_axi_aw_ready(c_arbiter_io_axi_aw_ready),
+    .io_axi_w_valid(c_arbiter_io_axi_w_valid),
+    .io_axi_w_data(c_arbiter_io_axi_w_data),
+    .io_axi_w_strb(c_arbiter_io_axi_w_strb),
+    .io_axi_w_ready(c_arbiter_io_axi_w_ready),
+    .io_axi_r_valid(c_arbiter_io_axi_r_valid),
+    .io_axi_r_data(c_arbiter_io_axi_r_data),
+    .io_axi_r_ready(c_arbiter_io_axi_r_ready),
     .io_axi_b_valid(c_arbiter_io_axi_b_valid),
     .io_axi_b_ready(c_arbiter_io_axi_b_ready),
     .io_axi_b_resp(c_arbiter_io_axi_b_resp),
@@ -2535,8 +2604,7 @@ module ysyx_25030077(
     .io_gpr_data(c_arbiter_io_gpr_data),
     .io_inst(c_arbiter_io_inst),
     .io_ifu_ready(c_arbiter_io_ifu_ready),
-    .io_r_valid_lsu(c_arbiter_io_r_valid_lsu),
-    .io_is_r(c_arbiter_io_is_r)
+    .io_r_valid_lsu(c_arbiter_io_r_valid_lsu)
   );
   ysyx_25030077_IDU d_idu ( // @[ysyx_25030077.scala 14:21]
     .io_instruction(d_idu_io_instruction),
@@ -2589,11 +2657,9 @@ module ysyx_25030077(
     .io_wdata(g_mem_io_wdata),
     .io_r_mask(g_mem_io_r_mask),
     .io_w_mask(g_mem_io_w_mask),
-    .io_r_valid(g_mem_io_r_valid),
     .io_mem_data(g_mem_io_mem_data),
-    .io_cnt(g_mem_io_cnt),
-    .io_r__ready(g_mem_io_r__ready),
-    .io_r__valid(g_mem_io_r__valid),
+    .io_r_ready(g_mem_io_r_ready),
+    .io_r_valid(g_mem_io_r_valid),
     .io_b_ready(g_mem_io_b_ready),
     .io_b_valid(g_mem_io_b_valid),
     .io_b_resp(g_mem_io_b_resp)
@@ -2641,97 +2707,162 @@ module ysyx_25030077(
     .io_ar_valid(m_clint_io_ar_valid),
     .io_raddr(m_clint_io_raddr),
     .io_r_mask(m_clint_io_r_mask),
-    .io_r_valid(m_clint_io_r_valid),
     .io_mem_data(m_clint_io_mem_data),
-    .io_cnt(m_clint_io_cnt),
-    .io_r__ready(m_clint_io_r__ready),
-    .io_r__valid(m_clint_io_r__valid)
+    .io_r_ready(m_clint_io_r_ready),
+    .io_r_valid(m_clint_io_r_valid),
+    .io_b_ready(m_clint_io_b_ready),
+    .io_b_valid(m_clint_io_b_valid),
+    .io_b_resp(m_clint_io_b_resp)
   );
-  assign io_is_unknown_instruction = j_pc_next_io_is_unknown_instruction; // @[ysyx_25030077.scala 108:29]
+  ysyx_25030077_xbar n_xbar ( // @[ysyx_25030077.scala 23:22]
+    .io_axi_ar_valid(n_xbar_io_axi_ar_valid),
+    .io_axi_ar_addr(n_xbar_io_axi_ar_addr),
+    .io_axi_ar_strb(n_xbar_io_axi_ar_strb),
+    .io_axi_ar_ready(n_xbar_io_axi_ar_ready),
+    .io_axi_aw_valid(n_xbar_io_axi_aw_valid),
+    .io_axi_aw_addr(n_xbar_io_axi_aw_addr),
+    .io_axi_aw_ready(n_xbar_io_axi_aw_ready),
+    .io_axi_w_valid(n_xbar_io_axi_w_valid),
+    .io_axi_w_data(n_xbar_io_axi_w_data),
+    .io_axi_w_strb(n_xbar_io_axi_w_strb),
+    .io_axi_w_ready(n_xbar_io_axi_w_ready),
+    .io_axi_r_valid(n_xbar_io_axi_r_valid),
+    .io_axi_r_data(n_xbar_io_axi_r_data),
+    .io_axi_r_ready(n_xbar_io_axi_r_ready),
+    .io_axi_b_valid(n_xbar_io_axi_b_valid),
+    .io_axi_b_ready(n_xbar_io_axi_b_ready),
+    .io_axi_ar_valid_mem(n_xbar_io_axi_ar_valid_mem),
+    .io_axi_ar_addr_mem(n_xbar_io_axi_ar_addr_mem),
+    .io_axi_ar_strb_mem(n_xbar_io_axi_ar_strb_mem),
+    .io_axi_ar_ready_mem(n_xbar_io_axi_ar_ready_mem),
+    .io_axi_ar_valid_clint(n_xbar_io_axi_ar_valid_clint),
+    .io_axi_ar_addr_clint(n_xbar_io_axi_ar_addr_clint),
+    .io_axi_ar_strb_clint(n_xbar_io_axi_ar_strb_clint),
+    .io_axi_ar_ready_clint(n_xbar_io_axi_ar_ready_clint),
+    .io_axi_aw_valid_mem(n_xbar_io_axi_aw_valid_mem),
+    .io_axi_aw_addr_mem(n_xbar_io_axi_aw_addr_mem),
+    .io_axi_aw_ready_mem(n_xbar_io_axi_aw_ready_mem),
+    .io_axi_w_valid_mem(n_xbar_io_axi_w_valid_mem),
+    .io_axi_w_data_mem(n_xbar_io_axi_w_data_mem),
+    .io_axi_w_strb_mem(n_xbar_io_axi_w_strb_mem),
+    .io_axi_w_ready_mem(n_xbar_io_axi_w_ready_mem),
+    .io_axi_aw_valid_uart(n_xbar_io_axi_aw_valid_uart),
+    .io_axi_aw_addr_uart(n_xbar_io_axi_aw_addr_uart),
+    .io_axi_aw_ready_uart(n_xbar_io_axi_aw_ready_uart),
+    .io_axi_w_valid_uart(n_xbar_io_axi_w_valid_uart),
+    .io_axi_w_data_uart(n_xbar_io_axi_w_data_uart),
+    .io_axi_w_strb_uart(n_xbar_io_axi_w_strb_uart),
+    .io_axi_w_ready_uart(n_xbar_io_axi_w_ready_uart),
+    .io_axi_r_valid_mem(n_xbar_io_axi_r_valid_mem),
+    .io_axi_r_data_mem(n_xbar_io_axi_r_data_mem),
+    .io_axi_r_ready_mem(n_xbar_io_axi_r_ready_mem),
+    .io_axi_b_valid_mem(n_xbar_io_axi_b_valid_mem),
+    .io_axi_b_ready_mem(n_xbar_io_axi_b_ready_mem),
+    .io_axi_b_valid_clint(n_xbar_io_axi_b_valid_clint),
+    .io_axi_b_ready_clint(n_xbar_io_axi_b_ready_clint),
+    .io_axi_r_valid_clint(n_xbar_io_axi_r_valid_clint),
+    .io_axi_r_data_clint(n_xbar_io_axi_r_data_clint),
+    .io_axi_r_ready_clint(n_xbar_io_axi_r_ready_clint)
+  );
+  assign io_is_unknown_instruction = j_pc_next_io_is_unknown_instruction; // @[ysyx_25030077.scala 127:29]
   assign b_ifu_clock = clock;
   assign b_ifu_reset = reset;
-  assign b_ifu_io_rd_Req_valid = f_gpr_io_ifu_Req_valid; // @[ysyx_25030077.scala 65:20]
-  assign b_ifu_io_rd_Req_bits_addr = f_gpr_io_ifu_Req_bits_addr; // @[ysyx_25030077.scala 65:20]
-  assign b_ifu_io_ar_ready = c_arbiter_io_ifu_ready; // @[ysyx_25030077.scala 24:21]
+  assign b_ifu_io_rd_Req_valid = f_gpr_io_ifu_Req_valid; // @[ysyx_25030077.scala 58:20]
+  assign b_ifu_io_rd_Req_bits_addr = f_gpr_io_ifu_Req_bits_addr; // @[ysyx_25030077.scala 58:20]
+  assign b_ifu_io_ar_ready = c_arbiter_io_ifu_ready; // @[ysyx_25030077.scala 25:21]
   assign c_arbiter_clock = clock;
   assign c_arbiter_reset = reset;
-  assign c_arbiter_io_ifu_valid = b_ifu_io_ar_valid; // @[ysyx_25030077.scala 26:26]
-  assign c_arbiter_io_delay_cnt_mem = g_mem_io_cnt; // @[ysyx_25030077.scala 47:30]
-  assign c_arbiter_io_delay_cnt_clint = m_clint_io_cnt; // @[ysyx_25030077.scala 48:32]
-  assign c_arbiter_io_pc = b_ifu_io_ar_bits_addr; // @[ysyx_25030077.scala 27:19]
-  assign c_arbiter_io_rs1_data = f_gpr_io_rdata_rs1; // @[ysyx_25030077.scala 28:25]
-  assign c_arbiter_io_rs2_data = f_gpr_io_rdata_rs2; // @[ysyx_25030077.scala 29:25]
-  assign c_arbiter_io_imm = e_imm_io_imm; // @[ysyx_25030077.scala 30:20]
-  assign c_arbiter_io_r_mask = d_idu_io_r_mask; // @[ysyx_25030077.scala 31:23]
-  assign c_arbiter_io_w_mask = d_idu_io_w_mask; // @[ysyx_25030077.scala 32:23]
-  assign c_arbiter_io_axi_ar_ready_mem = g_mem_io_ar_ready; // @[ysyx_25030077.scala 33:33]
-  assign c_arbiter_io_axi_ar_ready_clint = m_clint_io_ar_ready; // @[ysyx_25030077.scala 36:35]
-  assign c_arbiter_io_axi_aw_ready_mem = g_mem_io_aw_ready; // @[ysyx_25030077.scala 34:33]
-  assign c_arbiter_io_axi_w_ready_mem = g_mem_io_w_ready; // @[ysyx_25030077.scala 35:32]
-  assign c_arbiter_io_axi_aw_ready_uart = l_uart_io_aw_ready; // @[ysyx_25030077.scala 37:34]
-  assign c_arbiter_io_axi_w_ready_uart = l_uart_io_w_ready; // @[ysyx_25030077.scala 38:33]
-  assign c_arbiter_io_axi_r_valid_mem = g_mem_io_r__valid; // @[ysyx_25030077.scala 39:32]
-  assign c_arbiter_io_axi_r_data_mem = g_mem_io_mem_data; // @[ysyx_25030077.scala 40:31]
-  assign c_arbiter_io_axi_r_valid_clint = m_clint_io_r__valid; // @[ysyx_25030077.scala 41:34]
-  assign c_arbiter_io_axi_r_data_clint = m_clint_io_mem_data; // @[ysyx_25030077.scala 42:33]
-  assign c_arbiter_io_axi_b_valid = g_mem_io_b_valid; // @[ysyx_25030077.scala 43:28]
-  assign c_arbiter_io_axi_b_resp = g_mem_io_b_resp; // @[ysyx_25030077.scala 49:27]
-  assign c_arbiter_io_gpr_r_ready = f_gpr_io_mem_Req_ready; // @[ysyx_25030077.scala 45:28]
-  assign c_arbiter_io_gpr_b_ready = f_gpr_io_b_ready; // @[ysyx_25030077.scala 46:28]
-  assign c_arbiter_io_r_valid_lsu = d_idu_io_r_valid; // @[ysyx_25030077.scala 44:28]
-  assign d_idu_io_instruction = c_arbiter_io_inst; // @[ysyx_25030077.scala 51:24]
-  assign e_imm_io_instruction = c_arbiter_io_inst; // @[ysyx_25030077.scala 67:24]
-  assign e_imm_io_imm_type = d_idu_io_imm_type; // @[ysyx_25030077.scala 68:21]
+  assign c_arbiter_io_ifu_valid = b_ifu_io_ar_valid; // @[ysyx_25030077.scala 27:26]
+  assign c_arbiter_io_pc = b_ifu_io_ar_bits_addr; // @[ysyx_25030077.scala 28:19]
+  assign c_arbiter_io_rs1_data = f_gpr_io_rdata_rs1; // @[ysyx_25030077.scala 29:25]
+  assign c_arbiter_io_rs2_data = f_gpr_io_rdata_rs2; // @[ysyx_25030077.scala 30:25]
+  assign c_arbiter_io_imm = e_imm_io_imm; // @[ysyx_25030077.scala 31:20]
+  assign c_arbiter_io_r_mask = d_idu_io_r_mask; // @[ysyx_25030077.scala 32:23]
+  assign c_arbiter_io_w_mask = d_idu_io_w_mask; // @[ysyx_25030077.scala 33:23]
+  assign c_arbiter_io_axi_ar_ready = n_xbar_io_axi_ar_ready; // @[ysyx_25030077.scala 34:29]
+  assign c_arbiter_io_axi_aw_ready = n_xbar_io_axi_aw_ready; // @[ysyx_25030077.scala 35:29]
+  assign c_arbiter_io_axi_w_ready = n_xbar_io_axi_w_ready; // @[ysyx_25030077.scala 36:28]
+  assign c_arbiter_io_axi_r_valid = n_xbar_io_axi_r_valid; // @[ysyx_25030077.scala 37:28]
+  assign c_arbiter_io_axi_r_data = n_xbar_io_axi_r_data; // @[ysyx_25030077.scala 38:28]
+  assign c_arbiter_io_axi_b_valid = n_xbar_io_axi_b_valid; // @[ysyx_25030077.scala 39:28]
+  assign c_arbiter_io_axi_b_resp = 2'h0; // @[ysyx_25030077.scala 43:28]
+  assign c_arbiter_io_gpr_r_ready = f_gpr_io_mem_Req_ready; // @[ysyx_25030077.scala 41:28]
+  assign c_arbiter_io_gpr_b_ready = f_gpr_io_b_ready; // @[ysyx_25030077.scala 42:28]
+  assign c_arbiter_io_r_valid_lsu = d_idu_io_r_valid; // @[ysyx_25030077.scala 40:28]
+  assign d_idu_io_instruction = c_arbiter_io_inst; // @[ysyx_25030077.scala 45:24]
+  assign e_imm_io_instruction = c_arbiter_io_inst; // @[ysyx_25030077.scala 60:24]
+  assign e_imm_io_imm_type = d_idu_io_imm_type; // @[ysyx_25030077.scala 61:21]
   assign f_gpr_clock = clock;
   assign f_gpr_reset = reset;
-  assign f_gpr_io_mem_Req_valid = c_arbiter_io_gpr_r_valid; // @[ysyx_25030077.scala 75:26]
-  assign f_gpr_io_b_valid = c_arbiter_io_gpr_b_valid; // @[ysyx_25030077.scala 76:20]
-  assign f_gpr_io_gpr_b_resp = c_arbiter_io_gpr_b_resp; // @[ysyx_25030077.scala 77:23]
-  assign f_gpr_io_pc_next = j_pc_next_io_pc_next; // @[ysyx_25030077.scala 72:20]
-  assign f_gpr_io_waddr_rd = d_idu_io_rd; // @[ysyx_25030077.scala 73:21]
-  assign f_gpr_io_wdata_rd = i_alu_io_out; // @[ysyx_25030077.scala 74:21]
-  assign f_gpr_io_raddr_rs1 = d_idu_io_rs1; // @[ysyx_25030077.scala 70:22]
-  assign f_gpr_io_raddr_rs2 = d_idu_io_rs2; // @[ysyx_25030077.scala 71:22]
-  assign f_gpr_io_ifu_Req_ready = b_ifu_io_rd_Req_ready; // @[ysyx_25030077.scala 65:20]
+  assign f_gpr_io_mem_Req_valid = c_arbiter_io_gpr_r_valid; // @[ysyx_25030077.scala 68:26]
+  assign f_gpr_io_b_valid = c_arbiter_io_gpr_b_valid; // @[ysyx_25030077.scala 69:20]
+  assign f_gpr_io_gpr_b_resp = c_arbiter_io_gpr_b_resp; // @[ysyx_25030077.scala 70:23]
+  assign f_gpr_io_pc_next = j_pc_next_io_pc_next; // @[ysyx_25030077.scala 65:20]
+  assign f_gpr_io_waddr_rd = d_idu_io_rd; // @[ysyx_25030077.scala 66:21]
+  assign f_gpr_io_wdata_rd = i_alu_io_out; // @[ysyx_25030077.scala 67:21]
+  assign f_gpr_io_raddr_rs1 = d_idu_io_rs1; // @[ysyx_25030077.scala 63:22]
+  assign f_gpr_io_raddr_rs2 = d_idu_io_rs2; // @[ysyx_25030077.scala 64:22]
+  assign f_gpr_io_ifu_Req_ready = b_ifu_io_rd_Req_ready; // @[ysyx_25030077.scala 58:20]
   assign g_mem_clock = clock;
   assign g_mem_reset = reset;
-  assign g_mem_io_ar_valid = c_arbiter_io_axi_ar_valid_mem; // @[ysyx_25030077.scala 53:21]
-  assign g_mem_io_aw_valid = c_arbiter_io_axi_aw_valid_mem; // @[ysyx_25030077.scala 54:21]
-  assign g_mem_io_w_valid = c_arbiter_io_axi_w_valid_mem; // @[ysyx_25030077.scala 55:20]
-  assign g_mem_io_waddr = c_arbiter_io_axi_aw_addr_mem; // @[ysyx_25030077.scala 56:18]
-  assign g_mem_io_raddr = c_arbiter_io_axi_ar_addr_mem; // @[ysyx_25030077.scala 57:18]
-  assign g_mem_io_wdata = c_arbiter_io_axi_w_data_mem; // @[ysyx_25030077.scala 58:18]
-  assign g_mem_io_r_mask = c_arbiter_io_axi_ar_strb_mem; // @[ysyx_25030077.scala 59:19]
-  assign g_mem_io_w_mask = c_arbiter_io_axi_w_strb_mem; // @[ysyx_25030077.scala 60:19]
-  assign g_mem_io_r_valid = c_arbiter_io_is_r; // @[ysyx_25030077.scala 61:20]
-  assign g_mem_io_r__ready = c_arbiter_io_axi_r_ready_mem; // @[ysyx_25030077.scala 62:20]
-  assign g_mem_io_b_ready = c_arbiter_io_axi_b_ready; // @[ysyx_25030077.scala 63:20]
-  assign h_data_control_io_rs1_data = f_gpr_io_rdata_rs1; // @[ysyx_25030077.scala 85:30]
-  assign h_data_control_io_rs2_data = f_gpr_io_rdata_rs2; // @[ysyx_25030077.scala 86:30]
-  assign h_data_control_io_imm = e_imm_io_imm; // @[ysyx_25030077.scala 87:25]
-  assign h_data_control_io_mem_data = c_arbiter_io_gpr_data; // @[ysyx_25030077.scala 88:30]
-  assign h_data_control_io_pc_count = b_ifu_io_rd_Req_bits_addr; // @[ysyx_25030077.scala 90:30]
-  assign h_data_control_io_data_control = d_idu_io_data_control; // @[ysyx_25030077.scala 89:34]
-  assign i_alu_io_in_a = h_data_control_io_data_1; // @[ysyx_25030077.scala 92:17]
-  assign i_alu_io_in_b = h_data_control_io_data_2; // @[ysyx_25030077.scala 93:17]
-  assign i_alu_io_sw = d_idu_io_ALU_ctrl; // @[ysyx_25030077.scala 94:15]
-  assign j_pc_next_io_rs1_data = f_gpr_io_rdata_rs1; // @[ysyx_25030077.scala 79:25]
-  assign j_pc_next_io_rs2_data = f_gpr_io_rdata_rs2; // @[ysyx_25030077.scala 80:25]
-  assign j_pc_next_io_instruction = c_arbiter_io_inst; // @[ysyx_25030077.scala 81:28]
-  assign j_pc_next_io_pc_next_type = d_idu_io_pc_next_type; // @[ysyx_25030077.scala 83:29]
-  assign j_pc_next_io_pc_count = b_ifu_io_rd_Req_bits_addr; // @[ysyx_25030077.scala 82:25]
+  assign g_mem_io_ar_valid = n_xbar_io_axi_ar_valid_mem; // @[ysyx_25030077.scala 47:21]
+  assign g_mem_io_aw_valid = n_xbar_io_axi_aw_valid_mem; // @[ysyx_25030077.scala 48:21]
+  assign g_mem_io_w_valid = n_xbar_io_axi_w_valid_mem; // @[ysyx_25030077.scala 49:20]
+  assign g_mem_io_waddr = n_xbar_io_axi_aw_addr_mem; // @[ysyx_25030077.scala 50:18]
+  assign g_mem_io_raddr = n_xbar_io_axi_ar_addr_mem; // @[ysyx_25030077.scala 51:18]
+  assign g_mem_io_wdata = n_xbar_io_axi_w_data_mem; // @[ysyx_25030077.scala 52:18]
+  assign g_mem_io_r_mask = n_xbar_io_axi_ar_strb_mem; // @[ysyx_25030077.scala 53:19]
+  assign g_mem_io_w_mask = n_xbar_io_axi_w_strb_mem; // @[ysyx_25030077.scala 54:19]
+  assign g_mem_io_r_ready = n_xbar_io_axi_r_ready_mem; // @[ysyx_25030077.scala 55:20]
+  assign g_mem_io_b_ready = n_xbar_io_axi_b_ready_mem; // @[ysyx_25030077.scala 56:20]
+  assign h_data_control_io_rs1_data = f_gpr_io_rdata_rs1; // @[ysyx_25030077.scala 78:30]
+  assign h_data_control_io_rs2_data = f_gpr_io_rdata_rs2; // @[ysyx_25030077.scala 79:30]
+  assign h_data_control_io_imm = e_imm_io_imm; // @[ysyx_25030077.scala 80:25]
+  assign h_data_control_io_mem_data = c_arbiter_io_gpr_data; // @[ysyx_25030077.scala 81:30]
+  assign h_data_control_io_pc_count = b_ifu_io_rd_Req_bits_addr; // @[ysyx_25030077.scala 83:30]
+  assign h_data_control_io_data_control = d_idu_io_data_control; // @[ysyx_25030077.scala 82:34]
+  assign i_alu_io_in_a = h_data_control_io_data_1; // @[ysyx_25030077.scala 85:17]
+  assign i_alu_io_in_b = h_data_control_io_data_2; // @[ysyx_25030077.scala 86:17]
+  assign i_alu_io_sw = d_idu_io_ALU_ctrl; // @[ysyx_25030077.scala 87:15]
+  assign j_pc_next_io_rs1_data = f_gpr_io_rdata_rs1; // @[ysyx_25030077.scala 72:25]
+  assign j_pc_next_io_rs2_data = f_gpr_io_rdata_rs2; // @[ysyx_25030077.scala 73:25]
+  assign j_pc_next_io_instruction = c_arbiter_io_inst; // @[ysyx_25030077.scala 74:28]
+  assign j_pc_next_io_pc_next_type = d_idu_io_pc_next_type; // @[ysyx_25030077.scala 76:29]
+  assign j_pc_next_io_pc_count = b_ifu_io_rd_Req_bits_addr; // @[ysyx_25030077.scala 75:25]
   assign l_uart_clock = clock;
   assign l_uart_reset = reset;
-  assign l_uart_io_aw_valid = c_arbiter_io_axi_aw_valid_uart; // @[ysyx_25030077.scala 96:22]
-  assign l_uart_io_w_valid = c_arbiter_io_axi_w_valid_uart; // @[ysyx_25030077.scala 97:21]
-  assign l_uart_io_waddr = c_arbiter_io_axi_aw_addr_uart; // @[ysyx_25030077.scala 98:19]
-  assign l_uart_io_wdata = c_arbiter_io_axi_w_data_uart; // @[ysyx_25030077.scala 99:19]
-  assign l_uart_io_w_mask = c_arbiter_io_axi_w_strb_uart; // @[ysyx_25030077.scala 100:20]
+  assign l_uart_io_aw_valid = n_xbar_io_axi_aw_valid_uart; // @[ysyx_25030077.scala 89:22]
+  assign l_uart_io_w_valid = n_xbar_io_axi_w_valid_uart; // @[ysyx_25030077.scala 90:21]
+  assign l_uart_io_waddr = n_xbar_io_axi_aw_addr_uart; // @[ysyx_25030077.scala 91:19]
+  assign l_uart_io_wdata = n_xbar_io_axi_w_data_uart; // @[ysyx_25030077.scala 92:19]
+  assign l_uart_io_w_mask = n_xbar_io_axi_w_strb_uart; // @[ysyx_25030077.scala 93:20]
   assign m_clint_clock = clock;
   assign m_clint_reset = reset;
-  assign m_clint_io_ar_valid = c_arbiter_io_axi_ar_valid_clint; // @[ysyx_25030077.scala 102:23]
-  assign m_clint_io_raddr = c_arbiter_io_axi_ar_addr_clint; // @[ysyx_25030077.scala 103:20]
-  assign m_clint_io_r_mask = c_arbiter_io_axi_ar_strb_clint; // @[ysyx_25030077.scala 104:21]
-  assign m_clint_io_r_valid = c_arbiter_io_is_r; // @[ysyx_25030077.scala 105:22]
-  assign m_clint_io_r__ready = c_arbiter_io_axi_r_ready_clint; // @[ysyx_25030077.scala 106:22]
+  assign m_clint_io_ar_valid = n_xbar_io_axi_ar_valid_clint; // @[ysyx_25030077.scala 95:23]
+  assign m_clint_io_raddr = n_xbar_io_axi_ar_addr_clint; // @[ysyx_25030077.scala 96:20]
+  assign m_clint_io_r_mask = n_xbar_io_axi_ar_strb_clint; // @[ysyx_25030077.scala 97:21]
+  assign m_clint_io_r_ready = n_xbar_io_axi_r_ready_clint; // @[ysyx_25030077.scala 99:22]
+  assign m_clint_io_b_ready = n_xbar_io_axi_b_ready_clint; // @[ysyx_25030077.scala 100:22]
+  assign n_xbar_io_axi_ar_valid = c_arbiter_io_axi_ar_valid; // @[ysyx_25030077.scala 102:26]
+  assign n_xbar_io_axi_ar_addr = c_arbiter_io_axi_ar_addr; // @[ysyx_25030077.scala 103:25]
+  assign n_xbar_io_axi_ar_strb = c_arbiter_io_axi_ar_strb; // @[ysyx_25030077.scala 104:25]
+  assign n_xbar_io_axi_aw_valid = c_arbiter_io_axi_aw_valid; // @[ysyx_25030077.scala 105:26]
+  assign n_xbar_io_axi_aw_addr = c_arbiter_io_axi_aw_addr; // @[ysyx_25030077.scala 106:25]
+  assign n_xbar_io_axi_w_valid = c_arbiter_io_axi_w_valid; // @[ysyx_25030077.scala 107:25]
+  assign n_xbar_io_axi_w_data = c_arbiter_io_axi_w_data; // @[ysyx_25030077.scala 108:24]
+  assign n_xbar_io_axi_w_strb = c_arbiter_io_axi_w_strb; // @[ysyx_25030077.scala 109:24]
+  assign n_xbar_io_axi_r_ready = c_arbiter_io_axi_r_ready; // @[ysyx_25030077.scala 110:25]
+  assign n_xbar_io_axi_b_ready = c_arbiter_io_axi_b_ready; // @[ysyx_25030077.scala 111:25]
+  assign n_xbar_io_axi_ar_ready_mem = g_mem_io_ar_ready; // @[ysyx_25030077.scala 112:30]
+  assign n_xbar_io_axi_ar_ready_clint = m_clint_io_ar_ready; // @[ysyx_25030077.scala 113:32]
+  assign n_xbar_io_axi_aw_ready_mem = g_mem_io_aw_ready; // @[ysyx_25030077.scala 114:30]
+  assign n_xbar_io_axi_w_ready_mem = g_mem_io_w_ready; // @[ysyx_25030077.scala 116:29]
+  assign n_xbar_io_axi_aw_ready_uart = l_uart_io_aw_ready; // @[ysyx_25030077.scala 115:31]
+  assign n_xbar_io_axi_w_ready_uart = l_uart_io_w_ready; // @[ysyx_25030077.scala 117:30]
+  assign n_xbar_io_axi_r_valid_mem = g_mem_io_r_valid; // @[ysyx_25030077.scala 118:29]
+  assign n_xbar_io_axi_r_data_mem = g_mem_io_mem_data; // @[ysyx_25030077.scala 119:28]
+  assign n_xbar_io_axi_b_valid_mem = g_mem_io_r_valid; // @[ysyx_25030077.scala 122:29]
+  assign n_xbar_io_axi_b_valid_clint = m_clint_io_r_valid; // @[ysyx_25030077.scala 124:31]
+  assign n_xbar_io_axi_r_valid_clint = m_clint_io_r_valid; // @[ysyx_25030077.scala 120:31]
+  assign n_xbar_io_axi_r_data_clint = m_clint_io_mem_data; // @[ysyx_25030077.scala 121:30]
 endmodule

@@ -2,9 +2,7 @@
 // DESCRIPTION: Verilator output: Design implementation internals
 // See Vtop.h for the primary calling header
 
-#include "verilated.h"
-#include "verilated_dpi.h"
-
+#include "Vtop__pch.h"
 #include "Vtop__Syms.h"
 #include "Vtop___024root.h"
 
@@ -21,7 +19,7 @@ VL_INLINE_OPT void Vtop___024root____Vdpiimwrap_ysyx_25030077_top__DOT__i1__DOT_
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root____Vdpiimwrap_ysyx_25030077_top__DOT__i1__DOT__addr_read_TOP\n"); );
     // Body
     svBitVecVal pc__Vcvt[1];
-    for (size_t pc__Vidx = 0; pc__Vidx < 1; ++pc__Vidx) VL_SET_SVBV_I(32, pc__Vcvt + 1 * pc__Vidx, pc);
+    VL_SET_SVBV_I(32, pc__Vcvt, pc);
     svBitVecVal addr_read__Vfuncrtn__Vcvt[1];
     addr_read__Vfuncrtn__Vcvt[0] = addr_read(pc__Vcvt);
     addr_read__Vfuncrtn = VL_SET_I_SVBV(addr_read__Vfuncrtn__Vcvt);
@@ -33,7 +31,7 @@ VL_INLINE_OPT void Vtop___024root____Vdpiimwrap_ysyx_25030077_top__DOT__i2__DOT_
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root____Vdpiimwrap_ysyx_25030077_top__DOT__i2__DOT__is_break_TOP\n"); );
     // Body
     svBitVecVal instruction_in__Vcvt[1];
-    for (size_t instruction_in__Vidx = 0; instruction_in__Vidx < 1; ++instruction_in__Vidx) VL_SET_SVBV_I(32, instruction_in__Vcvt + 1 * instruction_in__Vidx, instruction_in);
+    VL_SET_SVBV_I(32, instruction_in__Vcvt, instruction_in);
     svBit is_break__Vfuncrtn__Vcvt;
     is_break__Vfuncrtn__Vcvt = is_break(instruction_in__Vcvt);
     is_break__Vfuncrtn = (1U & is_break__Vfuncrtn__Vcvt);
@@ -73,11 +71,11 @@ VL_INLINE_OPT void Vtop___024root____Vdpiimwrap_ysyx_25030077_top__DOT__i6__DOT_
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root____Vdpiimwrap_ysyx_25030077_top__DOT__i6__DOT__csr_read_TOP\n"); );
     // Body
     svBitVecVal rs1__Vcvt[1];
-    for (size_t rs1__Vidx = 0; rs1__Vidx < 1; ++rs1__Vidx) VL_SET_SVBV_I(32, rs1__Vcvt + 1 * rs1__Vidx, rs1);
+    VL_SET_SVBV_I(32, rs1__Vcvt, rs1);
     svBitVecVal imm__Vcvt[1];
-    for (size_t imm__Vidx = 0; imm__Vidx < 1; ++imm__Vidx) VL_SET_SVBV_I(32, imm__Vcvt + 1 * imm__Vidx, imm);
+    VL_SET_SVBV_I(32, imm__Vcvt, imm);
     svBitVecVal sw__Vcvt[1];
-    for (size_t sw__Vidx = 0; sw__Vidx < 1; ++sw__Vidx) VL_SET_SVBV_I(4, sw__Vcvt + 1 * sw__Vidx, sw);
+    VL_SET_SVBV_I(4, sw__Vcvt, sw);
     svBitVecVal csr_read__Vfuncrtn__Vcvt[1];
     csr_read__Vfuncrtn__Vcvt[0] = csr_read(rs1__Vcvt, imm__Vcvt, sw__Vcvt);
     csr_read__Vfuncrtn = VL_SET_I_SVBV(csr_read__Vfuncrtn__Vcvt);
@@ -96,9 +94,9 @@ VL_INLINE_OPT void Vtop___024root____Vdpiimwrap_ysyx_25030077_top__DOT__i7__DOT_
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root____Vdpiimwrap_ysyx_25030077_top__DOT__i7__DOT__ecall_read_TOP\n"); );
     // Body
     svBitVecVal pc__Vcvt[1];
-    for (size_t pc__Vidx = 0; pc__Vidx < 1; ++pc__Vidx) VL_SET_SVBV_I(32, pc__Vcvt + 1 * pc__Vidx, pc);
+    VL_SET_SVBV_I(32, pc__Vcvt, pc);
     svBitVecVal type_p__Vcvt[1];
-    for (size_t type_p__Vidx = 0; type_p__Vidx < 1; ++type_p__Vidx) VL_SET_SVBV_I(4, type_p__Vcvt + 1 * type_p__Vidx, type_p);
+    VL_SET_SVBV_I(4, type_p__Vcvt, type_p);
     svBitVecVal ecall_read__Vfuncrtn__Vcvt[1];
     ecall_read__Vfuncrtn__Vcvt[0] = ecall_read(pc__Vcvt, type_p__Vcvt);
     ecall_read__Vfuncrtn = VL_SET_I_SVBV(ecall_read__Vfuncrtn__Vcvt);
@@ -110,13 +108,13 @@ VL_INLINE_OPT void Vtop___024root____Vdpiimwrap_ysyx_25030077_top__DOT__i9__DOT_
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root____Vdpiimwrap_ysyx_25030077_top__DOT__i9__DOT__mem_data_read_TOP\n"); );
     // Body
     svBitVecVal instruction_in__Vcvt[1];
-    for (size_t instruction_in__Vidx = 0; instruction_in__Vidx < 1; ++instruction_in__Vidx) VL_SET_SVBV_I(32, instruction_in__Vcvt + 1 * instruction_in__Vidx, instruction_in);
+    VL_SET_SVBV_I(32, instruction_in__Vcvt, instruction_in);
     svBitVecVal rs1_data_in__Vcvt[1];
-    for (size_t rs1_data_in__Vidx = 0; rs1_data_in__Vidx < 1; ++rs1_data_in__Vidx) VL_SET_SVBV_I(32, rs1_data_in__Vcvt + 1 * rs1_data_in__Vidx, rs1_data_in);
+    VL_SET_SVBV_I(32, rs1_data_in__Vcvt, rs1_data_in);
     svBitVecVal rs2_data_in__Vcvt[1];
-    for (size_t rs2_data_in__Vidx = 0; rs2_data_in__Vidx < 1; ++rs2_data_in__Vidx) VL_SET_SVBV_I(32, rs2_data_in__Vcvt + 1 * rs2_data_in__Vidx, rs2_data_in);
+    VL_SET_SVBV_I(32, rs2_data_in__Vcvt, rs2_data_in);
     svBitVecVal imm_data_in__Vcvt[1];
-    for (size_t imm_data_in__Vidx = 0; imm_data_in__Vidx < 1; ++imm_data_in__Vidx) VL_SET_SVBV_I(32, imm_data_in__Vcvt + 1 * imm_data_in__Vidx, imm_data_in);
+    VL_SET_SVBV_I(32, imm_data_in__Vcvt, imm_data_in);
     svBitVecVal mem_data_read__Vfuncrtn__Vcvt[1];
     mem_data_read__Vfuncrtn__Vcvt[0] = mem_data_read(instruction_in__Vcvt, rs1_data_in__Vcvt, rs2_data_in__Vcvt, imm_data_in__Vcvt);
     mem_data_read__Vfuncrtn = VL_SET_I_SVBV(mem_data_read__Vfuncrtn__Vcvt);
@@ -127,13 +125,13 @@ VL_ATTR_COLD void Vtop___024root___dump_triggers__act(Vtop___024root* vlSelf);
 #endif  // VL_DEBUG
 
 void Vtop___024root___eval_triggers__act(Vtop___024root* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_triggers__act\n"); );
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelf->__VactTriggered.at(0U) = ((IData)(vlSelf->clock) 
-                                      & (~ (IData)(vlSelf->__Vtrigrprev__TOP__clock)));
-    vlSelf->__Vtrigrprev__TOP__clock = vlSelf->clock;
+    vlSelfRef.__VactTriggered.setBit(0U, ((IData)(vlSelfRef.clock) 
+                                          & (~ (IData)(vlSelfRef.__Vtrigprevexpr___TOP__clock__0))));
+    vlSelfRef.__Vtrigprevexpr___TOP__clock__0 = vlSelfRef.clock;
 #ifdef VL_DEBUG
     if (VL_UNLIKELY(vlSymsp->_vm_contextp__->debug())) {
         Vtop___024root___dump_triggers__act(vlSelf);

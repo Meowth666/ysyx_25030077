@@ -58,18 +58,8 @@ void Vysyx_25030077___024root____Vdpiexp_ysyx_25030077__DOT__g_mem__DOT__wmask_r
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_25030077___024root____Vdpiexp_ysyx_25030077__DOT__g_mem__DOT__wmask_read_TOP\n"); );
     // Init
     // Body
-    wmask_read__Vfuncrtn = ((0xa00003f8U == vlSymsp->TOP.ysyx_25030077__DOT__c_arbiter__DOT__axi_aw_addr)
-                             ? 0U : ((1U == (IData)(vlSymsp->TOP.ysyx_25030077__DOT__c_arbiter__DOT__state_reg))
-                                      ? ((0x123U == (IData)(vlSymsp->TOP.ysyx_25030077__DOT__d_idu__DOT___isaddi_T_2))
-                                          ? 1U : ((0x23U 
-                                                   == (IData)(vlSymsp->TOP.ysyx_25030077__DOT__d_idu__DOT___isaddi_T_2))
-                                                   ? 3U
-                                                   : 
-                                                  ((0xa3U 
-                                                    == (IData)(vlSymsp->TOP.ysyx_25030077__DOT__d_idu__DOT___isaddi_T_2))
-                                                    ? 2U
-                                                    : 0U)))
-                                      : 0U));
+    wmask_read__Vfuncrtn = ((0xa00003f8U == vlSymsp->TOP.ysyx_25030077__DOT__c_arbiter_io_axi_aw_addr)
+                             ? 0U : (IData)(vlSymsp->TOP.ysyx_25030077__DOT__c_arbiter_io_axi_w_strb));
 }
 
 void Vysyx_25030077___024root____Vdpiexp_ysyx_25030077__DOT__g_mem__DOT__valid_read_TOP(Vysyx_25030077__Syms* __restrict vlSymsp, IData/*31:0*/ &valid_read__Vfuncrtn) {
@@ -77,8 +67,8 @@ void Vysyx_25030077___024root____Vdpiexp_ysyx_25030077__DOT__g_mem__DOT__valid_r
     // Init
     // Body
     valid_read__Vfuncrtn = ((IData)(vlSymsp->TOP.ysyx_25030077__DOT__g_mem__DOT__canAccept_prng__DOT__state_0) 
-                            & ((0xa00003f8U != vlSymsp->TOP.ysyx_25030077__DOT__c_arbiter__DOT__axi_aw_addr) 
-                               & (IData)(vlSymsp->TOP.ysyx_25030077__DOT__c_arbiter__DOT__axi_aw_valid)));
+                            & ((0xa00003f8U != vlSymsp->TOP.ysyx_25030077__DOT__c_arbiter_io_axi_aw_addr) 
+                               & (IData)(vlSymsp->TOP.ysyx_25030077__DOT__c_arbiter_io_axi_aw_valid)));
 }
 
 void Vysyx_25030077___024root____Vdpiexp_ysyx_25030077__DOT__h_data_control__DOT__reg_read_rs1_TOP(Vysyx_25030077__Syms* __restrict vlSymsp, IData/*31:0*/ &reg_read_rs1__Vfuncrtn) {

@@ -1,4 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/b_npc_2/src/main/scala/ysyx_25030077.scala:17:26: not found: type mem[0m
-[0m[[0m[31merror[0m] [0m[0m  val g_mem = Module(new mem())[0m
-[0m[[0m[31merror[0m] [0m[0m                         ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/b_npc_2/src/main/scala/ysyx_25030077_xbar.scala:85:74: not found: value axi_ar_addr[0m
+[0m[[0m[31merror[0m] [0m[0m    io.axi_ar_addr_mem    := Mux(((io.axi_ar_addr === 0xa0000048L.U) || (axi_ar_addr === 0xa000004cL.U)), 0x80000000L.U, io.axi_ar_addr)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/meowth/ysyx/ysyx-workbench/chisel/b_npc_2/src/main/scala/ysyx_25030077_xbar.scala:86:74: not found: value axi_ar_addr[0m
+[0m[[0m[31merror[0m] [0m[0m    io.axi_ar_addr_clint  := Mux(((io.axi_ar_addr === 0xa0000048L.U) || (axi_ar_addr === 0xa000004cL.U)), io.axi_ar_addr, 0x80000000L.U)      [0m
+[0m[[0m[31merror[0m] [0m[0m                                                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

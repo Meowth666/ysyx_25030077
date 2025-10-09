@@ -312,11 +312,12 @@ module ysyx_25030077_clint(
   input         io_ar_valid,
   input  [31:0] io_raddr,
   input  [2:0]  io_r_mask,
-  input         io_r_valid,
   output [31:0] io_mem_data,
-  output [2:0]  io_cnt,
-  input         io_r__ready,
-  output        io_r__valid
+  input         io_r_ready,
+  output        io_r_valid,
+  input         io_b_ready,
+  output        io_b_valid,
+  output [1:0]  io_b_resp
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [63:0] _RAND_0;
@@ -341,28 +342,30 @@ module ysyx_25030077_clint(
   wire  canAccept_prng_io_out_13; // @[PRNG.scala 91:22]
   wire  canAccept_prng_io_out_14; // @[PRNG.scala 91:22]
   wire  canAccept_prng_io_out_15; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_clock; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_reset; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_0; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_1; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_2; // @[PRNG.scala 91:22]
-  reg [63:0] mem_data_Reg; // @[ysyx_25030077_clint.scala 17:29]
-  reg  validReg; // @[ysyx_25030077_clint.scala 18:25]
+  wire  lfsrValue_prng_clock; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_reset; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_0; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_1; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_2; // @[PRNG.scala 91:22]
+  reg [63:0] mem_data_Reg; // @[ysyx_25030077_clint.scala 18:29]
+  reg  validReg; // @[ysyx_25030077_clint.scala 19:25]
   wire [7:0] canAccept_lo = {canAccept_prng_io_out_7,canAccept_prng_io_out_6,canAccept_prng_io_out_5,
     canAccept_prng_io_out_4,canAccept_prng_io_out_3,canAccept_prng_io_out_2,canAccept_prng_io_out_1,
     canAccept_prng_io_out_0}; // @[PRNG.scala 95:17]
   wire [15:0] _canAccept_T = {canAccept_prng_io_out_15,canAccept_prng_io_out_14,canAccept_prng_io_out_13,
     canAccept_prng_io_out_12,canAccept_prng_io_out_11,canAccept_prng_io_out_10,canAccept_prng_io_out_9,
     canAccept_prng_io_out_8,canAccept_lo}; // @[PRNG.scala 95:17]
-  wire  canAccept = _canAccept_T[0]; // @[ysyx_25030077_clint.scala 19:28]
-  reg [2:0] delayCnt; // @[ysyx_25030077_clint.scala 21:25]
-  wire  _startDelay_T = io_ar_valid & canAccept; // @[ysyx_25030077_clint.scala 23:29]
-  wire  startDelay = io_ar_valid & canAccept & io_r_valid; // @[ysyx_25030077_clint.scala 23:42]
-  wire [2:0] _delayCnt_T = {delayCnt_prng_io_out_2,delayCnt_prng_io_out_1,delayCnt_prng_io_out_0}; // @[PRNG.scala 95:17]
-  wire [2:0] _delayCnt_T_3 = delayCnt - 3'h1; // @[ysyx_25030077_clint.scala 27:46]
-  wire  _io_r_valid_T = delayCnt == 3'h0; // @[ysyx_25030077_clint.scala 30:39]
-  wire  _validReg_T_3 = io_r__ready & _io_r_valid_T ? 1'h0 : validReg; // @[ysyx_25030077_clint.scala 34:18]
-  wire [63:0] _mem_data_Reg_T_2 = mem_data_Reg + 64'h320; // @[ysyx_25030077_clint.scala 36:62]
+  wire  canAccept = _canAccept_T[0]; // @[ysyx_25030077_clint.scala 20:28]
+  reg [2:0] delayCnt; // @[ysyx_25030077_clint.scala 22:25]
+  wire  r_valid_1 = io_r_mask > 3'h0; // @[ysyx_25030077_clint.scala 25:29]
+  wire  _startDelay_T = io_ar_valid & canAccept; // @[ysyx_25030077_clint.scala 26:29]
+  wire  startDelay = io_ar_valid & canAccept & r_valid_1; // @[ysyx_25030077_clint.scala 26:42]
+  wire [2:0] lfsrValue = {lfsrValue_prng_io_out_2,lfsrValue_prng_io_out_1,lfsrValue_prng_io_out_0}; // @[PRNG.scala 95:17]
+  wire  _delayCnt_T = delayCnt == 3'h0; // @[ysyx_25030077_clint.scala 31:43]
+  wire [2:0] _delayCnt_T_4 = delayCnt - 3'h1; // @[ysyx_25030077_clint.scala 32:46]
+  wire  _io_r_valid_T_2 = _delayCnt_T | delayCnt == 3'h1; // @[ysyx_25030077_clint.scala 35:47]
+  wire  _validReg_T_3 = io_r_ready & _delayCnt_T ? 1'h0 : validReg; // @[ysyx_25030077_clint.scala 41:18]
+  wire [63:0] _mem_data_Reg_T_2 = mem_data_Reg + 64'h700; // @[ysyx_25030077_clint.scala 43:62]
   MaxPeriodFibonacciLFSR canAccept_prng ( // @[PRNG.scala 91:22]
     .clock(canAccept_prng_clock),
     .reset(canAccept_prng_reset),
@@ -383,38 +386,43 @@ module ysyx_25030077_clint(
     .io_out_14(canAccept_prng_io_out_14),
     .io_out_15(canAccept_prng_io_out_15)
   );
-  MaxPeriodFibonacciLFSR_1 delayCnt_prng ( // @[PRNG.scala 91:22]
-    .clock(delayCnt_prng_clock),
-    .reset(delayCnt_prng_reset),
-    .io_out_0(delayCnt_prng_io_out_0),
-    .io_out_1(delayCnt_prng_io_out_1),
-    .io_out_2(delayCnt_prng_io_out_2)
+  MaxPeriodFibonacciLFSR_1 lfsrValue_prng ( // @[PRNG.scala 91:22]
+    .clock(lfsrValue_prng_clock),
+    .reset(lfsrValue_prng_reset),
+    .io_out_0(lfsrValue_prng_io_out_0),
+    .io_out_1(lfsrValue_prng_io_out_1),
+    .io_out_2(lfsrValue_prng_io_out_2)
   );
-  assign io_ar_ready = _canAccept_T[0]; // @[ysyx_25030077_clint.scala 19:28]
-  assign io_mem_data = io_raddr == 32'ha0000048 ? mem_data_Reg[31:0] : mem_data_Reg[63:32]; // @[ysyx_25030077_clint.scala 32:21]
-  assign io_cnt = delayCnt; // @[ysyx_25030077_clint.scala 24:10]
-  assign io_r__valid = validReg & delayCnt == 3'h0; // @[ysyx_25030077_clint.scala 30:26]
+  assign io_ar_ready = _canAccept_T[0]; // @[ysyx_25030077_clint.scala 20:28]
+  assign io_mem_data = io_raddr == 32'ha0000048 ? mem_data_Reg[31:0] : mem_data_Reg[63:32]; // @[ysyx_25030077_clint.scala 39:21]
+  assign io_r_valid = validReg & (_delayCnt_T | delayCnt == 3'h1); // @[ysyx_25030077_clint.scala 35:26]
+  assign io_b_valid = validReg & _io_r_valid_T_2; // @[ysyx_25030077_clint.scala 36:26]
+  assign io_b_resp = 2'h0; // @[ysyx_25030077_clint.scala 37:13]
   assign canAccept_prng_clock = clock;
   assign canAccept_prng_reset = reset;
-  assign delayCnt_prng_clock = clock;
-  assign delayCnt_prng_reset = reset;
+  assign lfsrValue_prng_clock = clock;
+  assign lfsrValue_prng_reset = reset;
   always @(posedge clock) begin
-    if (reset) begin // @[ysyx_25030077_clint.scala 17:29]
-      mem_data_Reg <= 64'h0; // @[ysyx_25030077_clint.scala 17:29]
-    end else if (_startDelay_T) begin // @[ysyx_25030077_clint.scala 36:22]
+    if (reset) begin // @[ysyx_25030077_clint.scala 18:29]
+      mem_data_Reg <= 64'h0; // @[ysyx_25030077_clint.scala 18:29]
+    end else if (_startDelay_T) begin // @[ysyx_25030077_clint.scala 43:22]
       mem_data_Reg <= _mem_data_Reg_T_2;
     end
-    if (reset) begin // @[ysyx_25030077_clint.scala 18:25]
-      validReg <= 1'h0; // @[ysyx_25030077_clint.scala 18:25]
+    if (reset) begin // @[ysyx_25030077_clint.scala 19:25]
+      validReg <= 1'h0; // @[ysyx_25030077_clint.scala 19:25]
     end else begin
-      validReg <= _startDelay_T | _validReg_T_3; // @[ysyx_25030077_clint.scala 33:12]
+      validReg <= _startDelay_T | _validReg_T_3; // @[ysyx_25030077_clint.scala 40:12]
     end
-    if (reset) begin // @[ysyx_25030077_clint.scala 21:25]
-      delayCnt <= 3'h0; // @[ysyx_25030077_clint.scala 21:25]
-    end else if (startDelay) begin // @[ysyx_25030077_clint.scala 26:18]
-      delayCnt <= _delayCnt_T;
-    end else if (delayCnt != 3'h0) begin // @[ysyx_25030077_clint.scala 27:18]
-      delayCnt <= _delayCnt_T_3;
+    if (reset) begin // @[ysyx_25030077_clint.scala 22:25]
+      delayCnt <= 3'h0; // @[ysyx_25030077_clint.scala 22:25]
+    end else if (startDelay & delayCnt == 3'h0) begin // @[ysyx_25030077_clint.scala 31:18]
+      if (lfsrValue == 3'h1) begin // @[ysyx_25030077_clint.scala 30:25]
+        delayCnt <= 3'h2;
+      end else begin
+        delayCnt <= lfsrValue;
+      end
+    end else if (delayCnt != 3'h0) begin // @[ysyx_25030077_clint.scala 32:18]
+      delayCnt <= _delayCnt_T_4;
     end else begin
       delayCnt <= 3'h0;
     end

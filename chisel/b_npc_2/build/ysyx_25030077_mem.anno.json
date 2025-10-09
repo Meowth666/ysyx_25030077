@@ -49,23 +49,15 @@
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~ysyx_25030077_mem|ysyx_25030077_mem>io_r_valid"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
     "target":"~ysyx_25030077_mem|ysyx_25030077_mem>io_mem_data"
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~ysyx_25030077_mem|ysyx_25030077_mem>io_cnt"
+    "target":"~ysyx_25030077_mem|ysyx_25030077_mem>io_r_ready"
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~ysyx_25030077_mem|ysyx_25030077_mem>io_r__ready"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~ysyx_25030077_mem|ysyx_25030077_mem>io_r__valid"
+    "target":"~ysyx_25030077_mem|ysyx_25030077_mem>io_r_valid"
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",

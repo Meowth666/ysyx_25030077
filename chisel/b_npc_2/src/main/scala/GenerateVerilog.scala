@@ -20,4 +20,5 @@ object GenerateVerilog extends App {
   stage.emitVerilog(new ysyx_25030077_pc_next, targetDir)
   stage.emitVerilog(new ysyx_25030077_UART, targetDir)
   stage.emitVerilog(new ysyx_25030077_clint, targetDir)
+  stage.emitVerilog(new ysyx_25030077_xbar, targetDir)
 }

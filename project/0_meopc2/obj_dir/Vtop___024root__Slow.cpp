@@ -2,9 +2,7 @@
 // DESCRIPTION: Verilator output: Design implementation internals
 // See Vtop.h for the primary calling header
 
-#include "verilated.h"
-#include "verilated_dpi.h"
-
+#include "Vtop__pch.h"
 #include "Vtop__Syms.h"
 #include "Vtop___024root.h"
 
@@ -19,7 +17,7 @@ Vtop___024root::Vtop___024root(Vtop__Syms* symsp, const char* v__name)
 }
 
 void Vtop___024root::__Vconfigure(bool first) {
-    if (false && first) {}  // Prevent unused
+    (void)first;  // Prevent unused variable warning
 }
 
 Vtop___024root::~Vtop___024root() {

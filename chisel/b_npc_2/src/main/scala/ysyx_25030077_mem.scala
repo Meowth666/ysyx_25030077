@@ -12,9 +12,8 @@ class ysyx_25030077_mem extends Module {
     val wdata  = Input(UInt(32.W))
     val r_mask = Input(UInt(3.W))
     val w_mask = Input(UInt(3.W))
-    val r_valid = Input(Bool())
+    // val r_valid = Input(Bool())
     val mem_data = Output(UInt(32.W))
-    val cnt = Output(UInt(3.W))
     val r  = Decoupled(new rReq)
     val b  = Decoupled(new bReq)
     val b_resp = Output(UInt(2.W))
@@ -27,15 +26,20 @@ class ysyx_25030077_mem extends Module {
 
   val delayCnt = RegInit(0.U(3.W))  // 延迟最大 7 个周期
   val startDelay = WireInit(false.B)
-  startDelay := io.ar.valid && canAccept && io.r_valid
+  val r_valid_1 = io.r_mask > 0.U
+  // startDelay := io.ar.valid && canAccept && io.r_valid
+  startDelay := io.ar.valid && canAccept && r_valid_1
 
-  io.cnt := delayCnt
-  delayCnt := Mux(startDelay, LFSR(3),
+  // io.cnt := delayCnt
+  val lfsrValue = LFSR(3)
+  // 2. 调整范围为2-7：若为1则替换为2，其他值不变
+  val adjustedLfsr = Mux(lfsrValue === 1.U, 2.U(3.W), lfsrValue)
+  delayCnt := Mux((startDelay && delayCnt === 0.U), adjustedLfsr,
               Mux(delayCnt =/= 0.U, delayCnt - 1.U,
                   0.U))
   
-  io.r.valid := validReg && (delayCnt === 0.U)
-  io.b.valid := validReg && (delayCnt === 0.U)
+  io.r.valid := validReg && (delayCnt === 0.U || delayCnt === 1.U)
+  io.b.valid := validReg && (delayCnt === 0.U || delayCnt === 1.U)
   io.b_resp := 0.U
 
   io.mem_data := mem_data_Reg

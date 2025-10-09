@@ -319,11 +319,9 @@ module ysyx_25030077_mem(
   input  [31:0] io_wdata,
   input  [2:0]  io_r_mask,
   input  [2:0]  io_w_mask,
-  input         io_r_valid,
   output [31:0] io_mem_data,
-  output [2:0]  io_cnt,
-  input         io_r__ready,
-  output        io_r__valid,
+  input         io_r_ready,
+  output        io_r_valid,
   input         io_b_ready,
   output        io_b_valid,
   output [1:0]  io_b_resp
@@ -351,31 +349,33 @@ module ysyx_25030077_mem(
   wire  canAccept_prng_io_out_13; // @[PRNG.scala 91:22]
   wire  canAccept_prng_io_out_14; // @[PRNG.scala 91:22]
   wire  canAccept_prng_io_out_15; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_clock; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_reset; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_0; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_1; // @[PRNG.scala 91:22]
-  wire  delayCnt_prng_io_out_2; // @[PRNG.scala 91:22]
-  reg [31:0] mem_data_Reg; // @[ysyx_25030077_mem.scala 23:29]
-  reg  validReg; // @[ysyx_25030077_mem.scala 24:25]
+  wire  lfsrValue_prng_clock; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_reset; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_0; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_1; // @[PRNG.scala 91:22]
+  wire  lfsrValue_prng_io_out_2; // @[PRNG.scala 91:22]
+  reg [31:0] mem_data_Reg; // @[ysyx_25030077_mem.scala 22:29]
+  reg  validReg; // @[ysyx_25030077_mem.scala 23:25]
   wire [7:0] canAccept_lo = {canAccept_prng_io_out_7,canAccept_prng_io_out_6,canAccept_prng_io_out_5,
     canAccept_prng_io_out_4,canAccept_prng_io_out_3,canAccept_prng_io_out_2,canAccept_prng_io_out_1,
     canAccept_prng_io_out_0}; // @[PRNG.scala 95:17]
   wire [15:0] _canAccept_T = {canAccept_prng_io_out_15,canAccept_prng_io_out_14,canAccept_prng_io_out_13,
     canAccept_prng_io_out_12,canAccept_prng_io_out_11,canAccept_prng_io_out_10,canAccept_prng_io_out_9,
     canAccept_prng_io_out_8,canAccept_lo}; // @[PRNG.scala 95:17]
-  wire  canAccept = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 25:28]
-  wire [31:0] _read_data_T = io_waddr ^ io_raddr; // @[ysyx_25030077_mem.scala 26:29]
-  wire [2:0] _read_data_T_1 = io_r_mask | io_w_mask; // @[ysyx_25030077_mem.scala 26:68]
+  wire  canAccept = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 24:28]
+  wire [31:0] _read_data_T = io_waddr ^ io_raddr; // @[ysyx_25030077_mem.scala 25:29]
+  wire [2:0] _read_data_T_1 = io_r_mask | io_w_mask; // @[ysyx_25030077_mem.scala 25:68]
   wire [31:0] _read_data_T_2 = {27'h0,_read_data_T_1,io_aw_valid,io_w_valid}; // @[Cat.scala 31:58]
-  wire [31:0] read_data = _read_data_T ^ _read_data_T_2; // @[ysyx_25030077_mem.scala 26:40]
-  reg [2:0] delayCnt; // @[ysyx_25030077_mem.scala 28:25]
-  wire  _startDelay_T = io_ar_valid & canAccept; // @[ysyx_25030077_mem.scala 30:29]
-  wire  startDelay = io_ar_valid & canAccept & io_r_valid; // @[ysyx_25030077_mem.scala 30:42]
-  wire [2:0] _delayCnt_T = {delayCnt_prng_io_out_2,delayCnt_prng_io_out_1,delayCnt_prng_io_out_0}; // @[PRNG.scala 95:17]
-  wire [2:0] _delayCnt_T_3 = delayCnt - 3'h1; // @[ysyx_25030077_mem.scala 34:46]
-  wire  _io_r_valid_T = delayCnt == 3'h0; // @[ysyx_25030077_mem.scala 37:39]
-  wire  _validReg_T_4 = io_b_ready & io_r__ready & _io_r_valid_T ? 1'h0 : validReg; // @[ysyx_25030077_mem.scala 44:18]
+  wire [31:0] read_data = _read_data_T ^ _read_data_T_2; // @[ysyx_25030077_mem.scala 25:40]
+  reg [2:0] delayCnt; // @[ysyx_25030077_mem.scala 27:25]
+  wire  r_valid_1 = io_r_mask > 3'h0; // @[ysyx_25030077_mem.scala 29:29]
+  wire  _startDelay_T = io_ar_valid & canAccept; // @[ysyx_25030077_mem.scala 31:29]
+  wire  startDelay = io_ar_valid & canAccept & r_valid_1; // @[ysyx_25030077_mem.scala 31:42]
+  wire [2:0] lfsrValue = {lfsrValue_prng_io_out_2,lfsrValue_prng_io_out_1,lfsrValue_prng_io_out_0}; // @[PRNG.scala 95:17]
+  wire  _delayCnt_T = delayCnt == 3'h0; // @[ysyx_25030077_mem.scala 37:43]
+  wire [2:0] _delayCnt_T_4 = delayCnt - 3'h1; // @[ysyx_25030077_mem.scala 38:46]
+  wire  _io_r_valid_T_2 = _delayCnt_T | delayCnt == 3'h1; // @[ysyx_25030077_mem.scala 41:47]
+  wire  _validReg_T_4 = io_b_ready & io_r_ready & _delayCnt_T ? 1'h0 : validReg; // @[ysyx_25030077_mem.scala 48:18]
   MaxPeriodFibonacciLFSR canAccept_prng ( // @[PRNG.scala 91:22]
     .clock(canAccept_prng_clock),
     .reset(canAccept_prng_reset),
@@ -396,42 +396,45 @@ module ysyx_25030077_mem(
     .io_out_14(canAccept_prng_io_out_14),
     .io_out_15(canAccept_prng_io_out_15)
   );
-  MaxPeriodFibonacciLFSR_1 delayCnt_prng ( // @[PRNG.scala 91:22]
-    .clock(delayCnt_prng_clock),
-    .reset(delayCnt_prng_reset),
-    .io_out_0(delayCnt_prng_io_out_0),
-    .io_out_1(delayCnt_prng_io_out_1),
-    .io_out_2(delayCnt_prng_io_out_2)
+  MaxPeriodFibonacciLFSR_1 lfsrValue_prng ( // @[PRNG.scala 91:22]
+    .clock(lfsrValue_prng_clock),
+    .reset(lfsrValue_prng_reset),
+    .io_out_0(lfsrValue_prng_io_out_0),
+    .io_out_1(lfsrValue_prng_io_out_1),
+    .io_out_2(lfsrValue_prng_io_out_2)
   );
-  assign io_ar_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 25:28]
-  assign io_aw_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 25:28]
-  assign io_w_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 25:28]
-  assign io_mem_data = mem_data_Reg; // @[ysyx_25030077_mem.scala 41:15]
-  assign io_cnt = delayCnt; // @[ysyx_25030077_mem.scala 32:10]
-  assign io_r__valid = validReg & delayCnt == 3'h0; // @[ysyx_25030077_mem.scala 37:26]
-  assign io_b_valid = validReg & _io_r_valid_T; // @[ysyx_25030077_mem.scala 38:26]
-  assign io_b_resp = 2'h0; // @[ysyx_25030077_mem.scala 39:13]
+  assign io_ar_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 24:28]
+  assign io_aw_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 24:28]
+  assign io_w_ready = _canAccept_T[0]; // @[ysyx_25030077_mem.scala 24:28]
+  assign io_mem_data = mem_data_Reg; // @[ysyx_25030077_mem.scala 45:15]
+  assign io_r_valid = validReg & (_delayCnt_T | delayCnt == 3'h1); // @[ysyx_25030077_mem.scala 41:26]
+  assign io_b_valid = validReg & _io_r_valid_T_2; // @[ysyx_25030077_mem.scala 42:26]
+  assign io_b_resp = 2'h0; // @[ysyx_25030077_mem.scala 43:13]
   assign canAccept_prng_clock = clock;
   assign canAccept_prng_reset = reset;
-  assign delayCnt_prng_clock = clock;
-  assign delayCnt_prng_reset = reset;
+  assign lfsrValue_prng_clock = clock;
+  assign lfsrValue_prng_reset = reset;
   always @(posedge clock) begin
-    if (reset) begin // @[ysyx_25030077_mem.scala 23:29]
-      mem_data_Reg <= 32'h0; // @[ysyx_25030077_mem.scala 23:29]
-    end else if (_startDelay_T) begin // @[ysyx_25030077_mem.scala 46:22]
+    if (reset) begin // @[ysyx_25030077_mem.scala 22:29]
+      mem_data_Reg <= 32'h0; // @[ysyx_25030077_mem.scala 22:29]
+    end else if (_startDelay_T) begin // @[ysyx_25030077_mem.scala 50:22]
       mem_data_Reg <= read_data;
     end
-    if (reset) begin // @[ysyx_25030077_mem.scala 24:25]
-      validReg <= 1'h0; // @[ysyx_25030077_mem.scala 24:25]
+    if (reset) begin // @[ysyx_25030077_mem.scala 23:25]
+      validReg <= 1'h0; // @[ysyx_25030077_mem.scala 23:25]
     end else begin
-      validReg <= _startDelay_T | _validReg_T_4; // @[ysyx_25030077_mem.scala 43:12]
+      validReg <= _startDelay_T | _validReg_T_4; // @[ysyx_25030077_mem.scala 47:12]
     end
-    if (reset) begin // @[ysyx_25030077_mem.scala 28:25]
-      delayCnt <= 3'h0; // @[ysyx_25030077_mem.scala 28:25]
-    end else if (startDelay) begin // @[ysyx_25030077_mem.scala 33:18]
-      delayCnt <= _delayCnt_T;
-    end else if (delayCnt != 3'h0) begin // @[ysyx_25030077_mem.scala 34:18]
-      delayCnt <= _delayCnt_T_3;
+    if (reset) begin // @[ysyx_25030077_mem.scala 27:25]
+      delayCnt <= 3'h0; // @[ysyx_25030077_mem.scala 27:25]
+    end else if (startDelay & delayCnt == 3'h0) begin // @[ysyx_25030077_mem.scala 37:18]
+      if (lfsrValue == 3'h1) begin // @[ysyx_25030077_mem.scala 36:25]
+        delayCnt <= 3'h2;
+      end else begin
+        delayCnt <= lfsrValue;
+      end
+    end else if (delayCnt != 3'h0) begin // @[ysyx_25030077_mem.scala 38:18]
+      delayCnt <= _delayCnt_T_4;
     end else begin
       delayCnt <= 3'h0;
     end

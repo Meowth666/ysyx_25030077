@@ -1,7 +1,7 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Symbol table implementation internals
 
-#include "Vtop__Syms.h"
+#include "Vtop__pch.h"
 #include "Vtop.h"
 #include "Vtop___024root.h"
 
@@ -24,6 +24,8 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     // Setup module instances
     , TOP{this, namep}
 {
+        // Check resources
+        Verilated::stackCheck(438);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-12);
     _vm_contextp__->timeprecision(-12);
@@ -31,10 +33,10 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     // Setup each module's pointer back to symbol table (for public functions)
     TOP.__Vconfigure(true);
     // Setup scopes
-    __Vscope_ysyx_25030077_top__i0.configure(this, name(), "ysyx_25030077_top.i0", "i0", -12, VerilatedScope::SCOPE_OTHER);
-    __Vscope_ysyx_25030077_top__i4.configure(this, name(), "ysyx_25030077_top.i4", "i4", -12, VerilatedScope::SCOPE_OTHER);
-    __Vscope_ysyx_25030077_top__i5.configure(this, name(), "ysyx_25030077_top.i5", "i5", -12, VerilatedScope::SCOPE_OTHER);
-    __Vscope_ysyx_25030077_top__i7.configure(this, name(), "ysyx_25030077_top.i7", "i7", -12, VerilatedScope::SCOPE_OTHER);
+    __Vscope_ysyx_25030077_top__i0.configure(this, name(), "ysyx_25030077_top.i0", "i0", "<null>", -12, VerilatedScope::SCOPE_OTHER);
+    __Vscope_ysyx_25030077_top__i4.configure(this, name(), "ysyx_25030077_top.i4", "i4", "<null>", -12, VerilatedScope::SCOPE_OTHER);
+    __Vscope_ysyx_25030077_top__i5.configure(this, name(), "ysyx_25030077_top.i5", "i5", "<null>", -12, VerilatedScope::SCOPE_OTHER);
+    __Vscope_ysyx_25030077_top__i7.configure(this, name(), "ysyx_25030077_top.i7", "i7", "<null>", -12, VerilatedScope::SCOPE_OTHER);
     // Setup export functions
     for (int __Vfinal = 0; __Vfinal < 2; ++__Vfinal) {
         __Vscope_ysyx_25030077_top__i0.exportInsert(__Vfinal, "pc_read_data", (void*)(&Vtop___024root____Vdpiexp_ysyx_25030077_top__DOT__i0__DOT__pc_read_data_TOP));
