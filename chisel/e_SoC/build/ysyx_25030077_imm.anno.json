@@ -1,0 +1,30 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.DontTouchAnnotation",
+    "target":"~ysyx_25030077_imm|ysyx_25030077_imm>io_instruction"
+  },
+  {
+    "class":"firrtl.transforms.DontTouchAnnotation",
+    "target":"~ysyx_25030077_imm|ysyx_25030077_imm>io_imm_type"
+  },
+  {
+    "class":"firrtl.transforms.DontTouchAnnotation",
+    "target":"~ysyx_25030077_imm|ysyx_25030077_imm>io_imm"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"build"
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~ysyx_25030077_imm|ysyx_25030077_imm>io_imm",
+    "sources":[
+      "~ysyx_25030077_imm|ysyx_25030077_imm>io_imm_type",
+      "~ysyx_25030077_imm|ysyx_25030077_imm>io_instruction"
+    ]
+  }
+]

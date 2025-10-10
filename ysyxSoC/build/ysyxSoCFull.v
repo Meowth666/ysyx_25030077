@@ -1518,7 +1518,7 @@ module CPU(	// home/meowth/ysyx/ysyx-workbench/ysyxSoC/src/CPU.scala:33:9
   input         auto_master_out_rlast	// home/meowth/ysyx/ysyx-workbench/ysyxSoC/rocket-chip/dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:100:25
 );
 
-  ysyx_00000000 cpu (	// home/meowth/ysyx/ysyx-workbench/ysyxSoC/src/CPU.scala:38:21
+  ysyx_25030077 cpu (	// home/meowth/ysyx/ysyx-workbench/ysyxSoC/src/CPU.scala:38:21
     .clock                   (clock),
     .reset                   (reset),
     .io_interrupt            (1'h0),	// home/meowth/ysyx/ysyx-workbench/ysyxSoC/src/CPU.scala:35:23, :36:19, :38:21
