@@ -69,11 +69,12 @@ wave_display:
 	gtkwave obj_dir/wave.fst
 
 # IMAGE = /home/meowth/ysyx/ysyx-workbench/am-kernels/tests/am-tests/build/amtest-riscv32e-npc
-IMAGE = /home/meowth/ysyx/ysyx-workbench/am-kernels/tests/cpu-tests/build/bit-riscv32e-npc
+# IMAGE = /home/meowth/ysyx/ysyx-workbench/am-kernels/tests/cpu-tests/build/string-riscv32e-ysyx-soc
+IMAGE = /home/meowth/ysyx/ysyx-workbench/project/a_ifu_sram/csrc/char-test
 
 DIFF_SO = /home/meowth/ysyx/ysyx-workbench/nemu/build/riscv32-nemu-interpreter-so
 sim:
-	verilator --cc --exe --trace-fst --build -j 0 \
+	verilator --cc --exe --autoflush --trace-fst --build -j 0 \
 	--timescale "1ns/1ns" \
     --no-timing \
 	-I$(abspath /home/meowth/ysyx/ysyx-workbench/ysyxSoC/perip/uart16550/rtl) \
@@ -90,6 +91,5 @@ sim:
 test:
 	verilator --cc --exe --trace-fst --build -j 0 $(CSRCS_SIM)  vsrc/*.v 
 	obj_dir/Vtop /home/meowth/ysyx/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-riscv32e-npc.bin
-
 
 .PHONY: default all clean run

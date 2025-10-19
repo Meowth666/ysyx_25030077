@@ -1,9 +1,11 @@
 #include "trap.h"
 
-#define N 10
-int a[N];
+// #define N 10
+
 
 int main() {
+  int N = 10;
+  int a[10];
   int i, j;
   for(i = 0; i < N; i ++)
     a[i] = i;

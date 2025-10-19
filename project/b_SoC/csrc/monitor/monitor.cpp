@@ -78,14 +78,15 @@ void init_monitor(int argc, char *argv[]) {
 
     if(FTRACE)
         init_elf(elf_file);
-
-    init_mem(0x8000000);
+    init_mem(0xfff);
     // init_isa();
+    // printf("Finish init_mem\n");
     long img_size = load_img();
     // for(int i = 0; i < img_size; i++){
     //     printf("guest_to_host(RESET_VECTOR)[%d] = %x\n", i, guest_to_host(RESET_VECTOR)[i]);
     // }
-    init_difftest(diff_so_file, img_size);
+    if(DIFFTEST)
+      init_difftest(diff_so_file, img_size);
     // init_sdb();
     IFDEF(ITRACE, init_disasm());
     // init_disasm();

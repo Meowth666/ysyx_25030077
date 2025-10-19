@@ -45,7 +45,7 @@ void difftest_skip_dut(int nr_ref, int nr_dut) {
 
 void init_difftest(char *ref_so_file, long img_size) {
   assert(ref_so_file != NULL);
-  // printf("Loading .so from: %s\n", ref_so_file);
+  printf("______Loading .so from: %s\n", ref_so_file);
   void *handle;
   handle = dlopen(ref_so_file, RTLD_LAZY);
   // printf("ERROR: %s\n", dlerror());
@@ -74,10 +74,10 @@ void init_difftest(char *ref_so_file, long img_size) {
       "If it is not necessary, you can turn it off in menuconfig.", ref_so_file);
 
   ref_difftest_init();
-  ref_difftest_memcpy(0x80000000, (void *)guest_to_host(0x80000000), img_size, DIFFTEST_TO_REF);
+  ref_difftest_memcpy(0x20000000, (void *)guest_to_host(0x20000000), img_size, DIFFTEST_TO_REF);
   
   CPU_state dut_r;
-  dut_r.pc = 0x80000000;
+  dut_r.pc = 0x20000000;
   for(int i = 0;i < REGNUM;i++)
     dut_r.gpr[i] = reg_data[i];
   ref_difftest_regcpy(&dut_r, DIFFTEST_TO_REF);

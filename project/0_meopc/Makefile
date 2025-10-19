@@ -27,7 +27,7 @@ CSRCS += $(SRC_AUTO_BIND)
 CSRCS_SIM = $(shell find $(abspath ./csrc) -name "*.c" -or -name "*.cc" -or -name "*.cpp")
 
 LIBCAPSTONE = /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/libcapstone.so.5
-#CFLAGS += -I  /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include
+# CFLAGS += -I  /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone/repo/include
 /home/meowth/ysyx/ysyx-workbench/project/0_meopc/csrc/utils/disasm.cpp: $(LIBCAPSTONE)
 $(LIBCAPSTONE):
 	$(MAKE) -C /home/meowth/ysyx/ysyx-workbench/project/0_meopc/tools/capstone

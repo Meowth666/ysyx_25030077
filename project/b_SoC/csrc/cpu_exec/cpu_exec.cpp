@@ -27,8 +27,38 @@ void step_and_dump_wave(){
 	contextp->timeInc(1);
 	tfp->dump(contextp->time());
 }
+int success = 0;
+uint32_t insn32;
 extern "C" void flash_read(int32_t addr, int32_t *data) { assert(0); }
-extern "C" void mrom_read(int32_t addr, int32_t *data) { assert(0); }
+extern "C" void mrom_read(int32_t addr, int32_t *data) { 
+	// assert(0); 
+    // printf("pc = %x\n", addr);
+	if(addr < 0x20000000){
+		*data = 0x413;
+	}
+	// else if(*pc == 0x80000050){
+	// 	instruction = 75299;
+	// }
+	else{
+        int insert = (addr - 0x20000000) + 3;
+        // printf("insert = %d\n", insert);
+        // printf("size : %d  %d\n", sizeof(guest_to_host(RESET_VECTOR)[0]), sizeof(insert));
+        *data = (static_cast<uint8_t>(guest_to_host(RESET_VECTOR)[insert]) << 24) |
+                    (static_cast<uint8_t>(guest_to_host(RESET_VECTOR)[insert - 1]) << 16) |
+                    (static_cast<uint8_t>(guest_to_host(RESET_VECTOR)[insert - 2]) << 8)  |
+                    static_cast<uint8_t>(guest_to_host(RESET_VECTOR)[insert - 3]);
+	}
+    // printf("pc =0x%x  instruction = 0x%x\n",addr, *data);
+	if(*data == 1048691 && insn32 == 32871){
+		//printf("instruction = %x\n", instruction);
+		success = 1;
+	}
+	else if(*data == 1048691){
+		flag = 1;
+	}
+	insn32 = *data;
+	// assert(0);
+}
 // svBit is_break(const svBitVecVal* instruction_in){
 // 	if(*instruction_in == 0b00000000000100000000000001110011){
 // 		flag = 1;
@@ -37,51 +67,7 @@ extern "C" void mrom_read(int32_t addr, int32_t *data) { assert(0); }
 // 	return 0;
 // }
 
-int success = 0;
-uint32_t insn32;
-
 int ins_cnt = 0;
-svBitVecVal addr_read(const svBitVecVal* pc){
-	svBitVecVal instruction;
-    // printf("pc = %x\n", *pc);
-	if(*pc < 0x80000000){
-		instruction = 0x413;
-	}
-	// else if(*pc == 0x80000050){
-	// 	instruction = 75299;
-	// }
-	else{
-        int insert = (*pc - 0x80000000) + 3;
-        // printf("insert = %d\n", insert);
-        // printf("size : %d  %d\n", sizeof(guest_to_host(RESET_VECTOR)[0]), sizeof(insert));
-        instruction = (static_cast<uint8_t>(guest_to_host(RESET_VECTOR)[insert]) << 24) |
-                    (static_cast<uint8_t>(guest_to_host(RESET_VECTOR)[insert - 1]) << 16) |
-                    (static_cast<uint8_t>(guest_to_host(RESET_VECTOR)[insert - 2]) << 8)  |
-                    static_cast<uint8_t>(guest_to_host(RESET_VECTOR)[insert - 3]);
-	}
-    // printf("pc =0x%x  instruction = 0x%x\n",*pc, instruction);
-	if(instruction == 1048691 && insn32 == 32871){
-		//printf("instruction = %x\n", instruction);
-		success = 1;
-	}
-	else if(instruction == 1048691){
-		flag = 1;
-	}
-	if(insn32 == instruction){
-		ins_cnt++;
-		if(ins_cnt > 100){
-			instruction = 1048691;
-			success = 1;
-			flag = 1;
-		}
-	}
-	else{
-		ins_cnt = 0;
-	}
-	insn32 = instruction;
-	// printf("instruction: %x\n",instruction);
-	return instruction;
-}
 svBitVecVal ecall_read(const svBitVecVal* pc, const svBitVecVal* type_p){
 	// printf("ecall_read: pc = %x, type = %d\n", *pc, *type_p);
 	if(*type_p == 11){
@@ -206,7 +192,7 @@ int cpu_exec(int n){
 		// if(ix > 200000){
 		// 	flag = 1;
 		// 	success = 0;
-		//  printf("Too many instructions\n");
+		// 	printf("\n----Too many instructions----\n");
 		// 	break;
 		// }
 	} 

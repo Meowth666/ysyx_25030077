@@ -23,7 +23,7 @@ void init_mem(size_t size){
 }
 
 uint8_t* guest_to_host(uint32_t paddr) { 
-    return pmem + (uintptr_t)(paddr - 0x80000000); 
+    return pmem + (uintptr_t)(paddr - 0x20000000); 
 }
 
 int ix = 0;

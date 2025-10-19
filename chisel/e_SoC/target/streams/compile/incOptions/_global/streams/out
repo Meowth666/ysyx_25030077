@@ -1,11 +1,11 @@
 [0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /home/meowth/ysyx/ysyx-workbench/chisel/e_SoC/target/scala-2.12/classes.bak[0m
 [0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077$$anon$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077_arbiter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077_arbiter$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077$$anon$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077_arbiter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077_arbiter$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077_arbiter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ysyx_25030077_arbiter$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/meowth/ysyx/ysyx-workbench/chisel/e_SoC/target/scala-2.12/classes.bak[0m

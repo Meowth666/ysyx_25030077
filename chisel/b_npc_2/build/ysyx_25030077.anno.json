@@ -2,38 +2,44 @@
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~ysyx_25030077|MaxPeriodFibonacciLFSR",
-    "duplicate":"~ysyx_25030077|ysyx_25030077/f_gpr:ysyx_25030077_gpr/canAccept_prng:MaxPeriodFibonacciLFSR",
-    "index":0.2631578947368421
+    "duplicate":"~ysyx_25030077|ysyx_25030077/c_arbiter:ysyx_25030077_arbiter/canAccept_prng:MaxPeriodFibonacciLFSR",
+    "index":0.1
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~ysyx_25030077|MaxPeriodFibonacciLFSR_1",
-    "duplicate":"~ysyx_25030077|ysyx_25030077/g_mem:ysyx_25030077_mem/canAccept_prng:MaxPeriodFibonacciLFSR",
-    "index":0.3684210526315789
+    "duplicate":"~ysyx_25030077|ysyx_25030077/f_gpr:ysyx_25030077_gpr/canAccept_prng:MaxPeriodFibonacciLFSR",
+    "index":0.3
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~ysyx_25030077|MaxPeriodFibonacciLFSR_2",
-    "duplicate":"~ysyx_25030077|ysyx_25030077/g_mem:ysyx_25030077_mem/lfsrValue_prng:MaxPeriodFibonacciLFSR_2",
-    "index":0.42105263157894735
+    "duplicate":"~ysyx_25030077|ysyx_25030077/g_mem:ysyx_25030077_mem/canAccept_prng:MaxPeriodFibonacciLFSR",
+    "index":0.4
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~ysyx_25030077|MaxPeriodFibonacciLFSR_3",
-    "duplicate":"~ysyx_25030077|ysyx_25030077/l_uart:ysyx_25030077_UART/canAccept_prng:MaxPeriodFibonacciLFSR",
-    "index":0.6842105263157895
+    "duplicate":"~ysyx_25030077|ysyx_25030077/g_mem:ysyx_25030077_mem/lfsrValue_prng:MaxPeriodFibonacciLFSR_3",
+    "index":0.45
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~ysyx_25030077|MaxPeriodFibonacciLFSR_4",
-    "duplicate":"~ysyx_25030077|ysyx_25030077/m_clint:ysyx_25030077_clint/canAccept_prng:MaxPeriodFibonacciLFSR",
-    "index":0.7894736842105263
+    "duplicate":"~ysyx_25030077|ysyx_25030077/l_uart:ysyx_25030077_UART/canAccept_prng:MaxPeriodFibonacciLFSR",
+    "index":0.7
   },
   {
     "class":"firrtl.transforms.DedupedResult",
     "original":"~ysyx_25030077|MaxPeriodFibonacciLFSR_5",
-    "duplicate":"~ysyx_25030077|ysyx_25030077/m_clint:ysyx_25030077_clint/lfsrValue_prng:MaxPeriodFibonacciLFSR_2",
-    "index":0.8421052631578947
+    "duplicate":"~ysyx_25030077|ysyx_25030077/m_clint:ysyx_25030077_clint/canAccept_prng:MaxPeriodFibonacciLFSR",
+    "index":0.8
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~ysyx_25030077|MaxPeriodFibonacciLFSR_6",
+    "duplicate":"~ysyx_25030077|ysyx_25030077/m_clint:ysyx_25030077_clint/lfsrValue_prng:MaxPeriodFibonacciLFSR_3",
+    "index":0.85
   },
   {
     "class":"firrtl.EmitCircuitAnnotation",

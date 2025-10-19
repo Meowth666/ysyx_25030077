@@ -26,7 +26,7 @@
 
 // typedef word_t vaddr_t;
 // typedef uint32_t paddr_t;
-#define PMEM_LEFT  ((paddr_t)0x80000000)
+#define PMEM_LEFT  ((paddr_t)0x20000000)
 #define RESET_VECTOR (PMEM_LEFT + 0)
 //#include <debug.h>
 

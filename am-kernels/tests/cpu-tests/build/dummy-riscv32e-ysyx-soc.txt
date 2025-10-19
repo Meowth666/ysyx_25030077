@@ -1,0 +1,52 @@
+
+/home/meowth/ysyx/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-riscv32e-ysyx-soc.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+20000000 <_start>:
+20000000:	00000413          	li	s0,0
+20000004:	ef000117          	auipc	sp,0xef000
+20000008:	7fc10113          	addi	sp,sp,2044 # f000800 <_end>
+2000000c:	070000ef          	jal	ra,2000007c <_trm_init>
+
+20000010 <main>:
+20000010:	00000513          	li	a0,0
+20000014:	00008067          	ret
+
+20000018 <bootloader_load>:
+20000018:	ef000797          	auipc	a5,0xef000
+2000001c:	fe878793          	addi	a5,a5,-24 # f000000 <_bss_end>
+20000020:	ef000717          	auipc	a4,0xef000
+20000024:	fe070713          	addi	a4,a4,-32 # f000000 <_bss_end>
+20000028:	40e78633          	sub	a2,a5,a4
+2000002c:	02e78263          	beq	a5,a4,20000050 <bootloader_load+0x38>
+20000030:	00000797          	auipc	a5,0x0
+20000034:	0ac78793          	addi	a5,a5,172 # 200000dc <_erodata>
+20000038:	00f60633          	add	a2,a2,a5
+2000003c:	0007c683          	lbu	a3,0(a5)
+20000040:	00178793          	addi	a5,a5,1
+20000044:	00170713          	addi	a4,a4,1
+20000048:	fed70fa3          	sb	a3,-1(a4)
+2000004c:	fec798e3          	bne	a5,a2,2000003c <bootloader_load+0x24>
+20000050:	ef000697          	auipc	a3,0xef000
+20000054:	fb068693          	addi	a3,a3,-80 # f000000 <_bss_end>
+20000058:	ef000797          	auipc	a5,0xef000
+2000005c:	fa878793          	addi	a5,a5,-88 # f000000 <_bss_end>
+20000060:	40f68733          	sub	a4,a3,a5
+20000064:	00f68a63          	beq	a3,a5,20000078 <bootloader_load+0x60>
+20000068:	00e78733          	add	a4,a5,a4
+2000006c:	00078023          	sb	zero,0(a5)
+20000070:	00178793          	addi	a5,a5,1
+20000074:	fef71ce3          	bne	a4,a5,2000006c <bootloader_load+0x54>
+20000078:	00008067          	ret
+
+2000007c <_trm_init>:
+2000007c:	ff410113          	addi	sp,sp,-12
+20000080:	00112423          	sw	ra,8(sp)
+20000084:	f95ff0ef          	jal	ra,20000018 <bootloader_load>
+20000088:	00000517          	auipc	a0,0x0
+2000008c:	01450513          	addi	a0,a0,20 # 2000009c <_etext>
+20000090:	f81ff0ef          	jal	ra,20000010 <main>
+20000094:	00100073          	ebreak
+20000098:	0000006f          	j	20000098 <_trm_init+0x1c>

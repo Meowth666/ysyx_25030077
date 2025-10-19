@@ -61,6 +61,69 @@ circuit ysyx_25030077 :
     io.ar.bits.addr <= reqQ.io.deq.bits.addr @[ysyx_25030077_IFU.scala 14:19]
     reqQ.io.deq.ready <= io.ar.ready @[ysyx_25030077_IFU.scala 15:14]
 
+  module MaxPeriodFibonacciLFSR :
+    input clock : Clock
+    input reset : Reset
+    output io : { flip seed : { valid : UInt<1>, bits : UInt<1>[16]}, flip increment : UInt<1>, out : UInt<1>[16]}
+
+    wire _state_WIRE : UInt<1>[16] @[PRNG.scala 46:28]
+    _state_WIRE[0] <= UInt<1>("h1") @[PRNG.scala 46:28]
+    _state_WIRE[1] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[2] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[3] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[4] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[5] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[6] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[7] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[8] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[9] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[10] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[11] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[12] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[13] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[14] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    _state_WIRE[15] <= UInt<1>("h0") @[PRNG.scala 46:28]
+    reg state : UInt<1>[16], clock with :
+      reset => (reset, _state_WIRE) @[PRNG.scala 55:49]
+    when io.increment : @[PRNG.scala 69:22]
+      node _T = xor(state[15], state[13]) @[LFSR.scala 15:41]
+      node _T_1 = xor(_T, state[12]) @[LFSR.scala 15:41]
+      node _T_2 = xor(_T_1, state[10]) @[LFSR.scala 15:41]
+      state[0] <= _T_2 @[PRNG.scala 70:11]
+      state[1] <= state[0] @[PRNG.scala 70:11]
+      state[2] <= state[1] @[PRNG.scala 70:11]
+      state[3] <= state[2] @[PRNG.scala 70:11]
+      state[4] <= state[3] @[PRNG.scala 70:11]
+      state[5] <= state[4] @[PRNG.scala 70:11]
+      state[6] <= state[5] @[PRNG.scala 70:11]
+      state[7] <= state[6] @[PRNG.scala 70:11]
+      state[8] <= state[7] @[PRNG.scala 70:11]
+      state[9] <= state[8] @[PRNG.scala 70:11]
+      state[10] <= state[9] @[PRNG.scala 70:11]
+      state[11] <= state[10] @[PRNG.scala 70:11]
+      state[12] <= state[11] @[PRNG.scala 70:11]
+      state[13] <= state[12] @[PRNG.scala 70:11]
+      state[14] <= state[13] @[PRNG.scala 70:11]
+      state[15] <= state[14] @[PRNG.scala 70:11]
+    when io.seed.valid : @[PRNG.scala 73:22]
+      state[0] <= io.seed.bits[0] @[PRNG.scala 74:11]
+      state[1] <= io.seed.bits[1] @[PRNG.scala 74:11]
+      state[2] <= io.seed.bits[2] @[PRNG.scala 74:11]
+      state[3] <= io.seed.bits[3] @[PRNG.scala 74:11]
+      state[4] <= io.seed.bits[4] @[PRNG.scala 74:11]
+      state[5] <= io.seed.bits[5] @[PRNG.scala 74:11]
+      state[6] <= io.seed.bits[6] @[PRNG.scala 74:11]
+      state[7] <= io.seed.bits[7] @[PRNG.scala 74:11]
+      state[8] <= io.seed.bits[8] @[PRNG.scala 74:11]
+      state[9] <= io.seed.bits[9] @[PRNG.scala 74:11]
+      state[10] <= io.seed.bits[10] @[PRNG.scala 74:11]
+      state[11] <= io.seed.bits[11] @[PRNG.scala 74:11]
+      state[12] <= io.seed.bits[12] @[PRNG.scala 74:11]
+      state[13] <= io.seed.bits[13] @[PRNG.scala 74:11]
+      state[14] <= io.seed.bits[14] @[PRNG.scala 74:11]
+      state[15] <= io.seed.bits[15] @[PRNG.scala 74:11]
+    io.out <= state @[PRNG.scala 78:10]
+
   module ysyx_25030077_arbiter :
     input clock : Clock
     input reset : Reset
@@ -72,6 +135,43 @@ circuit ysyx_25030077 :
       reset => (reset, UInt<32>("h0")) @[ysyx_25030077_arbiter.scala 54:27]
     reg axi_r_valid_delay : UInt, clock with :
       reset => (reset, UInt<1>("h0")) @[ysyx_25030077_arbiter.scala 55:36]
+    inst canAccept_prng of MaxPeriodFibonacciLFSR @[PRNG.scala 91:22]
+    canAccept_prng.clock <= clock
+    canAccept_prng.reset <= reset
+    canAccept_prng.io.seed.valid <= UInt<1>("h0") @[PRNG.scala 92:24]
+    canAccept_prng.io.seed.bits[0] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[1] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[2] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[3] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[4] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[5] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[6] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[7] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[8] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[9] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[10] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[11] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[12] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[13] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[14] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.seed.bits[15] is invalid @[PRNG.scala 93:23]
+    canAccept_prng.io.increment <= UInt<1>("h1") @[PRNG.scala 94:23]
+    node canAccept_lo_lo_lo = cat(canAccept_prng.io.out[1], canAccept_prng.io.out[0]) @[PRNG.scala 95:17]
+    node canAccept_lo_lo_hi = cat(canAccept_prng.io.out[3], canAccept_prng.io.out[2]) @[PRNG.scala 95:17]
+    node canAccept_lo_lo = cat(canAccept_lo_lo_hi, canAccept_lo_lo_lo) @[PRNG.scala 95:17]
+    node canAccept_lo_hi_lo = cat(canAccept_prng.io.out[5], canAccept_prng.io.out[4]) @[PRNG.scala 95:17]
+    node canAccept_lo_hi_hi = cat(canAccept_prng.io.out[7], canAccept_prng.io.out[6]) @[PRNG.scala 95:17]
+    node canAccept_lo_hi = cat(canAccept_lo_hi_hi, canAccept_lo_hi_lo) @[PRNG.scala 95:17]
+    node canAccept_lo = cat(canAccept_lo_hi, canAccept_lo_lo) @[PRNG.scala 95:17]
+    node canAccept_hi_lo_lo = cat(canAccept_prng.io.out[9], canAccept_prng.io.out[8]) @[PRNG.scala 95:17]
+    node canAccept_hi_lo_hi = cat(canAccept_prng.io.out[11], canAccept_prng.io.out[10]) @[PRNG.scala 95:17]
+    node canAccept_hi_lo = cat(canAccept_hi_lo_hi, canAccept_hi_lo_lo) @[PRNG.scala 95:17]
+    node canAccept_hi_hi_lo = cat(canAccept_prng.io.out[13], canAccept_prng.io.out[12]) @[PRNG.scala 95:17]
+    node canAccept_hi_hi_hi = cat(canAccept_prng.io.out[15], canAccept_prng.io.out[14]) @[PRNG.scala 95:17]
+    node canAccept_hi_hi = cat(canAccept_hi_hi_hi, canAccept_hi_hi_lo) @[PRNG.scala 95:17]
+    node canAccept_hi = cat(canAccept_hi_hi, canAccept_hi_lo) @[PRNG.scala 95:17]
+    node _canAccept_T = cat(canAccept_hi, canAccept_lo) @[PRNG.scala 95:17]
+    node canAccept = bits(_canAccept_T, 0, 0) @[ysyx_25030077_arbiter.scala 56:29]
     node _io_axi_ar_addr_T = add(io.rs1_data, io.imm) @[ysyx_25030077_arbiter.scala 57:44]
     node _io_axi_ar_addr_T_1 = bits(_io_axi_ar_addr_T, 31, 0) @[ysyx_25030077_arbiter.scala 57:54]
     node _io_axi_ar_addr_T_2 = eq(state_reg, UInt<1>("h0")) @[ysyx_25030077_arbiter.scala 58:42]
@@ -79,26 +179,25 @@ circuit ysyx_25030077 :
     io.axi_ar_addr <= _io_axi_ar_addr_T_3 @[ysyx_25030077_arbiter.scala 57:20]
     axi_r_valid_delay <= io.axi_r_valid @[ysyx_25030077_arbiter.scala 60:23]
     node _state_reg_T = eq(state_reg, UInt<1>("h0")) @[ysyx_25030077_arbiter.scala 62:20]
-    node _state_reg_T_1 = eq(io.axi_r_valid, UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 62:51]
-    node _state_reg_T_2 = mux(_state_reg_T_1, UInt<1>("h1"), UInt<1>("h0")) @[ysyx_25030077_arbiter.scala 62:35]
-    node _state_reg_T_3 = eq(state_reg, UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 63:20]
-    node _state_reg_T_4 = eq(io.r_valid_lsu, UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 64:53]
-    node _state_reg_T_5 = eq(io.axi_r_valid, UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 64:89]
-    node _state_reg_T_6 = eq(axi_r_valid_delay, UInt<1>("h0")) @[ysyx_25030077_arbiter.scala 64:119]
-    node _state_reg_T_7 = and(_state_reg_T_5, _state_reg_T_6) @[ysyx_25030077_arbiter.scala 64:98]
-    node _state_reg_T_8 = mux(_state_reg_T_7, UInt<2>("h2"), UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 64:71]
-    node _state_reg_T_9 = eq(io.r_valid_lsu, UInt<1>("h0")) @[ysyx_25030077_arbiter.scala 65:53]
-    node _state_reg_T_10 = and(io.axi_r_valid, io.axi_ar_ready) @[ysyx_25030077_arbiter.scala 65:88]
-    node _state_reg_T_11 = mux(_state_reg_T_10, UInt<2>("h2"), UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 65:72]
-    node _state_reg_T_12 = mux(_state_reg_T_9, _state_reg_T_11, UInt<1>("h0")) @[Mux.scala 101:16]
-    node _state_reg_T_13 = mux(_state_reg_T_4, _state_reg_T_8, _state_reg_T_12) @[Mux.scala 101:16]
-    node _state_reg_T_14 = eq(state_reg, UInt<2>("h2")) @[ysyx_25030077_arbiter.scala 67:20]
-    node _state_reg_T_15 = and(io.axi_r_valid, io.axi_ar_ready) @[ysyx_25030077_arbiter.scala 67:51]
-    node _state_reg_T_16 = mux(_state_reg_T_15, UInt<1>("h0"), UInt<2>("h2")) @[ysyx_25030077_arbiter.scala 67:35]
-    node _state_reg_T_17 = mux(_state_reg_T_14, _state_reg_T_16, UInt<1>("h0")) @[Mux.scala 101:16]
-    node _state_reg_T_18 = mux(_state_reg_T_3, _state_reg_T_13, _state_reg_T_17) @[Mux.scala 101:16]
-    node _state_reg_T_19 = mux(_state_reg_T, _state_reg_T_2, _state_reg_T_18) @[Mux.scala 101:16]
-    state_reg <= _state_reg_T_19 @[ysyx_25030077_arbiter.scala 61:15]
+    node _state_reg_T_1 = eq(io.axi_r_valid, UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 62:52]
+    node _state_reg_T_2 = and(_state_reg_T_1, io.axi_r_ready) @[ysyx_25030077_arbiter.scala 62:60]
+    node _state_reg_T_3 = mux(_state_reg_T_2, UInt<1>("h1"), UInt<1>("h0")) @[ysyx_25030077_arbiter.scala 62:35]
+    node _state_reg_T_4 = eq(state_reg, UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 63:20]
+    node _state_reg_T_5 = eq(io.r_valid_lsu, UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 64:53]
+    node _state_reg_T_6 = eq(io.axi_r_valid, UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 64:89]
+    node _state_reg_T_7 = eq(axi_r_valid_delay, UInt<1>("h0")) @[ysyx_25030077_arbiter.scala 64:119]
+    node _state_reg_T_8 = and(_state_reg_T_6, _state_reg_T_7) @[ysyx_25030077_arbiter.scala 64:98]
+    node _state_reg_T_9 = mux(_state_reg_T_8, UInt<2>("h2"), UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 64:71]
+    node _state_reg_T_10 = eq(io.r_valid_lsu, UInt<1>("h0")) @[ysyx_25030077_arbiter.scala 65:53]
+    node _state_reg_T_11 = mux(_state_reg_T_10, UInt<2>("h2"), UInt<1>("h0")) @[Mux.scala 101:16]
+    node _state_reg_T_12 = mux(_state_reg_T_5, _state_reg_T_9, _state_reg_T_11) @[Mux.scala 101:16]
+    node _state_reg_T_13 = eq(state_reg, UInt<2>("h2")) @[ysyx_25030077_arbiter.scala 67:20]
+    node _state_reg_T_14 = and(io.axi_r_valid, io.axi_ar_ready) @[ysyx_25030077_arbiter.scala 67:51]
+    node _state_reg_T_15 = mux(_state_reg_T_14, UInt<1>("h0"), UInt<2>("h2")) @[ysyx_25030077_arbiter.scala 67:35]
+    node _state_reg_T_16 = mux(_state_reg_T_13, _state_reg_T_15, UInt<1>("h0")) @[Mux.scala 101:16]
+    node _state_reg_T_17 = mux(_state_reg_T_4, _state_reg_T_12, _state_reg_T_16) @[Mux.scala 101:16]
+    node _state_reg_T_18 = mux(_state_reg_T, _state_reg_T_3, _state_reg_T_17) @[Mux.scala 101:16]
+    state_reg <= _state_reg_T_18 @[ysyx_25030077_arbiter.scala 61:15]
     node _io_axi_aw_addr_T = eq(state_reg, UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 71:42]
     node _io_axi_aw_addr_T_1 = add(io.rs1_data, io.imm) @[ysyx_25030077_arbiter.scala 71:67]
     node _io_axi_aw_addr_T_2 = bits(_io_axi_aw_addr_T_1, 31, 0) @[ysyx_25030077_arbiter.scala 71:77]
@@ -126,9 +225,9 @@ circuit ysyx_25030077 :
     node _io_axi_w_strb_T = eq(state_reg, UInt<1>("h1")) @[ysyx_25030077_arbiter.scala 91:42]
     node _io_axi_w_strb_T_1 = mux(_io_axi_w_strb_T, io.w_mask, UInt<1>("h0")) @[Mux.scala 101:16]
     io.axi_w_strb <= _io_axi_w_strb_T_1 @[ysyx_25030077_arbiter.scala 90:21]
-    io.axi_r_ready <= io.gpr_r_ready @[ysyx_25030077_arbiter.scala 94:21]
-    io.axi_b_ready <= io.gpr_b_ready @[ysyx_25030077_arbiter.scala 95:21]
-    io.ifu_ready <= io.axi_ar_ready @[ysyx_25030077_arbiter.scala 96:21]
+    io.axi_r_ready <= canAccept @[ysyx_25030077_arbiter.scala 94:21]
+    io.axi_b_ready <= canAccept @[ysyx_25030077_arbiter.scala 95:21]
+    io.ifu_ready <= canAccept @[ysyx_25030077_arbiter.scala 96:21]
     node _io_gpr_r_valid_T = eq(state_reg, UInt<2>("h2")) @[ysyx_25030077_arbiter.scala 99:42]
     node _io_gpr_r_valid_T_1 = mux(_io_gpr_r_valid_T, io.axi_r_valid, UInt<1>("h0")) @[Mux.scala 101:16]
     io.gpr_r_valid <= _io_gpr_r_valid_T_1 @[ysyx_25030077_arbiter.scala 98:21]
@@ -697,7 +796,7 @@ circuit ysyx_25030077 :
     node _io_imm_T_5 = mux(is_type1, Imm_type1, _io_imm_T_4) @[Mux.scala 101:16]
     io.imm <= _io_imm_T_5 @[ysyx_25030077_imm.scala 29:10]
 
-  module MaxPeriodFibonacciLFSR :
+  module MaxPeriodFibonacciLFSR_1 :
     input clock : Clock
     input reset : Reset
     output io : { flip seed : { valid : UInt<1>, bits : UInt<1>[16]}, flip increment : UInt<1>, out : UInt<1>[16]}
@@ -802,7 +901,7 @@ circuit ysyx_25030077 :
       reset => (reset, _regs_WIRE) @[ysyx_25030077_gpr.scala 21:21]
     reg validReg : UInt<1>, clock with :
       reset => (reset, UInt<1>("h0")) @[ysyx_25030077_gpr.scala 22:25]
-    inst canAccept_prng of MaxPeriodFibonacciLFSR @[PRNG.scala 91:22]
+    inst canAccept_prng of MaxPeriodFibonacciLFSR_1 @[PRNG.scala 91:22]
     canAccept_prng.clock <= clock
     canAccept_prng.reset <= reset
     canAccept_prng.io.seed.valid <= UInt<1>("h0") @[PRNG.scala 92:24]
@@ -860,7 +959,7 @@ circuit ysyx_25030077 :
     io.mem_Req.ready <= canAccept @[ysyx_25030077_gpr.scala 38:20]
     io.b.ready <= canAccept @[ysyx_25030077_gpr.scala 39:14]
 
-  module MaxPeriodFibonacciLFSR_1 :
+  module MaxPeriodFibonacciLFSR_2 :
     input clock : Clock
     input reset : Reset
     output io : { flip seed : { valid : UInt<1>, bits : UInt<1>[16]}, flip increment : UInt<1>, out : UInt<1>[16]}
@@ -923,7 +1022,7 @@ circuit ysyx_25030077 :
       state[15] <= io.seed.bits[15] @[PRNG.scala 74:11]
     io.out <= state @[PRNG.scala 78:10]
 
-  module MaxPeriodFibonacciLFSR_2 :
+  module MaxPeriodFibonacciLFSR_3 :
     input clock : Clock
     input reset : Reset
     output io : { flip seed : { valid : UInt<1>, bits : UInt<1>[3]}, flip increment : UInt<1>, out : UInt<1>[3]}
@@ -954,7 +1053,7 @@ circuit ysyx_25030077 :
       reset => (reset, UInt<32>("h0")) @[ysyx_25030077_mem.scala 22:29]
     reg validReg : UInt<1>, clock with :
       reset => (reset, UInt<1>("h0")) @[ysyx_25030077_mem.scala 23:25]
-    inst canAccept_prng of MaxPeriodFibonacciLFSR_1 @[PRNG.scala 91:22]
+    inst canAccept_prng of MaxPeriodFibonacciLFSR_2 @[PRNG.scala 91:22]
     canAccept_prng.clock <= clock
     canAccept_prng.reset <= reset
     canAccept_prng.io.seed.valid <= UInt<1>("h0") @[PRNG.scala 92:24]
@@ -1005,7 +1104,7 @@ circuit ysyx_25030077 :
     node _startDelay_T = and(io.ar.valid, canAccept) @[ysyx_25030077_mem.scala 31:29]
     node _startDelay_T_1 = and(_startDelay_T, r_valid_1) @[ysyx_25030077_mem.scala 31:42]
     startDelay <= _startDelay_T_1 @[ysyx_25030077_mem.scala 31:14]
-    inst lfsrValue_prng of MaxPeriodFibonacciLFSR_2 @[PRNG.scala 91:22]
+    inst lfsrValue_prng of MaxPeriodFibonacciLFSR_3 @[PRNG.scala 91:22]
     lfsrValue_prng.clock <= clock
     lfsrValue_prng.reset <= reset
     lfsrValue_prng.io.seed.valid <= UInt<1>("h0") @[PRNG.scala 92:24]
@@ -1305,7 +1404,7 @@ circuit ysyx_25030077 :
     node _io_is_unknown_instruction_T = mux(is_type3, UInt<1>("h1"), UInt<1>("h0")) @[Mux.scala 101:16]
     io.is_unknown_instruction <= _io_is_unknown_instruction_T @[ysyx_25030077_pc_next.scala 72:29]
 
-  module MaxPeriodFibonacciLFSR_3 :
+  module MaxPeriodFibonacciLFSR_4 :
     input clock : Clock
     input reset : Reset
     output io : { flip seed : { valid : UInt<1>, bits : UInt<1>[16]}, flip increment : UInt<1>, out : UInt<1>[16]}
@@ -1373,7 +1472,7 @@ circuit ysyx_25030077 :
     input reset : Reset
     output io : { flip aw : { flip ready : UInt<1>, valid : UInt<1>, bits : { }}, flip w : { flip ready : UInt<1>, valid : UInt<1>, bits : { }}, flip waddr : UInt<32>, flip wdata : UInt<32>, flip w_mask : UInt<3>}
 
-    inst canAccept_prng of MaxPeriodFibonacciLFSR_3 @[PRNG.scala 91:22]
+    inst canAccept_prng of MaxPeriodFibonacciLFSR_4 @[PRNG.scala 91:22]
     canAccept_prng.clock <= clock
     canAccept_prng.reset <= reset
     canAccept_prng.io.seed.valid <= UInt<1>("h0") @[PRNG.scala 92:24]
@@ -1423,7 +1522,7 @@ circuit ysyx_25030077 :
     when _T_6 : @[ysyx_25030077_UART.scala 22:11]
       printf(clock, UInt<1>("h1"), "%d%%c", _T_4) : printf @[ysyx_25030077_UART.scala 22:11]
 
-  module MaxPeriodFibonacciLFSR_4 :
+  module MaxPeriodFibonacciLFSR_5 :
     input clock : Clock
     input reset : Reset
     output io : { flip seed : { valid : UInt<1>, bits : UInt<1>[16]}, flip increment : UInt<1>, out : UInt<1>[16]}
@@ -1486,7 +1585,7 @@ circuit ysyx_25030077 :
       state[15] <= io.seed.bits[15] @[PRNG.scala 74:11]
     io.out <= state @[PRNG.scala 78:10]
 
-  module MaxPeriodFibonacciLFSR_5 :
+  module MaxPeriodFibonacciLFSR_6 :
     input clock : Clock
     input reset : Reset
     output io : { flip seed : { valid : UInt<1>, bits : UInt<1>[3]}, flip increment : UInt<1>, out : UInt<1>[3]}
@@ -1517,7 +1616,7 @@ circuit ysyx_25030077 :
       reset => (reset, UInt<64>("h0")) @[ysyx_25030077_clint.scala 18:29]
     reg validReg : UInt<1>, clock with :
       reset => (reset, UInt<1>("h0")) @[ysyx_25030077_clint.scala 19:25]
-    inst canAccept_prng of MaxPeriodFibonacciLFSR_4 @[PRNG.scala 91:22]
+    inst canAccept_prng of MaxPeriodFibonacciLFSR_5 @[PRNG.scala 91:22]
     canAccept_prng.clock <= clock
     canAccept_prng.reset <= reset
     canAccept_prng.io.seed.valid <= UInt<1>("h0") @[PRNG.scala 92:24]
@@ -1562,7 +1661,7 @@ circuit ysyx_25030077 :
     node _startDelay_T = and(io.ar.valid, canAccept) @[ysyx_25030077_clint.scala 26:29]
     node _startDelay_T_1 = and(_startDelay_T, r_valid_1) @[ysyx_25030077_clint.scala 26:42]
     startDelay <= _startDelay_T_1 @[ysyx_25030077_clint.scala 26:14]
-    inst lfsrValue_prng of MaxPeriodFibonacciLFSR_5 @[PRNG.scala 91:22]
+    inst lfsrValue_prng of MaxPeriodFibonacciLFSR_6 @[PRNG.scala 91:22]
     lfsrValue_prng.clock <= clock
     lfsrValue_prng.reset <= reset
     lfsrValue_prng.io.seed.valid <= UInt<1>("h0") @[PRNG.scala 92:24]

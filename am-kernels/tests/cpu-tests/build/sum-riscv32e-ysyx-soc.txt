@@ -1,0 +1,82 @@
+
+/home/meowth/ysyx/ysyx-workbench/am-kernels/tests/cpu-tests/build/sum-riscv32e-ysyx-soc.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+20000000 <_start>:
+20000000:	00000413          	li	s0,0
+20000004:	ef000117          	auipc	sp,0xef000
+20000008:	7fc10113          	addi	sp,sp,2044 # f000800 <_end>
+2000000c:	0d8000ef          	jal	ra,200000e4 <_trm_init>
+
+20000010 <check>:
+20000010:	00050463          	beqz	a0,20000018 <check+0x8>
+20000014:	00008067          	ret
+20000018:	ff410113          	addi	sp,sp,-12
+2000001c:	00100513          	li	a0,1
+20000020:	00112423          	sw	ra,8(sp)
+20000024:	0b8000ef          	jal	ra,200000dc <halt>
+
+20000028 <main>:
+20000028:	ff010113          	addi	sp,sp,-16
+2000002c:	00112623          	sw	ra,12(sp)
+20000030:	00012023          	sw	zero,0(sp)
+20000034:	00100793          	li	a5,1
+20000038:	06500693          	li	a3,101
+2000003c:	00012703          	lw	a4,0(sp)
+20000040:	00f70733          	add	a4,a4,a5
+20000044:	00e12023          	sw	a4,0(sp)
+20000048:	00178793          	addi	a5,a5,1
+2000004c:	fed798e3          	bne	a5,a3,2000003c <main+0x14>
+20000050:	00012503          	lw	a0,0(sp)
+20000054:	fffff7b7          	lui	a5,0xfffff
+20000058:	c4678793          	addi	a5,a5,-954 # ffffec46 <_erodata+0xdfffeb02>
+2000005c:	00f50533          	add	a0,a0,a5
+20000060:	00153513          	seqz	a0,a0
+20000064:	fadff0ef          	jal	ra,20000010 <check>
+20000068:	00c12083          	lw	ra,12(sp)
+2000006c:	00000513          	li	a0,0
+20000070:	01010113          	addi	sp,sp,16
+20000074:	00008067          	ret
+
+20000078 <bootloader_load>:
+20000078:	ef000797          	auipc	a5,0xef000
+2000007c:	f8878793          	addi	a5,a5,-120 # f000000 <_bss_end>
+20000080:	ef000717          	auipc	a4,0xef000
+20000084:	f8070713          	addi	a4,a4,-128 # f000000 <_bss_end>
+20000088:	40e78633          	sub	a2,a5,a4
+2000008c:	02e78263          	beq	a5,a4,200000b0 <bootloader_load+0x38>
+20000090:	00000797          	auipc	a5,0x0
+20000094:	0b478793          	addi	a5,a5,180 # 20000144 <_erodata>
+20000098:	00f60633          	add	a2,a2,a5
+2000009c:	0007c683          	lbu	a3,0(a5)
+200000a0:	00178793          	addi	a5,a5,1
+200000a4:	00170713          	addi	a4,a4,1
+200000a8:	fed70fa3          	sb	a3,-1(a4)
+200000ac:	fec798e3          	bne	a5,a2,2000009c <bootloader_load+0x24>
+200000b0:	ef000697          	auipc	a3,0xef000
+200000b4:	f5068693          	addi	a3,a3,-176 # f000000 <_bss_end>
+200000b8:	ef000797          	auipc	a5,0xef000
+200000bc:	f4878793          	addi	a5,a5,-184 # f000000 <_bss_end>
+200000c0:	40f68733          	sub	a4,a3,a5
+200000c4:	00f68a63          	beq	a3,a5,200000d8 <bootloader_load+0x60>
+200000c8:	00e78733          	add	a4,a5,a4
+200000cc:	00078023          	sb	zero,0(a5)
+200000d0:	00178793          	addi	a5,a5,1
+200000d4:	fef71ce3          	bne	a4,a5,200000cc <bootloader_load+0x54>
+200000d8:	00008067          	ret
+
+200000dc <halt>:
+200000dc:	00100073          	ebreak
+200000e0:	0000006f          	j	200000e0 <halt+0x4>
+
+200000e4 <_trm_init>:
+200000e4:	ff410113          	addi	sp,sp,-12
+200000e8:	00112423          	sw	ra,8(sp)
+200000ec:	f8dff0ef          	jal	ra,20000078 <bootloader_load>
+200000f0:	00000517          	auipc	a0,0x0
+200000f4:	01450513          	addi	a0,a0,20 # 20000104 <_etext>
+200000f8:	f31ff0ef          	jal	ra,20000028 <main>
+200000fc:	00100073          	ebreak
+20000100:	0000006f          	j	20000100 <_trm_init+0x1c>

@@ -1,0 +1,95 @@
+
+/home/meowth/ysyx/ysyx-workbench/am-kernels/tests/cpu-tests/build/switch-riscv32e-ysyx-soc.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+20000000 <_start>:
+20000000:	00000413          	li	s0,0
+20000004:	ef001117          	auipc	sp,0xef001
+20000008:	83c10113          	addi	sp,sp,-1988 # f000840 <_end>
+2000000c:	10c000ef          	jal	ra,20000118 <_trm_init>
+
+20000010 <check>:
+20000010:	00050463          	beqz	a0,20000018 <check+0x8>
+20000014:	00008067          	ret
+20000018:	ff410113          	addi	sp,sp,-12
+2000001c:	00100513          	li	a0,1
+20000020:	00112423          	sw	ra,8(sp)
+20000024:	0ec000ef          	jal	ra,20000110 <halt>
+
+20000028 <main>:
+20000028:	ff410113          	addi	sp,sp,-12
+2000002c:	00812223          	sw	s0,4(sp)
+20000030:	00912023          	sw	s1,0(sp)
+20000034:	00112423          	sw	ra,8(sp)
+20000038:	ef000497          	auipc	s1,0xef000
+2000003c:	fc848493          	addi	s1,s1,-56 # f000000 <ans>
+20000040:	00000413          	li	s0,0
+20000044:	fff00693          	li	a3,-1
+20000048:	0004a503          	lw	a0,0(s1)
+2000004c:	00448493          	addi	s1,s1,4
+20000050:	40d50533          	sub	a0,a0,a3
+20000054:	00153513          	seqz	a0,a0
+20000058:	fb9ff0ef          	jal	ra,20000010 <check>
+2000005c:	00241793          	slli	a5,s0,0x2
+20000060:	00000717          	auipc	a4,0x0
+20000064:	0d870713          	addi	a4,a4,216 # 20000138 <_etext>
+20000068:	00e00693          	li	a3,14
+2000006c:	00f707b3          	add	a5,a4,a5
+20000070:	00d00613          	li	a2,13
+20000074:	00d40c63          	beq	s0,a3,2000008c <main+0x64>
+20000078:	fff00693          	li	a3,-1
+2000007c:	00c40463          	beq	s0,a2,20000084 <main+0x5c>
+20000080:	0007a683          	lw	a3,0(a5)
+20000084:	00140413          	addi	s0,s0,1
+20000088:	fc1ff06f          	j	20000048 <main+0x20>
+2000008c:	00100513          	li	a0,1
+20000090:	f81ff0ef          	jal	ra,20000010 <check>
+20000094:	00812083          	lw	ra,8(sp)
+20000098:	00412403          	lw	s0,4(sp)
+2000009c:	00012483          	lw	s1,0(sp)
+200000a0:	00000513          	li	a0,0
+200000a4:	00c10113          	addi	sp,sp,12
+200000a8:	00008067          	ret
+
+200000ac <bootloader_load>:
+200000ac:	ef000797          	auipc	a5,0xef000
+200000b0:	f9078793          	addi	a5,a5,-112 # f00003c <_bss_end>
+200000b4:	ef000717          	auipc	a4,0xef000
+200000b8:	f4c70713          	addi	a4,a4,-180 # f000000 <ans>
+200000bc:	40e78633          	sub	a2,a5,a4
+200000c0:	02e78263          	beq	a5,a4,200000e4 <bootloader_load+0x38>
+200000c4:	00000797          	auipc	a5,0x0
+200000c8:	0e878793          	addi	a5,a5,232 # 200001ac <_erodata>
+200000cc:	00f60633          	add	a2,a2,a5
+200000d0:	0007c683          	lbu	a3,0(a5)
+200000d4:	00178793          	addi	a5,a5,1
+200000d8:	00170713          	addi	a4,a4,1
+200000dc:	fed70fa3          	sb	a3,-1(a4)
+200000e0:	fec798e3          	bne	a5,a2,200000d0 <bootloader_load+0x24>
+200000e4:	ef000697          	auipc	a3,0xef000
+200000e8:	f5868693          	addi	a3,a3,-168 # f00003c <_bss_end>
+200000ec:	ef000797          	auipc	a5,0xef000
+200000f0:	f5078793          	addi	a5,a5,-176 # f00003c <_bss_end>
+200000f4:	40f68733          	sub	a4,a3,a5
+200000f8:	00f68a63          	beq	a3,a5,2000010c <bootloader_load+0x60>
+200000fc:	00e78733          	add	a4,a5,a4
+20000100:	00078023          	sb	zero,0(a5)
+20000104:	00178793          	addi	a5,a5,1
+20000108:	fef71ce3          	bne	a4,a5,20000100 <bootloader_load+0x54>
+2000010c:	00008067          	ret
+
+20000110 <halt>:
+20000110:	00100073          	ebreak
+20000114:	0000006f          	j	20000114 <halt+0x4>
+
+20000118 <_trm_init>:
+20000118:	ff410113          	addi	sp,sp,-12
+2000011c:	00112423          	sw	ra,8(sp)
+20000120:	f8dff0ef          	jal	ra,200000ac <bootloader_load>
+20000124:	00000517          	auipc	a0,0x0
+20000128:	04850513          	addi	a0,a0,72 # 2000016c <mainargs>
+2000012c:	efdff0ef          	jal	ra,20000028 <main>
+20000130:	00100073          	ebreak
+20000134:	0000006f          	j	20000134 <_trm_init+0x1c>

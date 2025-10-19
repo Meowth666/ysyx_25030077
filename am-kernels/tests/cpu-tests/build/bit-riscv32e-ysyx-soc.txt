@@ -1,0 +1,182 @@
+
+/home/meowth/ysyx/ysyx-workbench/am-kernels/tests/cpu-tests/build/bit-riscv32e-ysyx-soc.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+20000000 <_start>:
+20000000:	00000413          	li	s0,0
+20000004:	ef000117          	auipc	sp,0xef000
+20000008:	7fc10113          	addi	sp,sp,2044 # f000800 <_end>
+2000000c:	258000ef          	jal	ra,20000264 <_trm_init>
+
+20000010 <check>:
+20000010:	00050463          	beqz	a0,20000018 <check+0x8>
+20000014:	00008067          	ret
+20000018:	ff410113          	addi	sp,sp,-12
+2000001c:	00100513          	li	a0,1
+20000020:	00112423          	sw	ra,8(sp)
+20000024:	238000ef          	jal	ra,2000025c <halt>
+
+20000028 <getbit>:
+20000028:	4035d793          	srai	a5,a1,0x3
+2000002c:	00f50533          	add	a0,a0,a5
+20000030:	00054503          	lbu	a0,0(a0)
+20000034:	0075f593          	andi	a1,a1,7
+20000038:	00100793          	li	a5,1
+2000003c:	00b797b3          	sll	a5,a5,a1
+20000040:	00f57533          	and	a0,a0,a5
+20000044:	00a03533          	snez	a0,a0
+20000048:	00008067          	ret
+
+2000004c <setbit>:
+2000004c:	4035d793          	srai	a5,a1,0x3
+20000050:	ffc10113          	addi	sp,sp,-4
+20000054:	00f50533          	add	a0,a0,a5
+20000058:	00a12023          	sw	a0,0(sp)
+2000005c:	00012783          	lw	a5,0(sp)
+20000060:	0075f593          	andi	a1,a1,7
+20000064:	00100713          	li	a4,1
+20000068:	00b71733          	sll	a4,a4,a1
+2000006c:	02061063          	bnez	a2,2000008c <setbit+0x40>
+20000070:	0007c783          	lbu	a5,0(a5)
+20000074:	fff74713          	not	a4,a4
+20000078:	00e7f7b3          	and	a5,a5,a4
+2000007c:	00012703          	lw	a4,0(sp)
+20000080:	00f70023          	sb	a5,0(a4)
+20000084:	00410113          	addi	sp,sp,4
+20000088:	00008067          	ret
+2000008c:	0007c783          	lbu	a5,0(a5)
+20000090:	00e7e7b3          	or	a5,a5,a4
+20000094:	00012703          	lw	a4,0(sp)
+20000098:	0ff7f793          	zext.b	a5,a5
+2000009c:	00f70023          	sb	a5,0(a4)
+200000a0:	00410113          	addi	sp,sp,4
+200000a4:	00008067          	ret
+
+200000a8 <main>:
+200000a8:	ff010113          	addi	sp,sp,-16
+200000ac:	0aa00793          	li	a5,170
+200000b0:	00000593          	li	a1,0
+200000b4:	00010513          	mv	a0,sp
+200000b8:	00112623          	sw	ra,12(sp)
+200000bc:	00f11023          	sh	a5,0(sp)
+200000c0:	f69ff0ef          	jal	ra,20000028 <getbit>
+200000c4:	00154513          	xori	a0,a0,1
+200000c8:	0ff57513          	zext.b	a0,a0
+200000cc:	f45ff0ef          	jal	ra,20000010 <check>
+200000d0:	00100593          	li	a1,1
+200000d4:	00010513          	mv	a0,sp
+200000d8:	f51ff0ef          	jal	ra,20000028 <getbit>
+200000dc:	f35ff0ef          	jal	ra,20000010 <check>
+200000e0:	00200593          	li	a1,2
+200000e4:	00010513          	mv	a0,sp
+200000e8:	f41ff0ef          	jal	ra,20000028 <getbit>
+200000ec:	00154513          	xori	a0,a0,1
+200000f0:	0ff57513          	zext.b	a0,a0
+200000f4:	f1dff0ef          	jal	ra,20000010 <check>
+200000f8:	00300593          	li	a1,3
+200000fc:	00010513          	mv	a0,sp
+20000100:	f29ff0ef          	jal	ra,20000028 <getbit>
+20000104:	f0dff0ef          	jal	ra,20000010 <check>
+20000108:	00400593          	li	a1,4
+2000010c:	00010513          	mv	a0,sp
+20000110:	f19ff0ef          	jal	ra,20000028 <getbit>
+20000114:	00154513          	xori	a0,a0,1
+20000118:	0ff57513          	zext.b	a0,a0
+2000011c:	ef5ff0ef          	jal	ra,20000010 <check>
+20000120:	00500593          	li	a1,5
+20000124:	00010513          	mv	a0,sp
+20000128:	f01ff0ef          	jal	ra,20000028 <getbit>
+2000012c:	ee5ff0ef          	jal	ra,20000010 <check>
+20000130:	00600593          	li	a1,6
+20000134:	00010513          	mv	a0,sp
+20000138:	ef1ff0ef          	jal	ra,20000028 <getbit>
+2000013c:	00154513          	xori	a0,a0,1
+20000140:	0ff57513          	zext.b	a0,a0
+20000144:	ecdff0ef          	jal	ra,20000010 <check>
+20000148:	00700593          	li	a1,7
+2000014c:	00010513          	mv	a0,sp
+20000150:	ed9ff0ef          	jal	ra,20000028 <getbit>
+20000154:	ebdff0ef          	jal	ra,20000010 <check>
+20000158:	00010513          	mv	a0,sp
+2000015c:	00100613          	li	a2,1
+20000160:	00800593          	li	a1,8
+20000164:	ee9ff0ef          	jal	ra,2000004c <setbit>
+20000168:	00010513          	mv	a0,sp
+2000016c:	00000613          	li	a2,0
+20000170:	00900593          	li	a1,9
+20000174:	ed9ff0ef          	jal	ra,2000004c <setbit>
+20000178:	00010513          	mv	a0,sp
+2000017c:	00100613          	li	a2,1
+20000180:	00a00593          	li	a1,10
+20000184:	ec9ff0ef          	jal	ra,2000004c <setbit>
+20000188:	00010513          	mv	a0,sp
+2000018c:	00000613          	li	a2,0
+20000190:	00b00593          	li	a1,11
+20000194:	eb9ff0ef          	jal	ra,2000004c <setbit>
+20000198:	00010513          	mv	a0,sp
+2000019c:	00100613          	li	a2,1
+200001a0:	00c00593          	li	a1,12
+200001a4:	ea9ff0ef          	jal	ra,2000004c <setbit>
+200001a8:	00010513          	mv	a0,sp
+200001ac:	00000613          	li	a2,0
+200001b0:	00d00593          	li	a1,13
+200001b4:	e99ff0ef          	jal	ra,2000004c <setbit>
+200001b8:	00010513          	mv	a0,sp
+200001bc:	00100613          	li	a2,1
+200001c0:	00e00593          	li	a1,14
+200001c4:	e89ff0ef          	jal	ra,2000004c <setbit>
+200001c8:	00010513          	mv	a0,sp
+200001cc:	00000613          	li	a2,0
+200001d0:	00f00593          	li	a1,15
+200001d4:	e79ff0ef          	jal	ra,2000004c <setbit>
+200001d8:	00114503          	lbu	a0,1(sp)
+200001dc:	fab50513          	addi	a0,a0,-85
+200001e0:	00153513          	seqz	a0,a0
+200001e4:	e2dff0ef          	jal	ra,20000010 <check>
+200001e8:	00c12083          	lw	ra,12(sp)
+200001ec:	00000513          	li	a0,0
+200001f0:	01010113          	addi	sp,sp,16
+200001f4:	00008067          	ret
+
+200001f8 <bootloader_load>:
+200001f8:	ef000797          	auipc	a5,0xef000
+200001fc:	e0878793          	addi	a5,a5,-504 # f000000 <_bss_end>
+20000200:	ef000717          	auipc	a4,0xef000
+20000204:	e0070713          	addi	a4,a4,-512 # f000000 <_bss_end>
+20000208:	40e78633          	sub	a2,a5,a4
+2000020c:	02e78263          	beq	a5,a4,20000230 <bootloader_load+0x38>
+20000210:	00000797          	auipc	a5,0x0
+20000214:	0b478793          	addi	a5,a5,180 # 200002c4 <_erodata>
+20000218:	00f60633          	add	a2,a2,a5
+2000021c:	0007c683          	lbu	a3,0(a5)
+20000220:	00178793          	addi	a5,a5,1
+20000224:	00170713          	addi	a4,a4,1
+20000228:	fed70fa3          	sb	a3,-1(a4)
+2000022c:	fec798e3          	bne	a5,a2,2000021c <bootloader_load+0x24>
+20000230:	ef000697          	auipc	a3,0xef000
+20000234:	dd068693          	addi	a3,a3,-560 # f000000 <_bss_end>
+20000238:	ef000797          	auipc	a5,0xef000
+2000023c:	dc878793          	addi	a5,a5,-568 # f000000 <_bss_end>
+20000240:	40f68733          	sub	a4,a3,a5
+20000244:	00f68a63          	beq	a3,a5,20000258 <bootloader_load+0x60>
+20000248:	00e78733          	add	a4,a5,a4
+2000024c:	00078023          	sb	zero,0(a5)
+20000250:	00178793          	addi	a5,a5,1
+20000254:	fef71ce3          	bne	a4,a5,2000024c <bootloader_load+0x54>
+20000258:	00008067          	ret
+
+2000025c <halt>:
+2000025c:	00100073          	ebreak
+20000260:	0000006f          	j	20000260 <halt+0x4>
+
+20000264 <_trm_init>:
+20000264:	ff410113          	addi	sp,sp,-12
+20000268:	00112423          	sw	ra,8(sp)
+2000026c:	f8dff0ef          	jal	ra,200001f8 <bootloader_load>
+20000270:	00000517          	auipc	a0,0x0
+20000274:	01450513          	addi	a0,a0,20 # 20000284 <_etext>
+20000278:	e31ff0ef          	jal	ra,200000a8 <main>
+2000027c:	00100073          	ebreak
+20000280:	0000006f          	j	20000280 <_trm_init+0x1c>

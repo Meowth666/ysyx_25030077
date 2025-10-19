@@ -148,13 +148,6 @@
   },
   {
     "class":"firrtl.transforms.CombinationalPath",
-    "sink":"~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_axi_r_ready",
-    "sources":[
-      "~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_gpr_r_ready"
-    ]
-  },
-  {
-    "class":"firrtl.transforms.CombinationalPath",
     "sink":"~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_axi_ar_addr",
     "sources":[
       "~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_pc",
@@ -214,13 +207,6 @@
   },
   {
     "class":"firrtl.transforms.CombinationalPath",
-    "sink":"~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_axi_b_ready",
-    "sources":[
-      "~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_gpr_b_ready"
-    ]
-  },
-  {
-    "class":"firrtl.transforms.CombinationalPath",
     "sink":"~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_gpr_b_valid",
     "sources":[
       "~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_axi_b_valid"
@@ -239,13 +225,6 @@
     "sources":[
       "~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_ifu_valid",
       "~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_axi_r_valid"
-    ]
-  },
-  {
-    "class":"firrtl.transforms.CombinationalPath",
-    "sink":"~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_ifu_ready",
-    "sources":[
-      "~ysyx_25030077_arbiter|ysyx_25030077_arbiter>io_axi_ar_ready"
     ]
   }
 ]

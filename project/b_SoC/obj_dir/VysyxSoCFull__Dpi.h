@@ -16,23 +16,23 @@ extern "C" {
 
 
     // DPI EXPORTS
-    // DPI export at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1634:16
+    // DPI export at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1843:16
     extern int dnpc_read_data();
     // DPI export at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:111:16
     extern int pc_read_data();
-    // DPI export at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:867:16
+    // DPI export at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1076:16
     extern int reg_read_addr();
-    // DPI export at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:872:16
+    // DPI export at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1081:16
     extern int reg_read_data();
-    // DPI export at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1556:16
+    // DPI export at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1765:16
     extern int reg_read_rs1();
-    // DPI export at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1561:16
+    // DPI export at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1770:16
     extern int reg_read_rs2();
 
     // DPI IMPORTS
-    // DPI import at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1578:37
+    // DPI import at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1787:37
     extern svBitVecVal csr_read(const svBitVecVal* rs1, const svBitVecVal* imm, const svBitVecVal* sw);
-    // DPI import at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1637:37
+    // DPI import at /home/meowth/ysyx/ysyx-workbench/project/b_SoC/vsrc/ysyx_25030077.v:1846:37
     extern svBitVecVal ecall_read(const svBitVecVal* pc, const svBitVecVal* type_p);
     // DPI import at /home/meowth/ysyx/ysyx-workbench/ysyxSoC/perip/flash/flash.v:84:30
     extern void flash_read(int addr, int* data);
